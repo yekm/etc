@@ -1,0 +1,275 @@
+pcm.!default {
+#	type hw
+#	card "Intel"
+    type route
+    slave.pcm copy
+    slave.channels 4
+    ttable {
+        0.0     1
+        1.1     1
+        0.2     1
+        1.3     1
+    }
+}
+
+pcm.copy {
+#	type hw
+#	card ST
+    type multi;
+    slaves.a.pcm "hw:0,0";
+    slaves.a.channels 2;
+    slaves.b.pcm "hw:1,0";
+    slaves.b.channels 2;
+    bindings.0.slave a;
+    bindings.0.channel 0;
+    bindings.1.slave a;
+    bindings.1.channel 1;
+    bindings.2.slave b;
+    bindings.2.channel 0;
+    bindings.3.slave b;
+    bindings.3.channel 1;
+}
+
+pcm.d {
+    type dmix
+    ipc_key 1024
+    ipc_key_add_uid false
+    ipc_perm 0666
+    slave {
+		pcm {
+			type hw
+#			card CMI8738
+			card CK804
+#			device 1
+		}
+        channels 6
+#        period_time 0
+#        period_size 1024
+#        buffer_size 4096 # buffer size < 6653, but pow(x, 2)
+#        rate 44100 # we want to play CDs only
+#format S32_LE # needed in alsa 1.0.10 for some reason
+    }
+}
+
+
+pcm.parallel6 {
+    type route
+    slave.pcm d
+    slave.channels 6
+    ttable {
+        0.0     1
+        1.1     1
+        0.2     1
+        1.3     1
+        0.4     1
+        1.5     1
+    }
+}
+
+#pcm.softvol {
+#	type softvol
+##slave.pcm "default:CARD=0"
+#	slave.pcm "upmix_20to51"
+#	control {
+#		name "Phonon"
+#		card CK804
+#	}
+#	min_dB -51.0
+#	max_dB 0.0
+#	resolution 100
+#	hint {
+#		show on
+#		description "softvol phonon hack"
+#	}
+#}
+
+pcm.upmix_20to51 {
+    type plug
+    slave.pcm cutter
+    slave.channels 5
+    ttable {
+        0.0     1       # left channel
+        1.1     1       # right channel
+        0.2     0.5     # mix left and right ...
+        1.2     0.5     # ... channel for subwoofer
+        0.3     1       # left channel
+        1.4     1       # right channel
+    }
+#	hint {
+#		show on
+#		description "pcm.upmix_20to51 type dmix."
+#	}
+}
+
+pcm.cutter {
+    type ladspa
+#    slave.pcm final_mix
+    slave.pcm amp
+    path "/usr/lib/ladspa"
+    channels 5
+    plugins {
+        0 {
+            id 1098 # Identity (Audio) (1098/identity_audio)
+            policy duplicate
+            input.bindings.0 "Input";
+            output.bindings.0 "Output";
+        }
+        1 {
+ 			id 1672 # 4 Pole Low-Pass Filter with Resonance (FCRCIA) (1672/lp4pole_fcrcia_oa)
+#			id 1041 # Simple Low Pass Filter
+#			id 1051 # Low Pass Filter (One Pole)
+#			id 1903 # GLAME Butterworth Lowpass
+            policy none
+            input.bindings.2 "Input";
+            output.bindings.2 "Output";
+            input {
+#                controls [ 3 ]
+				controls [ 75 0.1 ]
+            }
+        }
+       2 {
+#           id 1890 # Glame Highpass Filter (1890/highpass_iir)
+           id 1042 # Simple High Pass Filter (1042/hpf)
+#           id 1904 # GLAME Butterworth Highpass
+           policy none
+           input.bindings.0 "Input";
+           output.bindings.3 "Output";
+           input {
+               controls [ 600 ]
+           }
+       }
+       3 {
+#           id 1890 # Glame Highpass Filter (1890/highpass_iir)
+           id 1042 # Simple High Pass Filter (1042/hpf)
+#           id 1904 # GLAME Butterworth Highpass
+           policy none
+           input.bindings.1 "Input";
+           output.bindings.4 "Output";
+           input {
+               controls [ 600 ]
+           }
+       }
+    }
+}
+
+pcm.amp {
+    type ladspa
+    slave.pcm final_mix
+#    slave.pcm freeverb3
+    path "/usr/lib/ladspa"
+    channels 5
+    plugins {
+        0 {
+            id 1098 # Identity (Audio) (1098/identity_audio)
+            policy duplicate
+            input.bindings.0 "Input";
+            output.bindings.0 "Output";
+        }
+         1 {
+            id 1067 # Amplifier (Mono)
+            policy none
+            input.bindings.2 "Input";
+            output.bindings.2 "Output";
+           input {
+               controls [ 3 ]
+           }
+        }
+	}
+ }
+
+pcm.delay {
+    type ladspa
+    slave.pcm final_mix
+    path "/usr/lib/ladspa"
+    channels 5
+    plugins {
+        0 {
+            id 1098 # Identity (Audio) (1098/identity_audio)
+            policy duplicate
+            input.bindings.0 "Input";
+            output.bindings.0 "Output";
+        }
+         1 {
+            id 1054 # Echo Delay Line (Maximum Delay 0.1s)
+            policy none
+            input.bindings.3 "Input";
+            output.bindings.3 "Output";
+           input {
+               controls [ 0.1 1 ]
+           }
+        }
+         2 {
+            id 1054 # Echo Delay Line (Maximum Delay 0.1s)
+            policy none
+            input.bindings.4 "Input";
+            output.bindings.4 "Output";
+           input {
+               controls [ 0.1 1 ]
+           }
+        }
+	}
+ }
+
+pcm.freeverb3 {
+    type ladspa
+    slave.pcm final_mix
+    path "/usr/lib/ladspa"
+    channels 5
+    plugins {
+        0 {
+            id 1098 # Identity (Audio) (1098/identity_audio)
+            policy duplicate
+            input.bindings.0 "Input";
+            output.bindings.0 "Output";
+        }
+         1 {
+            id 1123 # Freeverb (Version 3)
+            policy none
+            input.bindings.0 "Input (Left)";
+            output.bindings.3 "Output (Left)";
+            input.bindings.1 "Input (Right)";
+            output.bindings.4 "Output (Right)";
+           input {
+               controls [ 0 0.5 0.5 1 0 0.5 ]
+#	"Freeze Mode" input, control, toggled, default 0
+#	"Room Size" input, control, 0 to 1, default 0.5
+#	"Damping" input, control, 0 to 1, default 0, logarithmic
+#	"Wet Level" input, control, 0 to 1, default 0, logarithmic
+#	"Dry Level" input, control, 0 to 1, default 1, logarithmic
+#	"Width" input, control, 0 to 1, default 0.5
+           }
+        }
+	}
+ }
+
+pcm.final_mix {
+    type plug
+#    type dimx
+    slave.pcm d
+#    slave.pcm {
+#		type hw
+#		card CK804
+#	   surround51:CARD=CK804,DEV=0
+# 2 - center
+# 3 - lfe
+# !! my subwoofer seems to be connected both to center and lfe channels =\
+# 4 - rear left
+# 5 - rear right
+#	}
+    slave.channels 6
+    ttable {
+#        2.0     1       # front left <- sub (test)
+#        3.0     1       # front left <- high passed left (test)
+        0.0     1       # front left <- original left
+        1.1     1       # front right <- original right
+#        3.2     1       # rear left <- high passed left
+#        4.3     1       # rear right <- high passed right
+#        2.2     1       # test <- left
+        3.4     1       # rear left <- cutted left
+        4.5     1       # rear right <- cutted right
+#        0.2     0.5     # center
+#        1.2     0.5     # center
+        2.3     2       # subwoofer <- 2x low passed mix
+    }
+}
+

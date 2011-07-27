@@ -1,0 +1,3 @@
+alias df="df -hT"
+alias grep="grep -n --color=auto"
+
