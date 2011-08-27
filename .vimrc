@@ -54,6 +54,16 @@ set listchars=tab:»·
 set listchars+=trail:·
 set endofline
 
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" with wrap
+nnoremap j gj
+nnoremap k gk
+
 "set nocp
 filetype plugin on
 
@@ -67,6 +77,8 @@ nnoremap ; :
 " Use Q for formatting the current paragraph (or selection)
 vmap Q gq
 nmap Q gqap
+
+nmap <silent> ,/ :nohlsearch<CR>
 
 cmap w!! w !sudo tee % >/dev/null
 
@@ -90,4 +102,13 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+let g:LustyJugglerAltTabMode = 1
+
+nmap <silent> <leader>nt :NERDTree .<CR>
+"let loaded_nerd_tree=1
+let NERDTreeShowLineNumbers = 1
+let NERDTreeShowFiles = 1
+"let NERDTreeIgnore = ['\.o$', '\.la$']
+let NERDChristmasTree = 0
 
