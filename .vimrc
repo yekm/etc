@@ -39,7 +39,7 @@ set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
-set visualbell           " don't beep
+set novisualbell         " don't beep
 set noerrorbells         " don't beep
 
 set nobackup
@@ -111,4 +111,12 @@ let NERDTreeShowLineNumbers = 1
 let NERDTreeShowFiles = 1
 "let NERDTreeIgnore = ['\.o$', '\.la$']
 let NERDChristmasTree = 0
+
+map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+
+let Tlist_Auto_Open = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Show_One_File = 1
+let Tlist_Use_Right_Window = 1
+
 
