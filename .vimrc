@@ -101,7 +101,7 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
-map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --exclude='*.php,*.js,*.tpl' .<CR>
+map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --exclude="*.js" --exclude="*.php" --exclude="*.tpl" .<CR>
 
 let LustyJugglerAltTabMode = 1
 
@@ -128,6 +128,5 @@ map <F1> :cp<CR>
 map <F2> :cn<CR>
 map <F12> :make -j2<CR>
 
-
-
+let g:LustyJugglerAltTabMode = 1
 
