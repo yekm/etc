@@ -16,7 +16,7 @@ let mapleader=","
 "preserved while the buffer is open. This is an absolute must-have.
 set hidden
 
-set nowrap        " don't wrap lines
+"set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
 set backspace=indent,eol,start "allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
@@ -68,7 +68,7 @@ nnoremap k gk
 filetype plugin on
 
 set t_Co=256
-colorscheme mustang
+colorscheme mustang2
 "colorscheme desert
 
 set mouse=a
@@ -101,22 +101,33 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
-map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --exclude='*.php,*.js,*.tpl' .<CR>
 
-let g:LustyJugglerAltTabMode = 1
+let LustyJugglerAltTabMode = 1
 
-nmap <silent> <leader>nt :NERDTree .<CR>
-"let loaded_nerd_tree=1
-let NERDTreeShowLineNumbers = 1
-let NERDTreeShowFiles = 1
-"let NERDTreeIgnore = ['\.o$', '\.la$']
-let NERDChristmasTree = 0
+nmap <silent> <leader>t :NERDTree .<CR>
 
-map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-
-let Tlist_Auto_Open = 1
+"let Tlist_Auto_Open = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Show_One_File = 1
 let Tlist_Use_Right_Window = 1
+
+"let loaded_nerd_tree = 1
+"let NERDChristmasTree = 1
+let NERDTreeOptionDetails = 1
+let NERDTreeIgnore=['\.vim$', '\~$', '\.a$', '^CMakeFiles$', '\.cmake$', '\.la$']
+
+nmap <silent> <leader>b :LustyBufferExplorer<CR>
+nmap <silent> <leader>g :LustyBufferGrep<CR>
+nmap <silent> <leader>r :LustyFilesystemExplorerFromHere<CR>
+
+"let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
+let &errorformat="%f:%l:%c: error:%m"
+
+map <F1> :cp<CR>
+map <F2> :cn<CR>
+map <F12> :make -j2<CR>
+
+
 
 
