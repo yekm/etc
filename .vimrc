@@ -126,6 +126,7 @@ let &errorformat="%f:%l:%c: error:%m"
 
 map <F1> :cp<CR>
 map <F2> :cn<CR>
+map <F4> :A<CR>
 map <F12> :make -j2<CR>
 
 let g:LustyJugglerAltTabMode = 1
