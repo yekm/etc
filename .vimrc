@@ -33,6 +33,7 @@ set incsearch     " show search matches as you type
 set expandtab
 set ruler
 "set smartindent
+set scrolloff=4
 
 
 set history=1000         " remember more commands and search history
@@ -46,6 +47,8 @@ set nobackup
 set noswapfile
 
 set pastetoggle=<F2>
+
+set viminfo='20,<50,s10,h,%
 
 :syn on
 
@@ -68,7 +71,8 @@ nnoremap k gk
 filetype plugin on
 
 set t_Co=256
-colorscheme mustang2
+colorscheme moria
+"colorscheme mustang2
 "colorscheme desert
 
 set mouse=a
