@@ -34,7 +34,6 @@ set expandtab
 set ruler
 "set smartindent
 set scrolloff=4
-set wildmenu
 
 
 set history=1000         " remember more commands and search history
