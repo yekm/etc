@@ -1,10 +1,9 @@
 pcm.!default {
 #	type hw
-#	card "Intel"
+#	card "ST"
     type route
-#    slave.pcm upmix_20to51
     slave.pcm copy
-    slave.channels 8
+    slave.channels 6
     ttable {
         0.0     1
         1.1     1
@@ -12,44 +11,49 @@ pcm.!default {
         1.3     1
         0.4     1
         1.5     1
-        0.6     1
-        1.7     1
     }
 }
 
+pcm.intel {
+	type hw
+	card "Intel"
+}
+
+
 pcm.copy {
-    type multi;
+    type multi
     slaves.a.pcm
     {
-    #"hw:0,0";
+    #"hw:0,0"
         type hw
         card "Intel"
     }
-    slaves.a.channels 6;
-    slaves.b.pcm {
-    #"hw:1,0";
+    slaves.a.channels 4
+    slaves.b.pcm
+    {
+    #"hw:1,0"
         type hw
         card "ST"
     }
-    slaves.b.channels 2;
+    slaves.b.channels 2
 
-    bindings.0.slave a;
-    bindings.0.channel 0;
-    bindings.1.slave a;
-    bindings.1.channel 1;
-    bindings.2.slave a;
-    bindings.2.channel 2;
-    bindings.3.slave a;
-    bindings.3.channel 3;
-    bindings.4.slave a;
-    bindings.4.channel 4;
-    bindings.5.slave a;
-    bindings.5.channel 5;
+    bindings.0.slave a
+    bindings.0.channel 0
+    bindings.1.slave a
+    bindings.1.channel 1
+    bindings.2.slave a
+    bindings.2.channel 2
+    bindings.3.slave a
+    bindings.3.channel 3
+#    bindings.4.slave a
+#    bindings.4.channel 4
+#    bindings.5.slave a
+#    bindings.5.channel 5
 
-    bindings.6.slave b;
-    bindings.6.channel 0;
-    bindings.7.slave b;
-    bindings.7.channel 1;
+    bindings.4.slave b
+    bindings.4.channel 0
+    bindings.5.slave b
+    bindings.5.channel 1
 }
 
 pcm.parallel6 {
@@ -99,8 +103,8 @@ pcm.cutter {
         0 {
             id 1098 # Identity (Audio) (1098/identity_audio)
             policy duplicate
-            input.bindings.0 "Input";
-            output.bindings.0 "Output";
+            input.bindings.0 "Input"
+            output.bindings.0 "Output"
         }
         1 {
 # 			id 1672 # 4 Pole Low-Pass Filter with Resonance (FCRCIA) (1672/lp4pole_fcrcia_oa)
@@ -108,8 +112,8 @@ pcm.cutter {
 #			id 1051 # Low Pass Filter (One Pole)
 #			id 1903 # GLAME Butterworth Lowpass
             policy none
-            input.bindings.2 "Input";
-            output.bindings.2 "Output";
+            input.bindings.2 "Input"
+            output.bindings.2 "Output"
             input {
                 controls [ 10 ]
 #				controls [ 75 0.1 ]
@@ -120,8 +124,8 @@ pcm.cutter {
            id 1042 # Simple High Pass Filter (1042/hpf)
 #           id 1904 # GLAME Butterworth Highpass
            policy none
-           input.bindings.0 "Input";
-           output.bindings.3 "Output";
+           input.bindings.0 "Input"
+           output.bindings.3 "Output"
            input {
                controls [ 600 ]
            }
@@ -131,8 +135,8 @@ pcm.cutter {
            id 1042 # Simple High Pass Filter (1042/hpf)
 #           id 1904 # GLAME Butterworth Highpass
            policy none
-           input.bindings.1 "Input";
-           output.bindings.4 "Output";
+           input.bindings.1 "Input"
+           output.bindings.4 "Output"
            input {
                controls [ 600 ]
            }
@@ -150,14 +154,14 @@ pcm.amp {
         0 {
             id 1098 # Identity (Audio) (1098/identity_audio)
             policy duplicate
-            input.bindings.0 "Input";
-            output.bindings.0 "Output";
+            input.bindings.0 "Input"
+            output.bindings.0 "Output"
         }
          1 {
             id 1067 # Amplifier (Mono)
             policy none
-            input.bindings.2 "Input";
-            output.bindings.2 "Output";
+            input.bindings.2 "Input"
+            output.bindings.2 "Output"
            input {
                controls [ 3 ]
            }
@@ -174,14 +178,14 @@ pcm.delay {
         0 {
             id 1098 # Identity (Audio) (1098/identity_audio)
             policy duplicate
-            input.bindings.0 "Input";
-            output.bindings.0 "Output";
+            input.bindings.0 "Input"
+            output.bindings.0 "Output"
         }
          1 {
             id 1054 # Echo Delay Line (Maximum Delay 0.1s)
             policy none
-            input.bindings.3 "Input";
-            output.bindings.3 "Output";
+            input.bindings.3 "Input"
+            output.bindings.3 "Output"
            input {
                controls [ 0.1 1 ]
            }
@@ -189,8 +193,8 @@ pcm.delay {
          2 {
             id 1054 # Echo Delay Line (Maximum Delay 0.1s)
             policy none
-            input.bindings.4 "Input";
-            output.bindings.4 "Output";
+            input.bindings.4 "Input"
+            output.bindings.4 "Output"
            input {
                controls [ 0.1 1 ]
            }
@@ -207,16 +211,16 @@ pcm.freeverb3 {
         0 {
             id 1098 # Identity (Audio) (1098/identity_audio)
             policy duplicate
-            input.bindings.0 "Input";
-            output.bindings.0 "Output";
+            input.bindings.0 "Input"
+            output.bindings.0 "Output"
         }
          1 {
             id 1123 # Freeverb (Version 3)
             policy none
-            input.bindings.0 "Input (Left)";
-            output.bindings.3 "Output (Left)";
-            input.bindings.1 "Input (Right)";
-            output.bindings.4 "Output (Right)";
+            input.bindings.0 "Input (Left)"
+            output.bindings.3 "Output (Left)"
+            input.bindings.1 "Input (Right)"
+            output.bindings.4 "Output (Right)"
            input {
                controls [ 0 0.5 0.5 1 0 0.5 ]
 #	"Freeze Mode" input, control, toggled, default 0
