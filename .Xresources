@@ -20,7 +20,7 @@ urxvt*matcher.button:   1
 urxvt*urlLauncher:      /usr/bin/google-chrome
 URxvt*saveLines:        50000
 URxvt*secondaryScroll:  true
-urxvt*termName:         rxvt-256color
+!urxvt*termName:         rxvt-256color
 
 !URxvt*font: xft:DejaVu Sans Mono-10
 
