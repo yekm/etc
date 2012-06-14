@@ -463,7 +463,6 @@ run_once("firefox")
 run_once("google-chrome")
 run_once("quasselclient")
 run_once("psi-plus")
-run_once("urxvtd")
 -- Use the second argument, if the programm you wanna start, 
 -- differs from the what you want to search.
 run_once("redshift", "nice -n19 redshift -l 51:14 -t 5700:4500")

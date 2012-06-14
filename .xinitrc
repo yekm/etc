@@ -8,5 +8,6 @@ xmodmap ~/.Xmodmap
 
 xset r rate 200 100
 
+urxvtd -q -f -o
 ssh-agent awesome
 
