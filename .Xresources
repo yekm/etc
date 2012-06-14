@@ -14,8 +14,8 @@ Xmerm*vt100*faceSize: 14
 URxvt*font:             -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
 URxvt*boldFont:         -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
 URxvt.scrollstyle:      plain
-urxvt*perl-lib:         /usr/lib/urxvt/perl/
-urxvt*perl-ext-common:  default,matcher,tabbed
+URxvt.perl-lib:         /home/yekm/.urxvt/perl
+urxvt*perl-ext-common:  default,matcher,tabbedex
 urxvt*matcher.button:   1
 urxvt*urlLauncher:      /usr/bin/google-chrome
 URxvt*saveLines:        50000
