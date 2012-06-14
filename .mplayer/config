@@ -7,7 +7,7 @@ double=yes
 #vf=pp
 af=resample=48000:0:2
 #cache=2048
-alang=jpn,eng,rus
+alang=jpn,eng,rus,jp,en,ru
 
 ass=yes
 ass-hinting=2
