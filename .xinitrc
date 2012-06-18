@@ -9,5 +9,6 @@ xmodmap ~/.Xmodmap
 xset r rate 200 100
 
 urxvtd -q -f -o
-ssh-agent awesome
+date >>~/.cache/awesome/log
+ssh-agent awesome >>~/.cache/awesome/log 2>&1
 
