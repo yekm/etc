@@ -135,3 +135,13 @@ map <F12> :make -j2<CR>
 
 let g:LustyJugglerAltTabMode = 1
 
+
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
+
