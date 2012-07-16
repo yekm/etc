@@ -71,7 +71,9 @@ nnoremap k gk
 filetype plugin on
 
 set t_Co=256
-colorscheme moria
+"colorscheme vividchalk
+"colorscheme Dim
+colorscheme dante
 "colorscheme mustang2
 "colorscheme desert
 
@@ -105,7 +107,7 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
-map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --exclude="*.js" --exclude="*.php" --exclude="*.tpl" .<CR>
+"map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --exclude="*.js" --exclude="*.php" --exclude="*.tpl" .<CR>
 
 let LustyJugglerAltTabMode = 1
 
@@ -144,4 +146,45 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
+
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+
+nmap <F8> :SrcExplToggle<CR>
+
+let g:SrcExpl_winHeight = 16
+
+let g:SrcExpl_refreshTime = 100
+
+" // Set "Enter" key to jump into the exact definition context
+" let g:SrcExpl_jumpKey = "<ENTER>"
+
+" // Set "Space" key for back from the definition context
+let g:SrcExpl_gobackKey = "<SPACE>"
+
+" // In order to Avoid conflicts, the Source Explorer should know what plugins
+" // are using buffers. And you need add their bufname into the list below
+" // according to the command ":buffers!"
+let g:SrcExpl_pluginList = [
+        \ "__Tag_List__",
+        \ "_NERD_tree_",
+        \ "Source_Explorer"
+    \ ] 
+
+" // Enable/Disable the local definition searching, and note that this is not
+" // guaranteed to work, the Source Explorer doesn't check the syntax for now.
+" // It only searches for a match with the keyword according to command 'gd'
+let g:SrcExpl_searchLocalDef = 1
+
+" // Do not let the Source Explorer update the tags file when opening
+let g:SrcExpl_isUpdateTags = 0
+
+" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to
+" //  create/update a tags file
+"let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
+let g:SrcExpl_updateTagsCmd = "ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --exclude='*.js' --exclude='*.php' --exclude='*.tpl' ."
+
+" // Set "<F12>" key for updating the tags file artificially
+let g:SrcExpl_updateTagsKey = "<F5>"
+
 
