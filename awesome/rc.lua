@@ -206,7 +206,7 @@ for s = 1, screen.count() do
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
-            mylauncher,
+--            mylauncher,
             mytaglist[s],
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
@@ -463,8 +463,9 @@ run_once("firefox")
 run_once("google-chrome")
 run_once("quasselclient")
 run_once("psi-plus")
+run_once("goldendict")
 -- Use the second argument, if the programm you wanna start, 
 -- differs from the what you want to search.
-run_once("redshift", "nice -n19 redshift -l 51:14 -t 5700:4500")
+-- run_once("redshift", "nice -n19 redshift -l 51:14 -t 5700:4500")
 
 
