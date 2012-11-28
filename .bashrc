@@ -26,3 +26,5 @@ stty start undef
 #export PATH="~/bin:/usr/lib/colorgcc/bin:${PATH}"
 export PATH=/usr/lib/ccache:$PATH
 
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+

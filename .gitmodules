@@ -1,3 +1,9 @@
 [submodule "awesome/vicious"]
 	path = awesome/vicious
 	url = http://git.sysphere.org/vicious
+[submodule "tmux-powerline"]
+	path = tmux-powerline
+	url = git://github.com/yekm/tmux-powerline.git
+[submodule "tmux-colors-solarized"]
+	path = tmux-colors-solarized
+	url = git://github.com/seebi/tmux-colors-solarized.git
