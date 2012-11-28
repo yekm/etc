@@ -12,3 +12,6 @@ urxvtd -q -f -o
 date >>~/.cache/awesome/log
 ssh-agent awesome >>~/.cache/awesome/log 2>&1
 
+ps axf | egrep chrom | awk '{print $1}' | xargs kill &
+sleep 3 && ps axf | egrep chrom | awk '{print $1}' | xargs kill -9 &
+
