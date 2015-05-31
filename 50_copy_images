@@ -1,0 +1,15 @@
+echo "uam mp $mp" >/dev/kmsg
+#exit 0
+if echo "$mp" | grep EOS; then
+    img=$(find "$mp" -maxdepth 3 -type f)
+    i=$(echo "$img" | wc -l)
+    echo "found $i images. moving..." >/dev/kmsg
+    ok=0
+    fail=0
+    while read l; do
+#	echo "$l" >/dev/kmsg
+    	mv "$l" /mnt/1/foto/auto/$(basename "$l") && let "ok += 1" || let "fail += 1"
+    done <<< "$img"
+    pumount "$mp"
+    echo "moved $ok ok, $fail failed" >/dev/kmsg
+fi

@@ -1,0 +1,4 @@
+alias df="df -hT"
+alias grep="grep -n --color=auto"
+alias x509info="openssl x509 -noout -text -in"
+
