@@ -1,6 +1,3 @@
-! scrollbar style - rxvt (default), plain (most compact), next, or xterm
-
-
 !Xft.dpi: 96
 !Xft.antialias: 0
 !Xft.hinting:    1
@@ -11,18 +8,17 @@ xterm*faceSize: 24
 Xmerm*vt100*faceSize: 24
 
 
-URxvt*font:             -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
-URxvt*boldFont:         -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
+!URxvt*font:           xft:Inconsolata:size=14
+URxvt*font:             -*-terminus-medium-*-*-*-18-*-*-*-*-*-*-*
+URxvt*boldFont:         -*-terminus-bold-*-*-*-18-*-*-*-*-*-*-*
 URxvt.scrollstyle:      plain
-URxvt.perl-lib:         /home/yekm/.urxvt/perl
 urxvt*perl-ext-common:  default,matcher,tabbed
 urxvt*matcher.button:   1
-urxvt*urlLauncher:      /usr/bin/google-chrome
+URxvt.url-launcher:     /usr/bin/xdg-open
 URxvt*saveLines:        50000
 URxvt*secondaryScroll:  true
+URxvt.colorUL:          #4682B4
 !urxvt*termName:         rxvt-256color
-
-!URxvt*font: xft:DejaVu Sans Mono-10
 
 URxvt*cursorColor: 3
 !URxvt*cursorColor2: 11
