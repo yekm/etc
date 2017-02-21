@@ -1,9 +1,10 @@
 source /etc/profile
 #source ~/.colors
 
-export EDITOR=/usr/bin/vim
+export EDITOR=vim
 #export LANG=ru_RU.UTF8
 export PATH="/opt/some:$PATH"
+export PATH="~/bin:$PATH"
 export LESS="-i -R $LESS"
 export HISTFILESIZE=100000
 export HISTSIZE=10000
@@ -19,3 +20,5 @@ stty start undef
 export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 export SDL_VIDEO_WINDOW_POS=0,0
 
+export PATH=/opt/rpi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin:$PATH
+export MPD_HOST='yekm_mpd@localhost'
