@@ -45,6 +45,8 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
 
+beautiful.font = 'Terminus 12'
+
 -- @DOC_DEFAULT_APPLICATIONS@
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -541,3 +543,8 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+awful.spawn("quasselclient")
+awful.spawn("google-chrome-stable")
+awful.spawn("goldendict")
+
