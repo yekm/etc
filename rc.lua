@@ -286,7 +286,8 @@ globalkeys = awful.util.table.join(
               {description = "jump to urgent client", group = "client"}),
     awful.key({ modkey,           }, "Tab",
         function ()
-            awful.client.focus.history.previous()
+            -- awful.client.focus.history.previous()
+            awful.client.focus.byidx(1)
             if client.focus then
                 client.focus:raise()
             end
@@ -345,7 +346,11 @@ globalkeys = awful.util.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+    awful.key({ modkey,           }, "v",
+        function (c)
+            c.maximized_vertical = not c.maximized_vertical
+        end)
 )
 
 -- @DOC_CLIENT_KEYBINDINGS@
