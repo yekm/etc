@@ -1,0 +1,61 @@
+<!DOCTYPE patchbay>
+<patchbay version="0.4.3" name="patchbay">
+ <output-sockets>
+  <socket client="mpd" type="jack-audio" name="mpd" exclusive="on">
+   <plug>left</plug>
+   <plug>right</plug>
+  </socket>
+  <socket client="eq12" type="jack-audio" name="eq12" exclusive="off">
+   <plug>out_l</plug>
+   <plug>out_r</plug>
+  </socket>
+  <socket client="PulseAudio JACK Sink" type="jack-audio" name="pa" exclusive="off">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket client="alsa-jack\.jackP\.[0-9]+\.0" type="jack-audio" name="alsa-jack\.jackP\.[0-9]+\. 1" exclusive="off">
+   <plug>out_000</plug>
+   <plug>out_001</plug>
+  </socket>
+  <socket client="stereotools" type="jack-audio" name="stereotools" exclusive="off">
+   <plug>out_l</plug>
+   <plug>out_r</plug>
+  </socket>
+  <socket client="eq12o" type="jack-audio" name="eq12onboard" exclusive="off">
+   <plug>out_l</plug>
+   <plug>out_r</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket client="eq12" type="jack-audio" name="eq12" exclusive="off">
+   <plug>in_l</plug>
+   <plug>in_r</plug>
+  </socket>
+  <socket client="system" type="jack-audio" name="xonar" exclusive="off">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+  </socket>
+  <socket client="stereotools" type="jack-audio" name="stereotools" exclusive="off">
+   <plug>in_l</plug>
+   <plug>in_r</plug>
+  </socket>
+  <socket client="eq12o" type="jack-audio" name="eq12onboard" exclusive="off">
+   <plug>in_l</plug>
+   <plug>in_r</plug>
+  </socket>
+  <socket client="onboard" type="jack-audio" name="onboard" exclusive="off">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable output="mpd" type="jack-audio" input="eq12"/>
+  <cable output="eq12" type="jack-audio" input="xonar"/>
+  <cable output="pa" type="jack-audio" input="stereotools"/>
+  <cable output="alsa-jack\.jackP\.[0-9]+\. 1" type="jack-audio" input="stereotools"/>
+  <cable output="stereotools" type="jack-audio" input="eq12onboard"/>
+  <cable output="eq12onboard" type="jack-audio" input="onboard"/>
+ </cables>
+</patchbay>
+
