@@ -1,61 +1,62 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.4.3" name="patchbay">
+<patchbay name="patchbay" version="0.4.3">
  <output-sockets>
-  <socket client="mpd" type="jack-audio" name="mpd" exclusive="on">
+  <socket client="mpd" exclusive="on" name="mpd" type="jack-audio">
    <plug>left</plug>
    <plug>right</plug>
   </socket>
-  <socket client="eq12" type="jack-audio" name="eq12" exclusive="off">
+  <socket client="eq12" exclusive="off" name="eq12" type="jack-audio">
    <plug>out_l</plug>
    <plug>out_r</plug>
   </socket>
-  <socket client="PulseAudio JACK Sink" type="jack-audio" name="pa" exclusive="off">
+  <socket client="PulseAudio JACK Sink" exclusive="off" name="pa" type="jack-audio">
    <plug>front-left</plug>
    <plug>front-right</plug>
   </socket>
-  <socket client="alsa-jack\.jackP\.[0-9]+\.0" type="jack-audio" name="alsa-jack\.jackP\.[0-9]+\. 1" exclusive="off">
+  <socket client="alsa-jack\.jackP\.[0-9]+\.0" exclusive="off" name="alsa-jack\.jackP\.[0-9]+\. 1" type="jack-audio">
    <plug>out_000</plug>
    <plug>out_001</plug>
   </socket>
-  <socket client="stereotools" type="jack-audio" name="stereotools" exclusive="off">
+  <socket client="stereotools" exclusive="off" name="stereotools" type="jack-audio">
    <plug>out_l</plug>
    <plug>out_r</plug>
   </socket>
-  <socket client="eq12o" type="jack-audio" name="eq12onboard" exclusive="off">
+  <socket client="eq12o" exclusive="off" name="eq12onboard" type="jack-audio">
    <plug>out_l</plug>
    <plug>out_r</plug>
   </socket>
  </output-sockets>
  <input-sockets>
-  <socket client="eq12" type="jack-audio" name="eq12" exclusive="off">
+  <socket client="eq12" exclusive="off" name="eq12" type="jack-audio">
    <plug>in_l</plug>
    <plug>in_r</plug>
   </socket>
-  <socket client="system" type="jack-audio" name="xonar" exclusive="off">
+  <socket client="system" exclusive="off" name="xonar" type="jack-audio">
    <plug>playback_1</plug>
    <plug>playback_2</plug>
   </socket>
-  <socket client="stereotools" type="jack-audio" name="stereotools" exclusive="off">
+  <socket client="eq12o" exclusive="off" name="eq12onboard" type="jack-audio">
    <plug>in_l</plug>
    <plug>in_r</plug>
   </socket>
-  <socket client="eq12o" type="jack-audio" name="eq12onboard" exclusive="off">
+  <socket client="stereotools" exclusive="off" name="stereotools" type="jack-audio">
    <plug>in_l</plug>
    <plug>in_r</plug>
   </socket>
-  <socket client="onboard" type="jack-audio" name="onboard" exclusive="off">
+  <socket client="onboard" exclusive="off" name="onboard" type="jack-audio">
    <plug>playback_1</plug>
    <plug>playback_2</plug>
   </socket>
  </input-sockets>
  <slots/>
  <cables>
-  <cable output="mpd" type="jack-audio" input="eq12"/>
-  <cable output="eq12" type="jack-audio" input="xonar"/>
-  <cable output="pa" type="jack-audio" input="stereotools"/>
-  <cable output="alsa-jack\.jackP\.[0-9]+\. 1" type="jack-audio" input="stereotools"/>
-  <cable output="stereotools" type="jack-audio" input="eq12onboard"/>
-  <cable output="eq12onboard" type="jack-audio" input="onboard"/>
+  <cable input="eq12" output="mpd" type="jack-audio"/>
+  <cable input="xonar" output="eq12" type="jack-audio"/>
+  <cable input="stereotools" output="pa" type="jack-audio"/>
+  <cable input="eq12" output="pa" type="jack-audio"/>
+  <cable input="stereotools" output="alsa-jack\.jackP\.[0-9]+\. 1" type="jack-audio"/>
+  <cable input="eq12onboard" output="stereotools" type="jack-audio"/>
+  <cable input="onboard" output="eq12onboard" type="jack-audio"/>
  </cables>
 </patchbay>
 
