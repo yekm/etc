@@ -23,37 +23,37 @@
 		pset:value 0.0
 	] , [
 		lv2:symbol "hp_freq" ;
-		pset:value 30.0
+		pset:value 3226.87963867
 	] , [
 		lv2:symbol "hp_mode" ;
-		pset:value 1.0
+		pset:value 0.0
 	] , [
 		lv2:symbol "hs_active" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "hs_freq" ;
-		pset:value 8033.52880859
+		pset:value 10091.07421875
 	] , [
 		lv2:symbol "hs_level" ;
-		pset:value 1.79005003
+		pset:value 1.28342557
 	] , [
 		lv2:symbol "individuals" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "level_in" ;
-		pset:value 0.55864358
+		pset:value 0.65975392
 	] , [
 		lv2:symbol "level_out" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "lp_active" ;
-		pset:value 0.0
+		pset:value 1.0
 	] , [
 		lv2:symbol "lp_freq" ;
-		pset:value 18000.0
+		pset:value 20000.0
 	] , [
 		lv2:symbol "lp_mode" ;
-		pset:value 1.0
+		pset:value 0.0
 	] , [
 		lv2:symbol "ls_active" ;
 		pset:value 1.0
@@ -62,7 +62,7 @@
 		pset:value 122.84003448
 	] , [
 		lv2:symbol "ls_level" ;
-		pset:value 0.71697766
+		pset:value 0.84674525
 	] , [
 		lv2:symbol "p1_active" ;
 		pset:value 1.0
@@ -143,7 +143,7 @@
 		pset:value 3226.87963867
 	] , [
 		lv2:symbol "p7_level" ;
-		pset:value 0.4005349
+		pset:value 0.51405686
 	] , [
 		lv2:symbol "p7_q" ;
 		pset:value 7.7624712
