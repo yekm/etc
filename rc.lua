@@ -346,11 +346,7 @@ globalkeys = awful.util.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
-    awful.key({ modkey,           }, "v",
-        function (c)
-            c.maximized_vertical = not c.maximized_vertical
-        end)
+              {description = "show the menubar", group = "launcher"})
 )
 
 -- @DOC_CLIENT_KEYBINDINGS@
@@ -383,7 +379,11 @@ clientkeys = awful.util.table.join(
             c.maximized = not c.maximized
             c:raise()
         end ,
-        {description = "maximize", group = "client"})
+        {description = "maximize", group = "client"}),
+    awful.key({ modkey,           }, "v",
+        function (c)
+            c.maximized_vertical = not c.maximized_vertical
+        end)
 )
 
 -- @DOC_NUMBER_KEYBINDINGS@
@@ -549,7 +549,8 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.spawn("quasselclient")
+-- awful.spawn("quasselclient")
+-- awful.spawn("nextcloud")
 awful.spawn("google-chrome-stable")
 awful.spawn("goldendict")
 
