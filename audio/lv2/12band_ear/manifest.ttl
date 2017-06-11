@@ -6,7 +6,7 @@
 @prefix state: <http://lv2plug.in/ns/ext/state#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<no.ttl>
+<state.ttl>
 	lv2:appliesTo <http://calf.sourceforge.net/plugins/Equalizer12Band> ;
 	a pset:Preset ;
-	rdfs:seeAlso <no.ttl> .
+	rdfs:seeAlso <state.ttl> .

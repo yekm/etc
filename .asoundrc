@@ -1,3 +1,6 @@
+#defaults.pcm.rate_converter "speexrate_medium"
+#defaults.pcm.rate_converter "speexrate_best"
+
 pcm.!default {
     type pulse
 }

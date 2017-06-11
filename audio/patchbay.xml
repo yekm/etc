@@ -35,6 +35,10 @@
   </socket>
  </output-sockets>
  <input-sockets>
+  <socket name="pa_in" exclusive="off" client="PulseAudio JACK Source" type="jack-audio">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
   <socket name="eq12" exclusive="off" client="eq12" type="jack-audio">
    <plug>in_l</plug>
    <plug>in_r</plug>
@@ -62,14 +66,14 @@
  </input-sockets>
  <slots/>
  <cables>
-  <cable output="mpd" input="eq12" type="jack-audio"/>
-  <cable output="eq12" input="xonar" type="jack-audio"/>
-  <cable output="pa" input="stereotools" type="jack-audio"/>
-  <cable output="alsa-jack\.jackP\.[0-9]+\. 1" input="stereotools" type="jack-audio"/>
-  <cable output="stereotools" input="comp" type="jack-audio"/>
-  <cable output="comp" input="eq12onboard" type="jack-audio"/>
-  <cable output="eq12onboard" input="onboard" type="jack-audio"/>
-  <cable output="eq12onboard" input="eq12" type="jack-audio"/>
+  <cable input="eq12" output="mpd" type="jack-audio"/>
+  <cable input="xonar" output="eq12" type="jack-audio"/>
+  <cable input="stereotools" output="pa" type="jack-audio"/>
+  <cable input="stereotools" output="alsa-jack\.jackP\.[0-9]+\. 1" type="jack-audio"/>
+  <cable input="comp" output="stereotools" type="jack-audio"/>
+  <cable input="eq12onboard" output="comp" type="jack-audio"/>
+  <cable input="onboard" output="eq12onboard" type="jack-audio"/>
+  <cable input="eq12" output="eq12onboard" type="jack-audio"/>
  </cables>
 </patchbay>
 

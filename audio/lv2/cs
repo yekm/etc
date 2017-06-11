@@ -1,0 +1,69 @@
+<?xml version="1.1" encoding="utf-8"?>
+<rack><plugin type="analyzer" instance-name="analyzer" input-index="3" output-index="3">
+<preset bank="0" program="0" plugin="analyzer" name="">
+  <param name="meter_L" value="0" />
+  <param name="meter_R" value="0" />
+  <param name="clip_L" value="0" />
+  <param name="clip_R" value="0" />
+  <param name="analyzer_level" value="1.25" />
+  <param name="analyzer_mode" value="6" />
+  <param name="analyzer_scale" value="0" />
+  <param name="analyzer_post" value="0" />
+  <param name="analyzer_view" value="1" />
+  <param name="analyzer_smoothing" value="1" />
+  <param name="analyzer_windowing" value="2" />
+  <param name="analyzer_accuracy" value="8" />
+  <param name="analyzer_speed" value="15" />
+  <param name="analyzer_display" value="1" />
+  <param name="analyzer_hold" value="0" />
+  <param name="analyzer_freeze" value="0" />
+  <param name="gonio_mode" value="4" />
+  <param name="gonio_use_fade" value="1" />
+  <param name="gonio_fade" value="0.5" />
+  <param name="gonio_accuracy" value="5" />
+  <param name="gonio_display" value="1" />
+</preset>
+</plugin>
+<plugin type="exciter" instance-name="exciter" input-index="7" output-index="7">
+<preset bank="0" program="0" plugin="exciter" name="">
+  <param name="bypass" value="1" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="1" />
+  <param name="amount" value="2.56685" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="clip_in" value="0" />
+  <param name="clip_out" value="0" />
+  <param name="drive" value="8.5" />
+  <param name="blend" value="0" />
+  <param name="meter_drive" value="0" />
+  <param name="freq" value="7500" />
+  <param name="listen" value="0" />
+  <param name="ceil_active" value="0" />
+  <param name="ceil" value="16000" />
+</preset>
+</plugin>
+<plugin type="limiter" instance-name="limiter" input-index="9" output-index="9">
+<preset bank="0" program="0" plugin="limiter" name="">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="4.58137e-26" />
+  <param name="meter_outR" value="4.58137e-26" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="limit" value="1" />
+  <param name="attack" value="5" />
+  <param name="release" value="50" />
+  <param name="att" value="1" />
+  <param name="asc" value="1" />
+  <param name="asc_led" value="0" />
+  <param name="asc_coeff" value="0.5" />
+  <param name="oversampling" value="1" />
+</preset>
+</plugin>
+</rack>

@@ -1,0 +1,122 @@
+<!DOCTYPE patchbay>
+<patchbay version="0.4.4" name="patchbay_cs">
+ <output-sockets>
+  <socket exclusive="off" name="multiband_limiter" client="Calf Studio Gear" type="jack-audio">
+   <plug>multibandlimiter Out #1</plug>
+   <plug>multibandlimiter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="onboard_in" client="onboard_in" type="jack-audio">
+   <plug>capture_1</plug>
+   <plug>capture_2</plug>
+  </socket>
+  <socket exclusive="on" name="mpd" client="mpd" type="jack-audio">
+   <plug>left</plug>
+   <plug>right</plug>
+  </socket>
+  <socket exclusive="off" name="pulse_audio" client="PulseAudio JACK Sink" type="jack-audio">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket exclusive="off" name="alsa-jack\.jackP\.[0-9]+\. 1" client="alsa-jack\.jackP\.[0-9]+\.0" type="jack-audio">
+   <plug>out_000</plug>
+   <plug>out_001</plug>
+  </socket>
+  <socket exclusive="off" name="eq" client="Calf Studio Gear" type="jack-audio">
+   <plug>eq12 Out #1</plug>
+   <plug>eq12 Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="deesser" client="Calf Studio Gear" type="jack-audio">
+   <plug>deesser Out #1</plug>
+   <plug>deesser Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="limiter" client="Calf Studio Gear" type="jack-audio">
+   <plug>limiter Out #1</plug>
+   <plug>limiter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="exciter" client="Calf Studio Gear" type="jack-audio">
+   <plug>exciter Out #1</plug>
+   <plug>exciter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="bass_e" client="Calf Studio Gear" type="jack-audio">
+   <plug>bassenhancer Out #1</plug>
+   <plug>bassenhancer Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="sc_limiter" client="Calf Studio Gear" type="jack-audio">
+   <plug>sidechainlimiter Out #1</plug>
+   <plug>sidechainlimiter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="s_tools" client="Calf Studio Gear" type="jack-audio">
+   <plug>stereo Out #1</plug>
+   <plug>stereo Out #2</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket exclusive="off" name="analyzer" client="Calf Studio Gear" type="jack-audio">
+   <plug>analyzer In #1</plug>
+   <plug>analyzer In #2</plug>
+  </socket>
+  <socket exclusive="off" name="multiband_limiter" client="Calf Studio Gear" type="jack-audio">
+   <plug>multibandlimiter In #1</plug>
+   <plug>multibandlimiter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="eq" client="Calf Studio Gear" type="jack-audio">
+   <plug>eq12 In #1</plug>
+   <plug>eq12 In #2</plug>
+  </socket>
+  <socket exclusive="off" name="sc_limiter" client="Calf Studio Gear" type="jack-audio">
+   <plug>sidechainlimiter In #1</plug>
+   <plug>sidechainlimiter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="sc_limiter_sc" client="Calf Studio Gear" type="jack-audio">
+   <plug>sidechainlimiter In #3</plug>
+   <plug>sidechainlimiter In #4</plug>
+  </socket>
+  <socket exclusive="off" name="deesser" client="Calf Studio Gear" type="jack-audio">
+   <plug>deesser In #1</plug>
+   <plug>deesser In #2</plug>
+  </socket>
+  <socket exclusive="off" name="limiter" client="Calf Studio Gear" type="jack-audio">
+   <plug>limiter In #1</plug>
+   <plug>limiter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="exciter" client="Calf Studio Gear" type="jack-audio">
+   <plug>exciter In #1</plug>
+   <plug>exciter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="bass_e" client="Calf Studio Gear" type="jack-audio">
+   <plug>bassenhancer In #1</plug>
+   <plug>bassenhancer In #2</plug>
+  </socket>
+  <socket exclusive="off" name="s_tools" client="Calf Studio Gear" type="jack-audio">
+   <plug>stereo In #1</plug>
+   <plug>stereo In #2</plug>
+  </socket>
+  <socket exclusive="off" name="pa_in" client="PulseAudio JACK Source" type="jack-audio">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket exclusive="off" name="xonar" client="system" type="jack-audio">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+  </socket>
+  <socket exclusive="off" name="onboard" client="onboard" type="jack-audio">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable input="deesser" output="multiband_limiter" type="jack-audio"/>
+  <cable input="s_tools" output="mpd" type="jack-audio"/>
+  <cable input="limiter" output="pulse_audio" type="jack-audio"/>
+  <cable input="limiter" output="alsa-jack\.jackP\.[0-9]+\. 1" type="jack-audio"/>
+  <cable input="analyzer" output="eq" type="jack-audio"/>
+  <cable input="xonar" output="eq" type="jack-audio"/>
+  <cable input="exciter" output="deesser" type="jack-audio"/>
+  <cable input="s_tools" output="limiter" type="jack-audio"/>
+  <cable input="bass_e" output="exciter" type="jack-audio"/>
+  <cable input="eq" output="bass_e" type="jack-audio"/>
+  <cable input="multiband_limiter" output="s_tools" type="jack-audio"/>
+ </cables>
+</patchbay>
+
