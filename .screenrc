@@ -1,0 +1,44 @@
+
+#hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][%{B}%Y-%m-%d %c:%s%{g}]'
+
+term xterm-256color
+#term rxvt-unicode-256color
+#term rxvt-unicode-256color
+
+# http://stackoverflow.com/a/14709845
+defbce "on"
+
+backtick 1 5 5 true
+termcapinfo rxvt* 'hs:ts=\E]2;:fs=\007:ds=\E]2;\007'
+hardstatus string "screen (%n: %t)"
+caption string "%{= kw}%Y-%m-%d %c    %{= kw}%-Lw%{= kG}%{+b}[%n %t]%{-b}%{= kw}%+Lw%1`"
+caption always
+
+logfile /tmp/screenlog
+
+defscrollback 10000
+
+startup_message off
+
+termcapinfo xterm* ti@:te@
+
+vbell off
+
+altscreen on
+
+windowlist string "%4n %h%=%f"
+
+# Alt + left
+bindkey ^[[1;3D prev
+# Alt + right
+bindkey ^[[1;3C next
+# alt+down
+bindkey ^[[1;3B screen
+
+# Alt + left
+bindkey ^[^[[D prev
+# Alt + right
+bindkey ^[^[[C next
+# alt+down
+bindkey ^[^[[B screen
+
