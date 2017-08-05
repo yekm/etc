@@ -17,3 +17,5 @@ set-default-source jack_in
 #load-module module-jack-sink connect=false
 #load-module module-jack-source
 
+load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
+

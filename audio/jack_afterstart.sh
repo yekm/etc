@@ -2,7 +2,7 @@
 
 SR=192000
 #SR=96000
-#SR=48000
+SR=48000
 
 killall pulseaudio
 pulseaudio --start
@@ -18,5 +18,6 @@ chrt --rr 99 calfjackhost --load ~/etc/audio/cjh.xml &
 #chrt --rr 99 jalv.gtk --jack-name deesser http://calf.sourceforge.net/plugins/Deesser &
 #chrt --rr 99 jalv.gtk --jack-name analyzer -l ~/etc/audio/lv2/analyzer http://calf.sourceforge.net/plugins/Analyzer &
 sleep 1
-ionice -c realtime mpd
+mpd
+#ionice -c realtime mpd
 

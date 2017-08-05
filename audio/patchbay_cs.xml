@@ -1,5 +1,5 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.4.4" name="patchbay_cs">
+<patchbay name="patchbay_cs" version="0.4.4">
  <output-sockets>
   <socket name="multiband_limiter" type="jack-audio" client="Calf Studio Gear" exclusive="off">
    <plug>multibandlimiter Out #1</plug>
@@ -16,6 +16,10 @@
   <socket name="pulse_audio" type="jack-audio" client="PulseAudio JACK Sink" exclusive="off">
    <plug>front-left</plug>
    <plug>front-right</plug>
+  </socket>
+  <socket name="analyzer" type="jack-audio" client="Calf Studio Gear" exclusive="off">
+   <plug>analyzer Out #1</plug>
+   <plug>analyzer Out #2</plug>
   </socket>
   <socket name="alsa-jack\.jackP\.[0-9]+\. 1" type="jack-audio" client="alsa-jack\.jackP\.[0-9]+\.0" exclusive="off">
    <plug>out_000</plug>
@@ -79,6 +83,10 @@
    <plug>limiter In #1</plug>
    <plug>limiter In #2</plug>
   </socket>
+  <socket name="ffmpeg" type="jack-audio" client="ffmpeg" exclusive="off">
+   <plug>input_1</plug>
+   <plug>input_2</plug>
+  </socket>
   <socket name="exciter" type="jack-audio" client="Calf Studio Gear" exclusive="off">
    <plug>exciter In #1</plug>
    <plug>exciter In #2</plug>
@@ -106,17 +114,18 @@
  </input-sockets>
  <slots/>
  <cables>
-  <cable output="multiband_limiter" type="jack-audio" input="deesser"/>
-  <cable output="multiband_limiter" type="jack-audio" input="analyzer"/>
-  <cable output="mpd" type="jack-audio" input="s_tools"/>
-  <cable output="pulse_audio" type="jack-audio" input="limiter"/>
-  <cable output="alsa-jack\.jackP\.[0-9]+\. 1" type="jack-audio" input="limiter"/>
-  <cable output="eq" type="jack-audio" input="xonar"/>
-  <cable output="deesser" type="jack-audio" input="eq"/>
-  <cable output="limiter" type="jack-audio" input="s_tools"/>
-  <cable output="exciter" type="jack-audio" input="bass_e"/>
-  <cable output="bass_e" type="jack-audio" input="multiband_limiter"/>
-  <cable output="s_tools" type="jack-audio" input="exciter"/>
+  <cable type="jack-audio" output="multiband_limiter" input="deesser"/>
+  <cable type="jack-audio" output="multiband_limiter" input="analyzer"/>
+  <cable type="jack-audio" output="mpd" input="s_tools"/>
+  <cable type="jack-audio" output="pulse_audio" input="limiter"/>
+  <cable type="jack-audio" output="analyzer" input="ffmpeg"/>
+  <cable type="jack-audio" output="alsa-jack\.jackP\.[0-9]+\. 1" input="limiter"/>
+  <cable type="jack-audio" output="eq" input="xonar"/>
+  <cable type="jack-audio" output="deesser" input="eq"/>
+  <cable type="jack-audio" output="limiter" input="s_tools"/>
+  <cable type="jack-audio" output="exciter" input="bass_e"/>
+  <cable type="jack-audio" output="bass_e" input="multiband_limiter"/>
+  <cable type="jack-audio" output="s_tools" input="exciter"/>
  </cables>
 </patchbay>
 
