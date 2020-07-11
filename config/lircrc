@@ -1,0 +1,133 @@
+begin
+  prog = irxevent
+  button = mute
+  config = Key space mpv
+end
+begin
+  prog = irxevent
+  button = KEY_PLAY
+  config = Key space mpv
+end
+
+
+begin
+  prog = irxevent
+  button = pwr
+  config = Key q mpv
+end
+
+begin
+  prog = irxevent
+  button = KEY_STOP
+  config = Key q mpv
+end
+
+
+
+
+
+begin
+  prog = irxevent
+  button = rec
+  config = Key Left mpv
+  repeat = 2
+end
+begin
+  prog = irxevent
+  button = KEY_1
+  config = Key Left mpv
+  repeat = 2
+end
+
+
+begin
+  prog = irxevent
+  button = chp
+  config = Key Right mpv
+  repeat = 2
+end
+begin
+  prog = irxevent
+  button = KEY_2
+  config = Key Right mpv
+  repeat = 2
+end
+
+
+
+
+
+begin
+  prog = irxevent
+  button = volm
+  config = Key Down mpv
+  repeat = 2
+end
+begin
+  prog = irxevent
+  button = KEY_4
+  config = Key Down mpv
+  repeat = 2
+end
+
+
+begin
+  prog = irxevent
+  button = fullscreen
+  config = Key Up mpv
+  repeat = 1
+end
+begin
+  prog = irxevent
+  button = KEY_5
+  config = Key Up mpv
+  repeat = 1
+end
+
+
+
+
+
+begin
+  prog = irxevent
+  button = b0
+  config = Key Ctrl-Left mpv
+  repeat = 1
+end
+begin
+  prog = irxevent
+  button = KEY_7
+  config = Key Ctrl-Left mpv
+  repeat = 1
+end
+
+
+begin
+  prog = irxevent
+  button = chm
+  config = Key Ctrl+Right mpv
+  repeat = 1
+end
+begin
+  prog = irxevent
+  button = KEY_8
+  config = Key Ctrl+Right mpv
+  repeat = 1
+end
+
+
+
+
+
+begin
+  prog = irxevent
+  button = src
+  config = Key f CurrentWindow
+end
+begin
+  prog = irxevent
+  button = KEY_AGAIN
+  config = Key f CurrentWindow
+end
+
+

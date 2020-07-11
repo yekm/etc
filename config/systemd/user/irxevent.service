@@ -1,0 +1,9 @@
+[Unit]
+Description=irxevent
+
+[Service]
+Type=simple
+ExecStart=/bin/irxevent
+
+[Install]
+WantedBy=default.target

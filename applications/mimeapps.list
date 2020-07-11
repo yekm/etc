@@ -1,6 +1,0 @@
-[Default Applications]
-text/html=google-chrome.desktop
-x-scheme-handler/http=google-chrome.desktop
-x-scheme-handler/https=google-chrome.desktop
-video/x-matroska=mplayer2.desktop
-video/x-msvideo=mplayer2.desktop

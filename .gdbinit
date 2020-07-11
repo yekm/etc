@@ -1,2 +1,2 @@
 handle SIGHUP nostop pass
-set print elements 1000
+#set print elements 1000

@@ -7,3 +7,24 @@ pcm.!default {
 ctl.!default {
     type pulse
 }
+
+pcm.rawjack {
+    type jack
+    playback_ports {
+        0 "Calf Studio Gear:Gate In #1"
+        1 "Calf Studio Gear:Gate In #2"
+    }
+    capture_ports {
+        0 "inputs:mono In #1"
+    }
+}
+
+#pcm.!default {
+pcm.j {
+    type plug
+    slave { pcm "rawjack" }
+    hint {
+ 	description "JACK Audio Connection Kit"
+    }
+}
+

@@ -1,0 +1,178 @@
+@prefix atom: <http://lv2plug.in/ns/ext/atom#> .
+@prefix lv2: <http://lv2plug.in/ns/lv2core#> .
+@prefix pset: <http://lv2plug.in/ns/ext/presets#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix state: <http://lv2plug.in/ns/ext/state#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+	a pset:Preset ;
+	lv2:appliesTo <http://calf.sourceforge.net/plugins/Equalizer12Band> ;
+	lv2:port [
+		lv2:symbol "analyzer" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "analyzer_mode" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "bypass" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "hp_active" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "hp_freq" ;
+		pset:value 30.0
+	] , [
+		lv2:symbol "hp_mode" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "hp_q" ;
+		pset:value 0.70700002
+	] , [
+		lv2:symbol "hs_active" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "hs_freq" ;
+		pset:value 5000.0
+	] , [
+		lv2:symbol "hs_level" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "hs_q" ;
+		pset:value 0.70700002
+	] , [
+		lv2:symbol "individuals" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "level_in" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "level_out" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "lp_active" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lp_freq" ;
+		pset:value 18000.0
+	] , [
+		lv2:symbol "lp_mode" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "lp_q" ;
+		pset:value 0.70700002
+	] , [
+		lv2:symbol "ls_active" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "ls_freq" ;
+		pset:value 100.0
+	] , [
+		lv2:symbol "ls_level" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "ls_q" ;
+		pset:value 0.70700002
+	] , [
+		lv2:symbol "p1_active" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "p1_freq" ;
+		pset:value 53.72640991
+	] , [
+		lv2:symbol "p1_level" ;
+		pset:value 0.0896222
+	] , [
+		lv2:symbol "p1_q" ;
+		pset:value 3.89045072
+	] , [
+		lv2:symbol "p2_active" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "p2_freq" ;
+		pset:value 97.88442993
+	] , [
+		lv2:symbol "p2_level" ;
+		pset:value 0.015625
+	] , [
+		lv2:symbol "p2_q" ;
+		pset:value 6.3095746
+	] , [
+		lv2:symbol "p3_active" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "p3_freq" ;
+		pset:value 173.57635498
+	] , [
+		lv2:symbol "p3_level" ;
+		pset:value 0.10584316
+	] , [
+		lv2:symbol "p3_q" ;
+		pset:value 6.3095746
+	] , [
+		lv2:symbol "p4_active" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "p4_freq" ;
+		pset:value 342.95639038
+	] , [
+		lv2:symbol "p4_level" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "p4_q" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "p5_active" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "p5_freq" ;
+		pset:value 324.67407227
+	] , [
+		lv2:symbol "p5_level" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "p5_q" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "p6_active" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "p6_freq" ;
+		pset:value 2197.67138672
+	] , [
+		lv2:symbol "p6_level" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "p6_q" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "p7_active" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "p7_freq" ;
+		pset:value 2831.42529297
+	] , [
+		lv2:symbol "p7_level" ;
+		pset:value 0.24316376
+	] , [
+		lv2:symbol "p7_q" ;
+		pset:value 1.38038421
+	] , [
+		lv2:symbol "p8_active" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "p8_freq" ;
+		pset:value 179.43014526
+	] , [
+		lv2:symbol "p8_level" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "p8_q" ;
+		pset:value 1.0
+	] , [
+		lv2:symbol "zoom" ;
+		pset:value 0.25
+	] .
+

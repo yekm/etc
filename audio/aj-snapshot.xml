@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aj-snapshot>
+<alsa>
+  <client name="System">
+    <port id="0" />
+    <port id="1" />
+  </client>
+  <client name="Midi Through">
+    <port id="0" />
+  </client>
+  <client name="LASH Server" />
+</alsa>
+<jack>
+  <client name="system">
+    <port name="capture_1">
+      <connection port="StereoTools:in_r" />
+    </port>
+    <port name="capture_2">
+      <connection port="StereoTools:in_l" />
+    </port>
+  </client>
+  <client name="StereoTools">
+    <port name="out_l" />
+    <port name="out_r" />
+  </client>
+  <client name="Equalizer8Band">
+    <port name="out_l" />
+  </client>
+  <client name="StereoTools">
+    <port name="events_out" />
+  </client>
+  <client name="Equalizer8Band">
+    <port name="out_r" />
+  </client>
+  <client name="Deesser">
+    <port name="out_l" />
+  </client>
+  <client name="Equalizer8Band">
+    <port name="events_out" />
+  </client>
+  <client name="Deesser">
+    <port name="out_r" />
+  </client>
+  <client name="Exciter">
+    <port name="out_l" />
+  </client>
+  <client name="Deesser">
+    <port name="events_out" />
+  </client>
+  <client name="Exciter">
+    <port name="out_r" />
+  </client>
+  <client name="Analyzer">
+    <port name="out_l" />
+    <port name="out_r" />
+  </client>
+  <client name="Exciter">
+    <port name="events_out" />
+  </client>
+  <client name="Analyzer">
+    <port name="events_out" />
+  </client>
+  <client name="Equalizer12Band">
+    <port name="out_l">
+      <connection port="/patchmatrix_monitor:sink_02" />
+      <connection port="system:playback_2" />
+    </port>
+    <port name="out_r">
+      <connection port="system:playback_1" />
+      <connection port="/patchmatrix_monitor:sink_01" />
+    </port>
+  </client>
+  <client name="Limiter">
+    <port name="out_l" />
+  </client>
+  <client name="Equalizer12Band">
+    <port name="events_out" />
+  </client>
+  <client name="Limiter">
+    <port name="out_r" />
+    <port name="events_out" />
+  </client>
+</jack>
+</aj-snapshot>

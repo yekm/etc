@@ -1,0 +1,25 @@
+[user]
+	name = Pavel V
+	email = pavel@qfactor.me
+	signingkey = pavel@qfactor.me
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	grep = auto
+[merge]
+	tool = threesome
+[mergetool "threesome"]
+	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+	trustExitCode = true
+[push]
+	default = simple
+[diff]
+    compactionHeuristic = true
+[alias]
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    s = status -sb
+[interactive]
+	diffFilter = diff-highlight
+[commit]
+    #gpgsign = true

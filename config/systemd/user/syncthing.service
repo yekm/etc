@@ -1,0 +1,9 @@
+[Unit]
+Description=syncthing
+
+[Service]
+Type=simple
+ExecStart=/bin/syncthing
+
+[Install]
+WantedBy=default.target

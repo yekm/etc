@@ -1,5 +1,5 @@
-export BROWSER=google-chrome
-#export BROWSER=chromium
+#export BROWSER=google-chrome
+export BROWSER=chromium
 export EDITOR=vim
 
 xrdb -merge ~/.Xresources
@@ -21,7 +21,15 @@ xrandr --output $vo --set "Broadcast RGB" "Full"
 
 xhost local:boinc
 
-urxvtd -q -f -o
-date >>~/.cache/awesome/log
-ssh-agent awesome >>~/.cache/awesome/log 2>&1
+redshift -l 55.81:37.58 -t 5700:3600 -g 0.8 -m randr &
+
+date >>~/.log/awesome
+
+#exec startlxqt
+
+#if [ "$DISPLAY" = ":0" ]; then
+    awesome >>~/.cache/awesome/log 2>&1
+#else
+#    qtile
+#fi
 
