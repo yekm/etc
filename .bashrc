@@ -36,7 +36,11 @@ export PATH="~/.local/bin:$PATH"
 #export PATH=/usr/lib/ccache:$PATH
 #export PATH=/opt/rpi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin:$PATH
 
-export PS1="\t \w\n\$? \h:\u\\$ "
+export PS1="════════════════════════════════════════════════════════════════════════════════\n\t \w\n\$? \h:\u\\$ "
 
 # Created by `userpath` on 2020-04-23 12:16:01
 export PATH="$PATH:/home/yekm/.local/bin"
+export PATH="/usr/lib/ccache/bin:$PATH"
+
+export COLORTERM=truecolor
+
