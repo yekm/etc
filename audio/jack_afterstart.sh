@@ -19,14 +19,15 @@ x42-meter 13 &
 x42-meter 14 &
 #x42-meter 10 -j rms &
 #x42-meter 10 -j rms_o &
+#x42-meter 10 -j dumb-client &
 sleep 0.5
 
 #calf=~/src/repos/lv2/calf/inst/bin/calfjackhost
 calf=/bin/calfjackhost
 #$calf --load ~/etc/audio/cjh.xml &
-chrt --rr 98 $calf -c meincalf --load ~/etc/audio/cjh.xml &
+$calf -c meincalf --load ~/etc/audio/cjh.xml &
 $calf -c bcalf    --load ~/etc/audio/bcalf.xml &
-jalv.gtk3 https://github.com/lucianodato/noise-repellent
+#jalv.gtk3 https://github.com/lucianodato/noise-repellent &
 #chrt --rr 99 $calf --client inputs --load ~/etc/audio/inputs.xml &
 
 #chrt --rr 99 jalv.gtk --jack-name eq12 -l ~/etc/audio/lv2/12band http://calf.sourceforge.net/plugins/Equalizer12Band &
@@ -36,4 +37,4 @@ jalv.gtk3 https://github.com/lucianodato/noise-repellent
 #chrt --rr 99 jalv.gtk --jack-name deesser http://calf.sourceforge.net/plugins/Deesser &
 #chrt --rr 99 jalv.gtk --jack-name analyzer -l ~/etc/audio/lv2/analyzer http://calf.sourceforge.net/plugins/Analyzer &
 
-jack_load netmanager
+jack_load netmanager &
