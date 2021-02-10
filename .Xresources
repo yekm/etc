@@ -18,7 +18,7 @@ URxvt*letterSpace: -2
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
-URxvt.cursorBlink:          true
+URxvt.cursorBlink:          false
 URxvt.cursorColor:          #657b83
 URxvt.cursorUnderline:      false
 
@@ -30,8 +30,8 @@ Xmerm*vt100*faceSize: 24
 
 
 !URxvt*font:           xft:Inconsolata:size=14
-URxvt*font:           xft:Input Mono:style=Regular:size=14
-URxvt*boldFont:         xft:Input Mono:style=Bold:size=14
+URxvt*font:           xft:Input Mono:style=Regular:size=13
+URxvt*boldFont:         xft:Input Mono:style=Bold:size=13
 !URxvt*font:             -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
 !URxvt*boldFont:         -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
 URxvt.scrollstyle:      plain

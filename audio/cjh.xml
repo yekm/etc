@@ -29,8 +29,8 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="1.06659e-08" />
-  <param name="meter_inR" value="1.06659e-08" />
+  <param name="meter_inL" value="3.92862e-08" />
+  <param name="meter_inR" value="3.92862e-08" />
   <param name="meter_outL" value="0" />
   <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
@@ -288,7 +288,7 @@
   <param name="p1_freq" value="132.541" />
   <param name="p1_q" value="17.7828" />
   <param name="p2_active" value="1" />
-  <param name="p2_level" value="0.716978" />
+  <param name="p2_level" value="0.659754" />
   <param name="p2_freq" value="447.214" />
   <param name="p2_q" value="1.69824" />
   <param name="p3_active" value="0" />
@@ -328,17 +328,17 @@
 <preset bank="0" program="0" plugin="limiter" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="level_out" value="0.147624" />
-  <param name="meter_inL" value="6.72544e-08" />
-  <param name="meter_inR" value="6.72544e-08" />
-  <param name="meter_outL" value="9.44828e-09" />
-  <param name="meter_outR" value="9.44828e-09" />
+  <param name="level_out" value="0.339151" />
+  <param name="meter_inL" value="1.5544e-07" />
+  <param name="meter_inR" value="1.5544e-07" />
+  <param name="meter_outL" value="5.27175e-08" />
+  <param name="meter_outR" value="5.27175e-08" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
   <param name="limit" value="1" />
-  <param name="attack" value="5" />
+  <param name="attack" value="0.1" />
   <param name="release" value="5.62341" />
   <param name="att" value="1" />
   <param name="asc" value="1" />
@@ -351,7 +351,7 @@
 <plugin type="sidechaincompressor" instance-name="sch comp" input-index="103" output-index="99">
 <preset bank="0" program="0" plugin="sidechaincompressor" name="">
   <param name="bypass" value="0" />
-  <param name="level_in" value="1" />
+  <param name="level_in" value="0.015625" />
   <param name="meter_in" value="0" />
   <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />

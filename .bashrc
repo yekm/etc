@@ -17,7 +17,8 @@ alias x509info="openssl x509 -noout -text -in"
 alias diff='diff --color=auto'
 alias ls='ls --color=auto'
 alias lsblk='lsblk -o NAME,SIZE,FSTYPE,FSSIZE,FSUSED,FSAVAIL,FSUSE%,MOUNTPOINT,LABEL'
-alias sshot="scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/shots/'"
+alias sshot='scrot "%Y-%m-%d_$wx$h.png" -e "mv $f ~/shots/"'
+alias ssshot='scrot -s "%Y-%m-%d_$wx$h.png" -e "mv $f ~/shots/"'
 
 . /usr/share/bash-completion/bash_completion
 

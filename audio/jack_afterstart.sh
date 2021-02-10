@@ -23,12 +23,16 @@ x42-meter 14 &
 sleep 0.5
 
 #calf=~/src/repos/lv2/calf/inst/bin/calfjackhost
-calf=/bin/calfjackhost
+#calf=/bin/calfjackhost
+calf=/usr/bin/calfjackhost
 #$calf --load ~/etc/audio/cjh.xml &
 $calf -c meincalf --load ~/etc/audio/cjh.xml &
 $calf -c bcalf    --load ~/etc/audio/bcalf.xml &
 #jalv.gtk3 https://github.com/lucianodato/noise-repellent &
 #chrt --rr 99 $calf --client inputs --load ~/etc/audio/inputs.xml &
+
+zita-j2n --chan 1 acer.local 7777 &
+jalv -i -c delay=1000 'http://gareus.org/oss/lv2/nodelay' &
 
 #chrt --rr 99 jalv.gtk --jack-name eq12 -l ~/etc/audio/lv2/12band http://calf.sourceforge.net/plugins/Equalizer12Band &
 #chrt --rr 99 jalv.gtk --jack-name eq12o -l ~/etc/audio/lv2/onboard http://calf.sourceforge.net/plugins/Equalizer12Band &
