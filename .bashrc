@@ -3,6 +3,7 @@ source /etc/profile
 export EDITOR=vim
 #export LANG=ru_RU.UTF8
 export LANG=en_US.UTF8
+#export LC_ALL=en_US.UTF8
 export LESS="-i -R -x4 -F -X $LESS"
 export HISTFILESIZE=100000
 export HISTSIZE=10000
@@ -19,6 +20,7 @@ alias ls='ls --color=auto'
 alias lsblk='lsblk -o NAME,SIZE,FSTYPE,FSSIZE,FSUSED,FSAVAIL,FSUSE%,MOUNTPOINT,LABEL'
 alias sshot='scrot "%Y-%m-%d_$wx$h.png" -e "mv $f ~/shots/"'
 alias ssshot='scrot -s "%Y-%m-%d_$wx$h.png" -e "mv $f ~/shots/"'
+alias cal='cal -my'
 
 . /usr/share/bash-completion/bash_completion
 
@@ -49,3 +51,7 @@ export COLORTERM=truecolor
 export SYSTEMD_DEBUGGER=cgdb
 
 export MC_SKIN=~/etc/solarized.ini
+
+# https://unix.stackexchange.com/a/147572
+bind Space:magic-space
+

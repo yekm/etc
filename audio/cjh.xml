@@ -1,8 +1,8 @@
 <?xml version="1.1" encoding="utf-8"?>
 <rack><plugin type="analyzer" instance-name="analyzer" input-index="3" output-index="3">
 <preset bank="0" program="0" plugin="analyzer" name="">
-  <param name="meter_L" value="0" />
-  <param name="meter_R" value="0" />
+  <param name="meter_L" value="-0.00180858" />
+  <param name="meter_R" value="0.0152004" />
   <param name="clip_L" value="0" />
   <param name="clip_R" value="0" />
   <param name="analyzer_level" value="2" />
@@ -29,10 +29,10 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="3.92862e-08" />
-  <param name="meter_inR" value="3.92862e-08" />
-  <param name="meter_outL" value="0" />
-  <param name="meter_outR" value="0" />
+  <param name="meter_inL" value="0.0367241" />
+  <param name="meter_inR" value="0.0658016" />
+  <param name="meter_outL" value="0.0367445" />
+  <param name="meter_outR" value="0.0588891" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -54,13 +54,13 @@
   <param name="hs_freq" value="2206.64" />
   <param name="hs_q" value="0.707" />
   <param name="p1_active" value="1" />
-  <param name="p1_level" value="0.0642571" />
+  <param name="p1_level" value="0.147624" />
   <param name="p1_freq" value="62.5473" />
-  <param name="p1_q" value="6.76083" />
+  <param name="p1_q" value="7.76247" />
   <param name="p2_active" value="1" />
-  <param name="p2_level" value="0.0358968" />
+  <param name="p2_level" value="0.0973956" />
   <param name="p2_freq" value="92.5852" />
-  <param name="p2_q" value="6.30957" />
+  <param name="p2_q" value="7.24436" />
   <param name="p3_active" value="0" />
   <param name="p3_level" value="0.220064" />
   <param name="p3_freq" value="179.635" />
@@ -78,7 +78,7 @@
   <param name="p6_freq" value="309.56" />
   <param name="p6_q" value="12.5893" />
   <param name="p7_active" value="1" />
-  <param name="p7_level" value="0.473029" />
+  <param name="p7_level" value="0.514057" />
   <param name="p7_freq" value="2990.7" />
   <param name="p7_q" value="1.47911" />
   <param name="p8_active" value="0" />
@@ -104,10 +104,10 @@
   <param name="ratio" value="4.29497e+09" />
   <param name="laxity" value="15" />
   <param name="makeup" value="1" />
-  <param name="f1_freq" value="4670.07" />
-  <param name="f2_freq" value="5033.57" />
+  <param name="f1_freq" value="6000" />
+  <param name="f2_freq" value="4500" />
   <param name="f1_level" value="1" />
-  <param name="f2_level" value="5.89708" />
+  <param name="f2_level" value="4" />
   <param name="f2_q" value="1" />
   <param name="sc_listen" value="0" />
 </preset>
@@ -125,7 +125,7 @@
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
-  <param name="limit" value="0.339151" />
+  <param name="limit" value="1" />
   <param name="attack" value="10" />
   <param name="release" value="10.9388" />
   <param name="att" value="1" />
@@ -141,18 +141,18 @@
   <param name="bypass" value="1" />
   <param name="level_in" value="0.920188" />
   <param name="level_out" value="1" />
-  <param name="amount" value="1" />
-  <param name="meter_in" value="0" />
-  <param name="meter_out" value="0" />
+  <param name="amount" value="1.05702" />
+  <param name="meter_in" value="5.19872e-07" />
+  <param name="meter_out" value="5.2159e-07" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="drive" value="8.5" />
-  <param name="blend" value="0" />
+  <param name="blend" value="2" />
   <param name="meter_drive" value="0" />
   <param name="freq" value="7500" />
   <param name="listen" value="0" />
   <param name="ceil_active" value="1" />
-  <param name="ceil" value="10000" />
+  <param name="ceil" value="16000" />
 </preset>
 </plugin>
 <plugin type="stereo" instance-name="stereo" input-index="23" output-index="23">
@@ -169,13 +169,13 @@
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
   <param name="balance_in" value="0" />
-  <param name="balance_out" value="-0.18" />
+  <param name="balance_out" value="0" />
   <param name="softclip" value="0" />
   <param name="mutel" value="0" />
   <param name="muter" value="0" />
-  <param name="phasel" value="0" />
+  <param name="phasel" value="1" />
   <param name="phaser" value="0" />
-  <param name="mode" value="0" />
+  <param name="mode" value="2" />
   <param name="slev" value="1" />
   <param name="sbal" value="0" />
   <param name="mlev" value="1" />
@@ -259,38 +259,38 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0" />
-  <param name="meter_inR" value="0" />
-  <param name="meter_outL" value="0" />
-  <param name="meter_outR" value="0" />
+  <param name="meter_inL" value="0.0936308" />
+  <param name="meter_inR" value="0.100784" />
+  <param name="meter_outL" value="0.0548436" />
+  <param name="meter_outR" value="0.0675708" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
-  <param name="hp_active" value="0" />
-  <param name="hp_freq" value="72.1552" />
-  <param name="hp_mode" value="1" />
+  <param name="hp_active" value="1" />
+  <param name="hp_freq" value="77.8535" />
+  <param name="hp_mode" value="0" />
   <param name="hp_q" value="0.707" />
   <param name="lp_active" value="0" />
   <param name="lp_freq" value="482.531" />
   <param name="lp_mode" value="2" />
   <param name="lp_q" value="0.660693" />
   <param name="ls_active" value="1" />
-  <param name="ls_level" value="0.659754" />
-  <param name="ls_freq" value="1201.29" />
+  <param name="ls_level" value="0.435275" />
+  <param name="ls_freq" value="653.983" />
   <param name="ls_q" value="0.707" />
   <param name="hs_active" value="0" />
   <param name="hs_level" value="2.94854" />
   <param name="hs_freq" value="2771.8" />
   <param name="hs_q" value="0.707" />
   <param name="p1_active" value="0" />
-  <param name="p1_level" value="0.0324869" />
+  <param name="p1_level" value="0.0358968" />
   <param name="p1_freq" value="132.541" />
   <param name="p1_q" value="17.7828" />
-  <param name="p2_active" value="1" />
+  <param name="p2_active" value="0" />
   <param name="p2_level" value="0.659754" />
   <param name="p2_freq" value="447.214" />
-  <param name="p2_q" value="1.69824" />
+  <param name="p2_q" value="1.47911" />
   <param name="p3_active" value="0" />
   <param name="p3_level" value="11.7289" />
   <param name="p3_freq" value="733.321" />
@@ -328,18 +328,18 @@
 <preset bank="0" program="0" plugin="limiter" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="level_out" value="0.339151" />
-  <param name="meter_inL" value="1.5544e-07" />
-  <param name="meter_inR" value="1.5544e-07" />
-  <param name="meter_outL" value="5.27175e-08" />
-  <param name="meter_outR" value="5.27175e-08" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0.0548428" />
+  <param name="meter_inR" value="0.0675708" />
+  <param name="meter_outL" value="0.0548428" />
+  <param name="meter_outR" value="0.0675708" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
   <param name="limit" value="1" />
-  <param name="attack" value="0.1" />
-  <param name="release" value="5.62341" />
+  <param name="attack" value="2.822" />
+  <param name="release" value="6.45654" />
   <param name="att" value="1" />
   <param name="asc" value="1" />
   <param name="asc_led" value="0" />
@@ -351,7 +351,7 @@
 <plugin type="sidechaincompressor" instance-name="sch comp" input-index="103" output-index="99">
 <preset bank="0" program="0" plugin="sidechaincompressor" name="">
   <param name="bypass" value="0" />
-  <param name="level_in" value="0.015625" />
+  <param name="level_in" value="0.607097" />
   <param name="meter_in" value="0" />
   <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
@@ -373,7 +373,7 @@
   <param name="sc_listen" value="0" />
   <param name="f1_active" value="0" />
   <param name="f2_active" value="0" />
-  <param name="sc_route" value="1" />
+  <param name="sc_route" value="0" />
   <param name="sc_level" value="1" />
   <param name="mix" value="1" />
 </preset>

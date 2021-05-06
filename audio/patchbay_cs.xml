@@ -1,493 +1,927 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.9.0" name="patchbay_cs">
+<patchbay version="0.9.2" name="patchbay_cs">
  <output-sockets>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_limiter">
-   <plug>L\ Out\ \#1</plug>
-   <plug>L\ Out\ \#2</plug>
+  <socket exclusive="off" name="noise-rep" client="Noise repellent" type="jack-audio">
+   <plug>output</plug>
   </socket>
-  <socket client="No\ Delay\ Line" type="jack-audio" exclusive="off" name="nodelay">
-   <plug>out</plug>
+  <socket exclusive="off" name="onboard_in" client="onboard_in" type="jack-audio">
+   <plug>capture_1</plug>
   </socket>
-  <socket client="gate_recorder" type="jack-audio" exclusive="off" name="gate_recorder">
-   <plug>output0</plug>
-   <plug>output1</plug>
+  <socket exclusive="off" name="system_in" client="system" type="jack-audio">
+   <plug>capture_1</plug>
   </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_meine">
-   <plug>L\ meine\ Out\ \#1</plug>
-   <plug>L\ meine\ Out\ \#2</plug>
+  <socket exclusive="off" name="wifib 1" client="wifib" type="jack-audio">
+   <plug>out_0</plug>
   </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_exciter">
-   <plug>Exciter Out #1</plug>
-   <plug>Exciter Out #2</plug>
+  <socket exclusive="off" name="b_filetr" client="bcalf" type="jack-audio">
+   <plug>Filter Out #1</plug>
+   <plug>Filter Out #2</plug>
   </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_eq8">
+  <socket exclusive="off" name="b_eq8" client="bcalf" type="jack-audio">
    <plug>Equalizer 8 Band Out #1</plug>
    <plug>Equalizer 8 Band Out #2</plug>
   </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_mono">
-   <plug>Mono Input Out #1</plug>
-   <plug>Mono Input Out #2</plug>
-  </socket>
-  <socket client="Noise repellent" type="jack-audio" exclusive="off" name="noise-rep">
-   <plug>output</plug>
-  </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_gate">
-   <plug>Gate Out #1</plug>
-   <plug>Gate Out #2</plug>
-  </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_filetr">
-   <plug>Filter Out #1</plug>
-   <plug>Filter Out #2</plug>
-  </socket>
-  <socket client="system" type="jack-audio" exclusive="off" name="system_in">
-   <plug>capture_1</plug>
-  </socket>
-  <socket client="pavel-Latitude-.*" type="jack-audio" exclusive="off" name="dell">
-   <plug>from_slave_1</plug>
-   <plug>from_slave_2</plug>
-  </socket>
-  <socket client="DESKTOP-MNCBJ7M.*" type="jack-audio" exclusive="off" name="DESKTOP-MNCBJ7M 1">
-   <plug>from_slave_1</plug>
-   <plug>from_slave_2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="wlimiter">
-   <plug>wLimiter Out #1</plug>
-   <plug>wLimiter Out #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="sgate">
-   <plug>sch gate Out #1</plug>
-   <plug>sch gate Out #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="scomp">
-   <plug>sch comp Out #1</plug>
-   <plug>sch comp Out #2</plug>
-  </socket>
-  <socket client="rms" type="jack-audio" exclusive="off" name="rms">
-   <plug>out1</plug>
-   <plug>out2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="limiter in">
-   <plug>limiter in Out #1</plug>
-   <plug>limiter in Out #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="swlimiter">
-   <plug>sidech wlmiter Out #1</plug>
-   <plug>sidech wlmiter Out #2</plug>
-  </socket>
-  <socket client="dumb-client" type="jack-audio" exclusive="off" name="dumb_client">
-   <plug>out1</plug>
-   <plug>out2</plug>
-  </socket>
-  <socket client="mpd" type="jack-audio" exclusive="on" name="mpd">
-   <plug>left</plug>
-   <plug>right</plug>
-  </socket>
-  <socket client="PulseAudio JACK Sink" type="jack-audio" exclusive="off" name="pulse_audio">
-   <plug>front-left</plug>
-   <plug>front-right</plug>
-  </socket>
-  <socket client="alsa-jack\.jackP\.[0-9]+\.0" type="jack-audio" exclusive="off" name="alsa-jack\.jackP\.[0-9]+\. 1">
-   <plug>out_000</plug>
-   <plug>out_001</plug>
-  </socket>
-  <socket client="mpv.*" type="jack-audio" exclusive="on" name="mpv">
-   <plug>out_0</plug>
-   <plug>out_1</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="s_tools">
-   <plug>stereo Out #1</plug>
-   <plug>stereo Out #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="deesser">
-   <plug>deesser Out #1</plug>
-   <plug>deesser Out #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="exciter">
-   <plug>exciter Out #1</plug>
-   <plug>exciter Out #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="mb enh">
-   <plug>mb enh Out #1</plug>
-   <plug>mb enh Out #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="bass_e">
-   <plug>bassenhancer Out #1</plug>
-   <plug>bassenhancer Out #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="filter">
-   <plug>Filter Out #1</plug>
-   <plug>Filter Out #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="multiband_limiter">
-   <plug>multibandlimiter Out #1</plug>
-   <plug>multibandlimiter Out #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="eq8">
-   <plug>eq8 Out #1</plug>
-   <plug>eq8 Out #2</plug>
-  </socket>
-  <socket client="qjacksignalgen" type="jack-audio" exclusive="off" name="qjsg">
+  <socket exclusive="off" name="gate_recorder" client="gate_recorder" type="jack-audio">
    <plug>output0</plug>
    <plug>output1</plug>
   </socket>
-  <socket client="baudline" type="jack-audio" exclusive="off" name="baudline 1">
-   <plug>out_1</plug>
-   <plug>out_2</plug>
+  <socket exclusive="off" name="b_limiter" client="bcalf" type="jack-audio">
+   <plug>L\ Out\ \#1</plug>
+   <plug>L\ Out\ \#2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="analyzer">
-   <plug>analyzer Out #1</plug>
-   <plug>analyzer Out #2</plug>
+  <socket exclusive="off" name="nodelay" client="No\ Delay\ Line" type="jack-audio">
+   <plug>out</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="limiter out">
-   <plug>limiter out Out #1</plug>
-   <plug>limiter out Out #2</plug>
+  <socket exclusive="off" name="b_meine" client="bcalf" type="jack-audio">
+   <plug>L\ meine\ Out\ \#1</plug>
+   <plug>L\ meine\ Out\ \#2</plug>
   </socket>
-  <socket client="EBU R128 Meter" type="jack-audio" exclusive="off" name="ebur128">
-   <plug>outL</plug>
-   <plug>outR</plug>
+  <socket exclusive="off" name="b_exciter" client="bcalf" type="jack-audio">
+   <plug>Exciter Out #1</plug>
+   <plug>Exciter Out #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="eq 12">
-   <plug>eq12 Out #1</plug>
-   <plug>eq12 Out #2</plug>
+  <socket exclusive="off" name="b_mono" client="bcalf" type="jack-audio">
+   <plug>Mono Input Out #1</plug>
+   <plug>Mono Input Out #2</plug>
   </socket>
-  <socket client="webcam" type="jack-audio" exclusive="off" name="webcam">
-   <plug>capture_1</plug>
-  </socket>
-  <socket client="onboard_in" type="jack-audio" exclusive="off" name="onboard_in">
-   <plug>capture_1</plug>
-  </socket>
-  <socket client="inputs" type="jack-audio" exclusive="off" name="i_mono">
-   <plug>mono Out #1</plug>
-   <plug>mono Out #2</plug>
-  </socket>
-  <socket client="inputs" type="jack-audio" exclusive="off" name="i_eq8">
-   <plug>eq8 Out #1</plug>
-   <plug>eq8 Out #2</plug>
-  </socket>
-  <socket client="inputs" type="jack-audio" exclusive="off" name="i_gate">
-   <plug>gate Out #1</plug>
-   <plug>gate Out #2</plug>
-  </socket>
-  <socket client="inputs" type="jack-audio" exclusive="off" name="i_lilmiter">
-   <plug>limiter Out #1</plug>
-   <plug>limiter Out #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="multi spread">
-   <plug>Multi Spread Out #1</plug>
-   <plug>Multi Spread Out #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="gate">
+  <socket exclusive="off" name="b_gate" client="bcalf" type="jack-audio">
    <plug>Gate Out #1</plug>
    <plug>Gate Out #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="sc_limiter">
+  <socket exclusive="off" name="zita_pch" client="zita_pch" type="jack-audio">
+   <plug>capture_1</plug>
+  </socket>
+  <socket exclusive="off" name="dell" client="pavel-Latitude-.*" type="jack-audio">
+   <plug>from_slave_1</plug>
+   <plug>from_slave_2</plug>
+  </socket>
+  <socket exclusive="off" name="DESKTOP-MNCBJ7M 1" client="DESKTOP-MNCBJ7M.*" type="jack-audio">
+   <plug>from_slave_1</plug>
+   <plug>from_slave_2</plug>
+  </socket>
+  <socket exclusive="off" name="wlimiter" client="meincalf" type="jack-audio">
+   <plug>wLimiter Out #1</plug>
+   <plug>wLimiter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="sgate" client="meincalf" type="jack-audio">
+   <plug>sch gate Out #1</plug>
+   <plug>sch gate Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="scomp" client="meincalf" type="jack-audio">
+   <plug>sch comp Out #1</plug>
+   <plug>sch comp Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="rms" client="rms" type="jack-audio">
+   <plug>out1</plug>
+   <plug>out2</plug>
+  </socket>
+  <socket exclusive="off" name="limiter in" client="meincalf" type="jack-audio">
+   <plug>limiter in Out #1</plug>
+   <plug>limiter in Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="swlimiter" client="meincalf" type="jack-audio">
+   <plug>sidech wlmiter Out #1</plug>
+   <plug>sidech wlmiter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="dumb_client" client="dumb-client" type="jack-audio">
+   <plug>out1</plug>
+   <plug>out2</plug>
+  </socket>
+  <socket exclusive="on" name="mpd" client="mpd" type="jack-audio">
+   <plug>left</plug>
+   <plug>right</plug>
+  </socket>
+  <socket exclusive="off" name="pulse_audio" client="PulseAudio JACK Sink" type="jack-audio">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket exclusive="off" name="alsa-jack\.jackP\.[0-9]+\. 1" client="alsa-jack\.jackP\.[0-9]+\.0" type="jack-audio">
+   <plug>out_000</plug>
+   <plug>out_001</plug>
+  </socket>
+  <socket exclusive="on" name="mpv" client="mpv.*" type="jack-audio">
+   <plug>out_0</plug>
+   <plug>out_1</plug>
+  </socket>
+  <socket exclusive="off" name="s_tools" client="meincalf" type="jack-audio">
+   <plug>stereo Out #1</plug>
+   <plug>stereo Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="deesser" client="meincalf" type="jack-audio">
+   <plug>deesser Out #1</plug>
+   <plug>deesser Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="exciter" client="meincalf" type="jack-audio">
+   <plug>exciter Out #1</plug>
+   <plug>exciter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="mb enh" client="meincalf" type="jack-audio">
+   <plug>mb enh Out #1</plug>
+   <plug>mb enh Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="bass_e" client="meincalf" type="jack-audio">
+   <plug>bassenhancer Out #1</plug>
+   <plug>bassenhancer Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="filter" client="meincalf" type="jack-audio">
+   <plug>Filter Out #1</plug>
+   <plug>Filter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="multiband_limiter" client="meincalf" type="jack-audio">
+   <plug>multibandlimiter Out #1</plug>
+   <plug>multibandlimiter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="eq8" client="meincalf" type="jack-audio">
+   <plug>eq8 Out #1</plug>
+   <plug>eq8 Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="qjsg" client="qjacksignalgen" type="jack-audio">
+   <plug>output0</plug>
+   <plug>output1</plug>
+  </socket>
+  <socket exclusive="off" name="baudline 1" client="baudline" type="jack-audio">
+   <plug>out_1</plug>
+   <plug>out_2</plug>
+  </socket>
+  <socket exclusive="off" name="analyzer" client="meincalf" type="jack-audio">
+   <plug>analyzer Out #1</plug>
+   <plug>analyzer Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="limiter out" client="meincalf" type="jack-audio">
+   <plug>limiter out Out #1</plug>
+   <plug>limiter out Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="ebur128" client="EBU R128 Meter" type="jack-audio">
+   <plug>outL</plug>
+   <plug>outR</plug>
+  </socket>
+  <socket exclusive="off" name="eq 12" client="meincalf" type="jack-audio">
+   <plug>eq12 Out #1</plug>
+   <plug>eq12 Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="webcam" client="webcam" type="jack-audio">
+   <plug>capture_1</plug>
+  </socket>
+  <socket exclusive="off" name="i_mono" client="inputs" type="jack-audio">
+   <plug>mono Out #1</plug>
+   <plug>mono Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="i_eq8" client="inputs" type="jack-audio">
+   <plug>eq8 Out #1</plug>
+   <plug>eq8 Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="i_gate" client="inputs" type="jack-audio">
+   <plug>gate Out #1</plug>
+   <plug>gate Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="i_lilmiter" client="inputs" type="jack-audio">
+   <plug>limiter Out #1</plug>
+   <plug>limiter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="multi spread" client="meincalf" type="jack-audio">
+   <plug>Multi Spread Out #1</plug>
+   <plug>Multi Spread Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="gate" client="meincalf" type="jack-audio">
+   <plug>Gate Out #1</plug>
+   <plug>Gate Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="sc_limiter" client="meincalf" type="jack-audio">
    <plug>sidechainlimiter Out #1</plug>
    <plug>sidechainlimiter Out #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="eq30">
+  <socket exclusive="off" name="eq30" client="meincalf" type="jack-audio">
    <plug>eq30 Out #1</plug>
    <plug>eq30 Out #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="mb enhancer">
+  <socket exclusive="off" name="mb enhancer" client="meincalf" type="jack-audio">
    <plug>Multiband Enhancer Out #1</plug>
    <plug>Multiband Enhancer Out #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="emphasis">
+  <socket exclusive="off" name="emphasis" client="meincalf" type="jack-audio">
    <plug>emphasis Out #1</plug>
    <plug>emphasis Out #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="eq8_l">
+  <socket exclusive="off" name="eq8_l" client="meincalf" type="jack-audio">
    <plug>eq8 Out #1</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="eq8_r">
+  <socket exclusive="off" name="eq8_r" client="meincalf" type="jack-audio">
    <plug>eq8 Out #2</plug>
   </socket>
-  <socket client="rms_o" type="jack-audio" exclusive="off" name="rms_o">
+  <socket exclusive="off" name="rms_o" client="rms_o" type="jack-audio">
+   <plug>out1</plug>
+   <plug>out2</plug>
+  </socket>
+  <socket exclusive="off" name="noise-rep" client="Noise repellent" type="jack-audio">
+   <plug>output</plug>
+  </socket>
+  <socket exclusive="off" name="onboard_in" client="onboard_in" type="jack-audio">
+   <plug>capture_1</plug>
+  </socket>
+  <socket exclusive="off" name="system_in" client="system" type="jack-audio">
+   <plug>capture_1</plug>
+  </socket>
+  <socket exclusive="off" name="b_filetr" client="bcalf" type="jack-audio">
+   <plug>Filter Out #1</plug>
+   <plug>Filter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="gate_recorder" client="gate_recorder" type="jack-audio">
+   <plug>output0</plug>
+   <plug>output1</plug>
+  </socket>
+  <socket exclusive="off" name="b_limiter" client="bcalf" type="jack-audio">
+   <plug>L\ Out\ \#1</plug>
+   <plug>L\ Out\ \#2</plug>
+  </socket>
+  <socket exclusive="off" name="nodelay" client="No\ Delay\ Line" type="jack-audio">
+   <plug>out</plug>
+  </socket>
+  <socket exclusive="off" name="b_meine" client="bcalf" type="jack-audio">
+   <plug>L\ meine\ Out\ \#1</plug>
+   <plug>L\ meine\ Out\ \#2</plug>
+  </socket>
+  <socket exclusive="off" name="b_exciter" client="bcalf" type="jack-audio">
+   <plug>Exciter Out #1</plug>
+   <plug>Exciter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="b_eq8" client="bcalf" type="jack-audio">
+   <plug>Equalizer 8 Band Out #1</plug>
+   <plug>Equalizer 8 Band Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="b_mono" client="bcalf" type="jack-audio">
+   <plug>Mono Input Out #1</plug>
+   <plug>Mono Input Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="b_gate" client="bcalf" type="jack-audio">
+   <plug>Gate Out #1</plug>
+   <plug>Gate Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="zita_pch" client="zita_pch" type="jack-audio">
+   <plug>capture_1</plug>
+  </socket>
+  <socket exclusive="off" name="dell" client="pavel-Latitude-.*" type="jack-audio">
+   <plug>from_slave_1</plug>
+   <plug>from_slave_2</plug>
+  </socket>
+  <socket exclusive="off" name="DESKTOP-MNCBJ7M 1" client="DESKTOP-MNCBJ7M.*" type="jack-audio">
+   <plug>from_slave_1</plug>
+   <plug>from_slave_2</plug>
+  </socket>
+  <socket exclusive="off" name="wlimiter" client="meincalf" type="jack-audio">
+   <plug>wLimiter Out #1</plug>
+   <plug>wLimiter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="sgate" client="meincalf" type="jack-audio">
+   <plug>sch gate Out #1</plug>
+   <plug>sch gate Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="scomp" client="meincalf" type="jack-audio">
+   <plug>sch comp Out #1</plug>
+   <plug>sch comp Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="rms" client="rms" type="jack-audio">
+   <plug>out1</plug>
+   <plug>out2</plug>
+  </socket>
+  <socket exclusive="off" name="limiter in" client="meincalf" type="jack-audio">
+   <plug>limiter in Out #1</plug>
+   <plug>limiter in Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="swlimiter" client="meincalf" type="jack-audio">
+   <plug>sidech wlmiter Out #1</plug>
+   <plug>sidech wlmiter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="dumb_client" client="dumb-client" type="jack-audio">
+   <plug>out1</plug>
+   <plug>out2</plug>
+  </socket>
+  <socket exclusive="on" name="mpd" client="mpd" type="jack-audio">
+   <plug>left</plug>
+   <plug>right</plug>
+  </socket>
+  <socket exclusive="off" name="pulse_audio" client="PulseAudio JACK Sink" type="jack-audio">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket exclusive="off" name="alsa-jack\.jackP\.[0-9]+\. 1" client="alsa-jack\.jackP\.[0-9]+\.0" type="jack-audio">
+   <plug>out_000</plug>
+   <plug>out_001</plug>
+  </socket>
+  <socket exclusive="on" name="mpv" client="mpv.*" type="jack-audio">
+   <plug>out_0</plug>
+   <plug>out_1</plug>
+  </socket>
+  <socket exclusive="off" name="s_tools" client="meincalf" type="jack-audio">
+   <plug>stereo Out #1</plug>
+   <plug>stereo Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="deesser" client="meincalf" type="jack-audio">
+   <plug>deesser Out #1</plug>
+   <plug>deesser Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="exciter" client="meincalf" type="jack-audio">
+   <plug>exciter Out #1</plug>
+   <plug>exciter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="mb enh" client="meincalf" type="jack-audio">
+   <plug>mb enh Out #1</plug>
+   <plug>mb enh Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="bass_e" client="meincalf" type="jack-audio">
+   <plug>bassenhancer Out #1</plug>
+   <plug>bassenhancer Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="filter" client="meincalf" type="jack-audio">
+   <plug>Filter Out #1</plug>
+   <plug>Filter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="multiband_limiter" client="meincalf" type="jack-audio">
+   <plug>multibandlimiter Out #1</plug>
+   <plug>multibandlimiter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="eq8" client="meincalf" type="jack-audio">
+   <plug>eq8 Out #1</plug>
+   <plug>eq8 Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="qjsg" client="qjacksignalgen" type="jack-audio">
+   <plug>output0</plug>
+   <plug>output1</plug>
+  </socket>
+  <socket exclusive="off" name="baudline 1" client="baudline" type="jack-audio">
+   <plug>out_1</plug>
+   <plug>out_2</plug>
+  </socket>
+  <socket exclusive="off" name="analyzer" client="meincalf" type="jack-audio">
+   <plug>analyzer Out #1</plug>
+   <plug>analyzer Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="limiter out" client="meincalf" type="jack-audio">
+   <plug>limiter out Out #1</plug>
+   <plug>limiter out Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="ebur128" client="EBU R128 Meter" type="jack-audio">
+   <plug>outL</plug>
+   <plug>outR</plug>
+  </socket>
+  <socket exclusive="off" name="eq 12" client="meincalf" type="jack-audio">
+   <plug>eq12 Out #1</plug>
+   <plug>eq12 Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="webcam" client="webcam" type="jack-audio">
+   <plug>capture_1</plug>
+  </socket>
+  <socket exclusive="off" name="i_mono" client="inputs" type="jack-audio">
+   <plug>mono Out #1</plug>
+   <plug>mono Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="i_eq8" client="inputs" type="jack-audio">
+   <plug>eq8 Out #1</plug>
+   <plug>eq8 Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="i_gate" client="inputs" type="jack-audio">
+   <plug>gate Out #1</plug>
+   <plug>gate Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="i_lilmiter" client="inputs" type="jack-audio">
+   <plug>limiter Out #1</plug>
+   <plug>limiter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="multi spread" client="meincalf" type="jack-audio">
+   <plug>Multi Spread Out #1</plug>
+   <plug>Multi Spread Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="gate" client="meincalf" type="jack-audio">
+   <plug>Gate Out #1</plug>
+   <plug>Gate Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="sc_limiter" client="meincalf" type="jack-audio">
+   <plug>sidechainlimiter Out #1</plug>
+   <plug>sidechainlimiter Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="eq30" client="meincalf" type="jack-audio">
+   <plug>eq30 Out #1</plug>
+   <plug>eq30 Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="mb enhancer" client="meincalf" type="jack-audio">
+   <plug>Multiband Enhancer Out #1</plug>
+   <plug>Multiband Enhancer Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="emphasis" client="meincalf" type="jack-audio">
+   <plug>emphasis Out #1</plug>
+   <plug>emphasis Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="eq8_l" client="meincalf" type="jack-audio">
+   <plug>eq8 Out #1</plug>
+  </socket>
+  <socket exclusive="off" name="eq8_r" client="meincalf" type="jack-audio">
+   <plug>eq8 Out #2</plug>
+  </socket>
+  <socket exclusive="off" name="rms_o" client="rms_o" type="jack-audio">
    <plug>out1</plug>
    <plug>out2</plug>
   </socket>
  </output-sockets>
  <input-sockets>
-  <socket client="ffmpeg" type="jack-audio" exclusive="off" name="ffmpeg">
+  <socket exclusive="off" name="noise-rep" client="Noise repellent" type="jack-audio">
+   <plug>input</plug>
+  </socket>
+  <socket exclusive="off" name="ffmpeg" client="ffmpeg" type="jack-audio">
    <plug>input_1</plug>
    <plug>input_2</plug>
   </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_meine">
-   <plug>L\ meine\ In\ \#1</plug>
-   <plug>L\ meine\ In\ \#2</plug>
+  <socket exclusive="off" name="b_filter" client="bcalf" type="jack-audio">
+   <plug>Filter In #1</plug>
+   <plug>Filter In #2</plug>
   </socket>
-  <socket client="baudline" type="jack-audio" exclusive="off" name="baudline 1">
-   <plug>in_1</plug>
-   <plug>in_2</plug>
-  </socket>
-  <socket client="No\ Delay\ Line" type="jack-audio" exclusive="off" name="nodelay">
-   <plug>in</plug>
-  </socket>
-  <socket client="zita\-j2n" type="jack-audio" exclusive="off" name="b_zita_j2n">
-   <plug>in_1</plug>
-  </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_analyser">
-   <plug>Analyzer In #1</plug>
-   <plug>Analyzer In #2</plug>
-  </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_limiter">
-   <plug>L\ In\ \#1</plug>
-   <plug>L\ In\ \#2</plug>
-  </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_exciter">
-   <plug>Exciter In #1</plug>
-   <plug>Exciter In #2</plug>
-  </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_eq8">
-   <plug>Equalizer 8 Band In #1</plug>
-   <plug>Equalizer 8 Band In #2</plug>
-  </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_mono">
-   <plug>Mono Input In #1</plug>
-  </socket>
-  <socket client="gate_recorder" type="jack-audio" exclusive="off" name="gate_recorder">
+  <socket exclusive="off" name="gate_recorder" client="gate_recorder" type="jack-audio">
    <plug>input0</plug>
    <plug>input1</plug>
   </socket>
-  <socket client="Noise repellent" type="jack-audio" exclusive="off" name="noise-rep">
-   <plug>input</plug>
+  <socket exclusive="off" name="b_eq8" client="bcalf" type="jack-audio">
+   <plug>Equalizer 8 Band In #1</plug>
+   <plug>Equalizer 8 Band In #2</plug>
   </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_gate">
+  <socket exclusive="off" name="b_limiter" client="bcalf" type="jack-audio">
+   <plug>L\ In\ \#1</plug>
+   <plug>L\ In\ \#2</plug>
+  </socket>
+  <socket exclusive="off" name="b_meine" client="bcalf" type="jack-audio">
+   <plug>L\ meine\ In\ \#1</plug>
+   <plug>L\ meine\ In\ \#2</plug>
+  </socket>
+  <socket exclusive="off" name="baudline 1" client="baudline" type="jack-audio">
+   <plug>in_1</plug>
+   <plug>in_2</plug>
+  </socket>
+  <socket exclusive="off" name="nodelay" client="No\ Delay\ Line" type="jack-audio">
+   <plug>in</plug>
+  </socket>
+  <socket exclusive="off" name="b_zita_j2n" client="zita\-j2n" type="jack-audio">
+   <plug>in_1</plug>
+  </socket>
+  <socket exclusive="off" name="b_analyser" client="bcalf" type="jack-audio">
+   <plug>Analyzer In #1</plug>
+   <plug>Analyzer In #2</plug>
+  </socket>
+  <socket exclusive="off" name="b_exciter" client="bcalf" type="jack-audio">
+   <plug>Exciter In #1</plug>
+   <plug>Exciter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="b_mono" client="bcalf" type="jack-audio">
+   <plug>Mono Input In #1</plug>
+  </socket>
+  <socket exclusive="off" name="b_gate" client="bcalf" type="jack-audio">
    <plug>Gate In #1</plug>
    <plug>Gate In #2</plug>
   </socket>
-  <socket client="bcalf" type="jack-audio" exclusive="off" name="b_filter">
-   <plug>Filter In #1</plug>
-   <plug>Filter In #2</plug>
-  </socket>
-  <socket client="testscope" type="jack-audio" exclusive="off" name="testscope 1">
+  <socket exclusive="off" name="testscope 1" client="testscope" type="jack-audio">
    <plug>in1</plug>
    <plug>in2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="wlimiter">
+  <socket exclusive="off" name="wlimiter" client="meincalf" type="jack-audio">
    <plug>wLimiter In #1</plug>
    <plug>wLimiter In #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="scomp">
+  <socket exclusive="off" name="scomp" client="meincalf" type="jack-audio">
    <plug>sch comp In #1</plug>
    <plug>sch comp In #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="scomp sch">
+  <socket exclusive="off" name="scomp sch" client="meincalf" type="jack-audio">
    <plug>sch comp In #3</plug>
    <plug>sch comp In #4</plug>
   </socket>
-  <socket client="rms" type="jack-audio" exclusive="off" name="rms">
+  <socket exclusive="off" name="rms" client="rms" type="jack-audio">
    <plug>in1</plug>
    <plug>in2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="limiter in">
+  <socket exclusive="off" name="limiter in" client="meincalf" type="jack-audio">
    <plug>limiter in In #1</plug>
    <plug>limiter in In #2</plug>
   </socket>
-  <socket client="Bit Meter" type="jack-audio" exclusive="off" name="bitmeter">
-   <plug>in</plug>
-  </socket>
-  <socket client="Simple Scope \(4 channel\)" type="jack-audio" exclusive="off" name="scope1">
-   <plug>in1</plug>
-   <plug>in2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="s_tools">
-   <plug>stereo In #1</plug>
-   <plug>stereo In #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="deesser">
-   <plug>deesser In #1</plug>
-   <plug>deesser In #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="exciter">
-   <plug>exciter In #1</plug>
-   <plug>exciter In #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="mb enh">
-   <plug>mb enh In #1</plug>
-   <plug>mb enh In #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="bass_e">
-   <plug>bassenhancer In #1</plug>
-   <plug>bassenhancer In #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="filter">
-   <plug>Filter In #1</plug>
-   <plug>Filter In #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="multiband_limiter">
-   <plug>multibandlimiter In #1</plug>
-   <plug>multibandlimiter In #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="eq8">
-   <plug>eq8 In #1</plug>
-   <plug>eq8 In #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="analyzer">
-   <plug>analyzer In #1</plug>
-   <plug>analyzer In #2</plug>
-  </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="limiter out">
-   <plug>limiter out In #1</plug>
-   <plug>limiter out In #2</plug>
-  </socket>
-  <socket client="Spectr" type="jack-audio" exclusive="off" name="spectr">
-   <plug>in</plug>
-  </socket>
-  <socket client="rms_o" type="jack-audio" exclusive="off" name="rms_o">
-   <plug>in1</plug>
-   <plug>in2</plug>
-  </socket>
-  <socket client="EBU R128 Meter" type="jack-audio" exclusive="off" name="ebur128">
-   <plug>inL</plug>
-   <plug>inR</plug>
-  </socket>
-  <socket client="Goniometer" type="jack-audio" exclusive="off" name="goinometer">
-   <plug>inL</plug>
-   <plug>inR</plug>
-  </socket>
-  <socket client="Phase/Frequency Wheel" type="jack-audio" exclusive="off" name="Phase/Frequency Wheel 1">
-   <plug>in1</plug>
-   <plug>in2</plug>
-  </socket>
-  <socket client="Simple Scope \(4 channel\)" type="jack-audio" exclusive="off" name="scope2">
-   <plug>in3</plug>
-   <plug>in4</plug>
-  </socket>
-  <socket client="ffmpeg_meine" type="jack-audio" exclusive="off" name="ffmpeg_meine 1">
+  <socket exclusive="off" name="x11grab" client="x11grab" type="jack-audio">
    <plug>input_1</plug>
    <plug>input_2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="eq 12">
-   <plug>eq12 In #1</plug>
-   <plug>eq12 In #2</plug>
+  <socket exclusive="off" name="bitmeter" client="Bit Meter" type="jack-audio">
+   <plug>in</plug>
   </socket>
-  <socket client="system" type="jack-audio" exclusive="off" name="xonar">
-   <plug>playback_1</plug>
-   <plug>playback_2</plug>
+  <socket exclusive="off" name="scope1" client="Simple Scope \(4 channel\)" type="jack-audio">
+   <plug>in1</plug>
+   <plug>in2</plug>
   </socket>
-  <socket client="onboard" type="jack-audio" exclusive="off" name="onboard">
-   <plug>playback_1</plug>
-   <plug>playback_2</plug>
+  <socket exclusive="off" name="s_tools" client="meincalf" type="jack-audio">
+   <plug>stereo In #1</plug>
+   <plug>stereo In #2</plug>
   </socket>
-  <socket client="inputs" type="jack-audio" exclusive="off" name="i_mono">
-   <plug>mono In #1</plug>
+  <socket exclusive="off" name="deesser" client="meincalf" type="jack-audio">
+   <plug>deesser In #1</plug>
+   <plug>deesser In #2</plug>
   </socket>
-  <socket client="inputs" type="jack-audio" exclusive="off" name="i_eq8">
+  <socket exclusive="off" name="exciter" client="meincalf" type="jack-audio">
+   <plug>exciter In #1</plug>
+   <plug>exciter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="mb enh" client="meincalf" type="jack-audio">
+   <plug>mb enh In #1</plug>
+   <plug>mb enh In #2</plug>
+  </socket>
+  <socket exclusive="off" name="bass_e" client="meincalf" type="jack-audio">
+   <plug>bassenhancer In #1</plug>
+   <plug>bassenhancer In #2</plug>
+  </socket>
+  <socket exclusive="off" name="filter" client="meincalf" type="jack-audio">
+   <plug>Filter In #1</plug>
+   <plug>Filter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="multiband_limiter" client="meincalf" type="jack-audio">
+   <plug>multibandlimiter In #1</plug>
+   <plug>multibandlimiter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="eq8" client="meincalf" type="jack-audio">
    <plug>eq8 In #1</plug>
    <plug>eq8 In #2</plug>
   </socket>
-  <socket client="inputs" type="jack-audio" exclusive="off" name="i_gate">
-   <plug>gate In #1</plug>
-   <plug>gate In #2</plug>
-  </socket>
-  <socket client="inputs" type="jack-audio" exclusive="off" name="i_limiter">
-   <plug>limiter In #1</plug>
-   <plug>limiter In #2</plug>
-  </socket>
-  <socket client="inputs" type="jack-audio" exclusive="off" name="i_analyzer">
+  <socket exclusive="off" name="analyzer" client="meincalf" type="jack-audio">
    <plug>analyzer In #1</plug>
    <plug>analyzer In #2</plug>
   </socket>
-  <socket client="PulseAudio JACK Source" type="jack-audio" exclusive="off" name="pa_in">
+  <socket exclusive="off" name="limiter out" client="meincalf" type="jack-audio">
+   <plug>limiter out In #1</plug>
+   <plug>limiter out In #2</plug>
+  </socket>
+  <socket exclusive="off" name="spectr" client="Spectr" type="jack-audio">
+   <plug>in</plug>
+  </socket>
+  <socket exclusive="off" name="rms_o" client="rms_o" type="jack-audio">
+   <plug>in1</plug>
+   <plug>in2</plug>
+  </socket>
+  <socket exclusive="off" name="ebur128" client="EBU R128 Meter" type="jack-audio">
+   <plug>inL</plug>
+   <plug>inR</plug>
+  </socket>
+  <socket exclusive="off" name="goinometer" client="Goniometer" type="jack-audio">
+   <plug>inL</plug>
+   <plug>inR</plug>
+  </socket>
+  <socket exclusive="off" name="Phase/Frequency Wheel 1" client="Phase/Frequency Wheel" type="jack-audio">
+   <plug>in1</plug>
+   <plug>in2</plug>
+  </socket>
+  <socket exclusive="off" name="scope2" client="Simple Scope \(4 channel\)" type="jack-audio">
+   <plug>in3</plug>
+   <plug>in4</plug>
+  </socket>
+  <socket exclusive="off" name="ffmpeg_meine 1" client="ffmpeg_meine" type="jack-audio">
+   <plug>input_1</plug>
+   <plug>input_2</plug>
+  </socket>
+  <socket exclusive="off" name="eq 12" client="meincalf" type="jack-audio">
+   <plug>eq12 In #1</plug>
+   <plug>eq12 In #2</plug>
+  </socket>
+  <socket exclusive="off" name="xonar" client="system" type="jack-audio">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+  </socket>
+  <socket exclusive="off" name="onboard" client="onboard" type="jack-audio">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+  </socket>
+  <socket exclusive="off" name="i_mono" client="inputs" type="jack-audio">
+   <plug>mono In #1</plug>
+  </socket>
+  <socket exclusive="off" name="i_eq8" client="inputs" type="jack-audio">
+   <plug>eq8 In #1</plug>
+   <plug>eq8 In #2</plug>
+  </socket>
+  <socket exclusive="off" name="i_gate" client="inputs" type="jack-audio">
+   <plug>gate In #1</plug>
+   <plug>gate In #2</plug>
+  </socket>
+  <socket exclusive="off" name="i_limiter" client="inputs" type="jack-audio">
+   <plug>limiter In #1</plug>
+   <plug>limiter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="i_analyzer" client="inputs" type="jack-audio">
+   <plug>analyzer In #1</plug>
+   <plug>analyzer In #2</plug>
+  </socket>
+  <socket exclusive="off" name="pa_in" client="PulseAudio JACK Source" type="jack-audio">
    <plug>front-left</plug>
    <plug>front-right</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="multi spread">
+  <socket exclusive="off" name="multi spread" client="meincalf" type="jack-audio">
    <plug>Multi Spread In #1</plug>
    <plug>Multi Spread In #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="gate">
+  <socket exclusive="off" name="gate" client="meincalf" type="jack-audio">
    <plug>Gate In #1</plug>
    <plug>Gate In #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="sc_limiter_sc">
+  <socket exclusive="off" name="sc_limiter_sc" client="meincalf" type="jack-audio">
    <plug>sidechainlimiter In #3</plug>
    <plug>sidechainlimiter In #4</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="sc_limiter">
+  <socket exclusive="off" name="sc_limiter" client="meincalf" type="jack-audio">
    <plug>sidechainlimiter In #1</plug>
    <plug>sidechainlimiter In #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="eq30">
+  <socket exclusive="off" name="eq30" client="meincalf" type="jack-audio">
    <plug>eq30 In #1</plug>
    <plug>eq30 In #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="mb enhancer">
+  <socket exclusive="off" name="mb enhancer" client="meincalf" type="jack-audio">
    <plug>Multiband Enhancer In #1</plug>
    <plug>Multiband Enhancer In #2</plug>
   </socket>
-  <socket client="meincalf" type="jack-audio" exclusive="off" name="emphasis">
+  <socket exclusive="off" name="emphasis" client="meincalf" type="jack-audio">
    <plug>emphasis In #1</plug>
    <plug>emphasis In #2</plug>
   </socket>
-  <socket client="nr_l" type="jack-audio" exclusive="off" name="nr_l">
+  <socket exclusive="off" name="nr_l" client="nr_l" type="jack-audio">
    <plug>input</plug>
   </socket>
-  <socket client="nr_r" type="jack-audio" exclusive="off" name="nr_r">
+  <socket exclusive="off" name="nr_r" client="nr_r" type="jack-audio">
+   <plug>input</plug>
+  </socket>
+  <socket exclusive="off" name="noise-rep" client="Noise repellent" type="jack-audio">
+   <plug>input</plug>
+  </socket>
+  <socket exclusive="off" name="ffmpeg" client="ffmpeg" type="jack-audio">
+   <plug>input_1</plug>
+   <plug>input_2</plug>
+  </socket>
+  <socket exclusive="off" name="b_filter" client="bcalf" type="jack-audio">
+   <plug>Filter In #1</plug>
+   <plug>Filter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="gate_recorder" client="gate_recorder" type="jack-audio">
+   <plug>input0</plug>
+   <plug>input1</plug>
+  </socket>
+  <socket exclusive="off" name="b_limiter" client="bcalf" type="jack-audio">
+   <plug>L\ In\ \#1</plug>
+   <plug>L\ In\ \#2</plug>
+  </socket>
+  <socket exclusive="off" name="b_meine" client="bcalf" type="jack-audio">
+   <plug>L\ meine\ In\ \#1</plug>
+   <plug>L\ meine\ In\ \#2</plug>
+  </socket>
+  <socket exclusive="off" name="baudline 1" client="baudline" type="jack-audio">
+   <plug>in_1</plug>
+   <plug>in_2</plug>
+  </socket>
+  <socket exclusive="off" name="nodelay" client="No\ Delay\ Line" type="jack-audio">
+   <plug>in</plug>
+  </socket>
+  <socket exclusive="off" name="b_zita_j2n" client="zita\-j2n" type="jack-audio">
+   <plug>in_1</plug>
+  </socket>
+  <socket exclusive="off" name="b_analyser" client="bcalf" type="jack-audio">
+   <plug>Analyzer In #1</plug>
+   <plug>Analyzer In #2</plug>
+  </socket>
+  <socket exclusive="off" name="b_exciter" client="bcalf" type="jack-audio">
+   <plug>Exciter In #1</plug>
+   <plug>Exciter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="b_eq8" client="bcalf" type="jack-audio">
+   <plug>Equalizer 8 Band In #1</plug>
+   <plug>Equalizer 8 Band In #2</plug>
+  </socket>
+  <socket exclusive="off" name="b_mono" client="bcalf" type="jack-audio">
+   <plug>Mono Input In #1</plug>
+  </socket>
+  <socket exclusive="off" name="b_gate" client="bcalf" type="jack-audio">
+   <plug>Gate In #1</plug>
+   <plug>Gate In #2</plug>
+  </socket>
+  <socket exclusive="off" name="testscope 1" client="testscope" type="jack-audio">
+   <plug>in1</plug>
+   <plug>in2</plug>
+  </socket>
+  <socket exclusive="off" name="wlimiter" client="meincalf" type="jack-audio">
+   <plug>wLimiter In #1</plug>
+   <plug>wLimiter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="scomp" client="meincalf" type="jack-audio">
+   <plug>sch comp In #1</plug>
+   <plug>sch comp In #2</plug>
+  </socket>
+  <socket exclusive="off" name="scomp sch" client="meincalf" type="jack-audio">
+   <plug>sch comp In #3</plug>
+   <plug>sch comp In #4</plug>
+  </socket>
+  <socket exclusive="off" name="rms" client="rms" type="jack-audio">
+   <plug>in1</plug>
+   <plug>in2</plug>
+  </socket>
+  <socket exclusive="off" name="limiter in" client="meincalf" type="jack-audio">
+   <plug>limiter in In #1</plug>
+   <plug>limiter in In #2</plug>
+  </socket>
+  <socket exclusive="off" name="x11grab" client="x11grab" type="jack-audio">
+   <plug>input_1</plug>
+   <plug>input_2</plug>
+  </socket>
+  <socket exclusive="off" name="bitmeter" client="Bit Meter" type="jack-audio">
+   <plug>in</plug>
+  </socket>
+  <socket exclusive="off" name="scope1" client="Simple Scope \(4 channel\)" type="jack-audio">
+   <plug>in1</plug>
+   <plug>in2</plug>
+  </socket>
+  <socket exclusive="off" name="s_tools" client="meincalf" type="jack-audio">
+   <plug>stereo In #1</plug>
+   <plug>stereo In #2</plug>
+  </socket>
+  <socket exclusive="off" name="deesser" client="meincalf" type="jack-audio">
+   <plug>deesser In #1</plug>
+   <plug>deesser In #2</plug>
+  </socket>
+  <socket exclusive="off" name="exciter" client="meincalf" type="jack-audio">
+   <plug>exciter In #1</plug>
+   <plug>exciter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="mb enh" client="meincalf" type="jack-audio">
+   <plug>mb enh In #1</plug>
+   <plug>mb enh In #2</plug>
+  </socket>
+  <socket exclusive="off" name="bass_e" client="meincalf" type="jack-audio">
+   <plug>bassenhancer In #1</plug>
+   <plug>bassenhancer In #2</plug>
+  </socket>
+  <socket exclusive="off" name="filter" client="meincalf" type="jack-audio">
+   <plug>Filter In #1</plug>
+   <plug>Filter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="multiband_limiter" client="meincalf" type="jack-audio">
+   <plug>multibandlimiter In #1</plug>
+   <plug>multibandlimiter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="eq8" client="meincalf" type="jack-audio">
+   <plug>eq8 In #1</plug>
+   <plug>eq8 In #2</plug>
+  </socket>
+  <socket exclusive="off" name="analyzer" client="meincalf" type="jack-audio">
+   <plug>analyzer In #1</plug>
+   <plug>analyzer In #2</plug>
+  </socket>
+  <socket exclusive="off" name="limiter out" client="meincalf" type="jack-audio">
+   <plug>limiter out In #1</plug>
+   <plug>limiter out In #2</plug>
+  </socket>
+  <socket exclusive="off" name="spectr" client="Spectr" type="jack-audio">
+   <plug>in</plug>
+  </socket>
+  <socket exclusive="off" name="rms_o" client="rms_o" type="jack-audio">
+   <plug>in1</plug>
+   <plug>in2</plug>
+  </socket>
+  <socket exclusive="off" name="ebur128" client="EBU R128 Meter" type="jack-audio">
+   <plug>inL</plug>
+   <plug>inR</plug>
+  </socket>
+  <socket exclusive="off" name="goinometer" client="Goniometer" type="jack-audio">
+   <plug>inL</plug>
+   <plug>inR</plug>
+  </socket>
+  <socket exclusive="off" name="Phase/Frequency Wheel 1" client="Phase/Frequency Wheel" type="jack-audio">
+   <plug>in1</plug>
+   <plug>in2</plug>
+  </socket>
+  <socket exclusive="off" name="scope2" client="Simple Scope \(4 channel\)" type="jack-audio">
+   <plug>in3</plug>
+   <plug>in4</plug>
+  </socket>
+  <socket exclusive="off" name="ffmpeg_meine 1" client="ffmpeg_meine" type="jack-audio">
+   <plug>input_1</plug>
+   <plug>input_2</plug>
+  </socket>
+  <socket exclusive="off" name="eq 12" client="meincalf" type="jack-audio">
+   <plug>eq12 In #1</plug>
+   <plug>eq12 In #2</plug>
+  </socket>
+  <socket exclusive="off" name="xonar" client="system" type="jack-audio">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+  </socket>
+  <socket exclusive="off" name="onboard" client="onboard" type="jack-audio">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+  </socket>
+  <socket exclusive="off" name="i_mono" client="inputs" type="jack-audio">
+   <plug>mono In #1</plug>
+  </socket>
+  <socket exclusive="off" name="i_eq8" client="inputs" type="jack-audio">
+   <plug>eq8 In #1</plug>
+   <plug>eq8 In #2</plug>
+  </socket>
+  <socket exclusive="off" name="i_gate" client="inputs" type="jack-audio">
+   <plug>gate In #1</plug>
+   <plug>gate In #2</plug>
+  </socket>
+  <socket exclusive="off" name="i_limiter" client="inputs" type="jack-audio">
+   <plug>limiter In #1</plug>
+   <plug>limiter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="i_analyzer" client="inputs" type="jack-audio">
+   <plug>analyzer In #1</plug>
+   <plug>analyzer In #2</plug>
+  </socket>
+  <socket exclusive="off" name="pa_in" client="PulseAudio JACK Source" type="jack-audio">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket exclusive="off" name="multi spread" client="meincalf" type="jack-audio">
+   <plug>Multi Spread In #1</plug>
+   <plug>Multi Spread In #2</plug>
+  </socket>
+  <socket exclusive="off" name="gate" client="meincalf" type="jack-audio">
+   <plug>Gate In #1</plug>
+   <plug>Gate In #2</plug>
+  </socket>
+  <socket exclusive="off" name="sc_limiter_sc" client="meincalf" type="jack-audio">
+   <plug>sidechainlimiter In #3</plug>
+   <plug>sidechainlimiter In #4</plug>
+  </socket>
+  <socket exclusive="off" name="sc_limiter" client="meincalf" type="jack-audio">
+   <plug>sidechainlimiter In #1</plug>
+   <plug>sidechainlimiter In #2</plug>
+  </socket>
+  <socket exclusive="off" name="eq30" client="meincalf" type="jack-audio">
+   <plug>eq30 In #1</plug>
+   <plug>eq30 In #2</plug>
+  </socket>
+  <socket exclusive="off" name="mb enhancer" client="meincalf" type="jack-audio">
+   <plug>Multiband Enhancer In #1</plug>
+   <plug>Multiband Enhancer In #2</plug>
+  </socket>
+  <socket exclusive="off" name="emphasis" client="meincalf" type="jack-audio">
+   <plug>emphasis In #1</plug>
+   <plug>emphasis In #2</plug>
+  </socket>
+  <socket exclusive="off" name="nr_l" client="nr_l" type="jack-audio">
+   <plug>input</plug>
+  </socket>
+  <socket exclusive="off" name="nr_r" client="nr_r" type="jack-audio">
    <plug>input</plug>
   </socket>
  </input-sockets>
  <slots/>
  <cables>
-  <cable input="b_meine" type="jack-audio" output="b_limiter"/>
-  <cable input="ffmpeg" type="jack-audio" output="b_limiter"/>
-  <cable input="baudline 1" type="jack-audio" output="b_limiter"/>
-  <cable input="nodelay" type="jack-audio" output="b_limiter"/>
-  <cable input="b_zita_j2n" type="jack-audio" output="nodelay"/>
-  <cable input="b_analyser" type="jack-audio" output="b_meine"/>
-  <cable input="limiter out" type="jack-audio" output="b_meine"/>
-  <cable input="b_limiter" type="jack-audio" output="b_exciter"/>
-  <cable input="b_exciter" type="jack-audio" output="b_eq8"/>
-  <cable input="b_eq8" type="jack-audio" output="b_mono"/>
-  <cable input="b_mono" type="jack-audio" output="b_gate"/>
-  <cable input="noise-rep" type="jack-audio" output="b_filetr"/>
-  <cable input="b_gate" type="jack-audio" output="b_filetr"/>
-  <cable input="gate_recorder" type="jack-audio" output="b_filetr"/>
-  <cable input="b_filter" type="jack-audio" output="system_in"/>
-  <cable input="testscope 1" type="jack-audio" output="dell"/>
-  <cable input="scomp" type="jack-audio" output="DESKTOP-MNCBJ7M 1"/>
-  <cable input="s_tools" type="jack-audio" output="sgate"/>
-  <cable input="s_tools" type="jack-audio" output="scomp"/>
-  <cable input="bitmeter" type="jack-audio" output="scomp"/>
-  <cable input="scope1" type="jack-audio" output="limiter in"/>
-  <cable input="scomp sch" type="jack-audio" output="limiter in"/>
-  <cable input="s_tools" type="jack-audio" output="limiter in"/>
-  <cable input="bitmeter" type="jack-audio" output="limiter in"/>
-  <cable input="limiter in" type="jack-audio" output="dumb_client"/>
-  <cable input="limiter in" type="jack-audio" output="mpd"/>
-  <cable input="limiter in" type="jack-audio" output="pulse_audio"/>
-  <cable input="limiter in" type="jack-audio" output="alsa-jack\.jackP\.[0-9]+\. 1"/>
-  <cable input="limiter in" type="jack-audio" output="mpv"/>
-  <cable input="deesser" type="jack-audio" output="s_tools"/>
-  <cable input="exciter" type="jack-audio" output="deesser"/>
-  <cable input="bass_e" type="jack-audio" output="exciter"/>
-  <cable input="filter" type="jack-audio" output="bass_e"/>
-  <cable input="multiband_limiter" type="jack-audio" output="filter"/>
-  <cable input="eq8" type="jack-audio" output="multiband_limiter"/>
-  <cable input="analyzer" type="jack-audio" output="eq8"/>
-  <cable input="limiter out" type="jack-audio" output="eq8"/>
-  <cable input="limiter out" type="jack-audio" output="qjsg"/>
-  <cable input="limiter out" type="jack-audio" output="baudline 1"/>
-  <cable input="spectr" type="jack-audio" output="analyzer"/>
-  <cable input="rms_o" type="jack-audio" output="analyzer"/>
-  <cable input="ebur128" type="jack-audio" output="analyzer"/>
-  <cable input="goinometer" type="jack-audio" output="analyzer"/>
-  <cable input="Phase/Frequency Wheel 1" type="jack-audio" output="analyzer"/>
-  <cable input="scope2" type="jack-audio" output="analyzer"/>
-  <cable input="ffmpeg_meine 1" type="jack-audio" output="analyzer"/>
-  <cable input="eq 12" type="jack-audio" output="limiter out"/>
-  <cable input="onboard" type="jack-audio" output="eq 12"/>
-  <cable input="xonar" type="jack-audio" output="eq 12"/>
-  <cable input="i_mono" type="jack-audio" output="webcam"/>
-  <cable input="i_mono" type="jack-audio" output="onboard_in"/>
-  <cable input="i_eq8" type="jack-audio" output="i_mono"/>
-  <cable input="i_gate" type="jack-audio" output="i_eq8"/>
-  <cable input="i_limiter" type="jack-audio" output="i_gate"/>
-  <cable input="i_analyzer" type="jack-audio" output="i_lilmiter"/>
-  <cable input="pa_in" type="jack-audio" output="i_lilmiter"/>
-  <cable input="nr_l" type="jack-audio" output="eq8_l"/>
-  <cable input="nr_r" type="jack-audio" output="eq8_r"/>
+  <cable input="b_filter" output="system_in" type="jack-audio"/>
+  <cable input="b_eq8" output="b_filetr" type="jack-audio"/>
+  <cable input="b_limiter" output="b_eq8" type="jack-audio"/>
+  <cable input="b_meine" output="b_limiter" type="jack-audio"/>
+  <cable input="baudline 1" output="b_limiter" type="jack-audio"/>
+  <cable input="b_zita_j2n" output="b_limiter" type="jack-audio"/>
+  <cable input="b_analyser" output="b_meine" type="jack-audio"/>
+  <cable input="limiter out" output="b_meine" type="jack-audio"/>
+  <cable input="testscope 1" output="dell" type="jack-audio"/>
+  <cable input="scomp" output="DESKTOP-MNCBJ7M 1" type="jack-audio"/>
+  <cable input="s_tools" output="sgate" type="jack-audio"/>
+  <cable input="s_tools" output="scomp" type="jack-audio"/>
+  <cable input="bitmeter" output="scomp" type="jack-audio"/>
+  <cable input="scope1" output="limiter in" type="jack-audio"/>
+  <cable input="scomp sch" output="limiter in" type="jack-audio"/>
+  <cable input="s_tools" output="limiter in" type="jack-audio"/>
+  <cable input="bitmeter" output="limiter in" type="jack-audio"/>
+  <cable input="x11grab" output="limiter in" type="jack-audio"/>
+  <cable input="limiter in" output="dumb_client" type="jack-audio"/>
+  <cable input="limiter in" output="mpd" type="jack-audio"/>
+  <cable input="limiter in" output="pulse_audio" type="jack-audio"/>
+  <cable input="limiter in" output="alsa-jack\.jackP\.[0-9]+\. 1" type="jack-audio"/>
+  <cable input="limiter in" output="mpv" type="jack-audio"/>
+  <cable input="deesser" output="s_tools" type="jack-audio"/>
+  <cable input="exciter" output="deesser" type="jack-audio"/>
+  <cable input="bass_e" output="exciter" type="jack-audio"/>
+  <cable input="filter" output="bass_e" type="jack-audio"/>
+  <cable input="multiband_limiter" output="filter" type="jack-audio"/>
+  <cable input="eq8" output="multiband_limiter" type="jack-audio"/>
+  <cable input="analyzer" output="eq8" type="jack-audio"/>
+  <cable input="limiter out" output="eq8" type="jack-audio"/>
+  <cable input="limiter out" output="qjsg" type="jack-audio"/>
+  <cable input="limiter out" output="baudline 1" type="jack-audio"/>
+  <cable input="spectr" output="analyzer" type="jack-audio"/>
+  <cable input="rms_o" output="analyzer" type="jack-audio"/>
+  <cable input="ebur128" output="analyzer" type="jack-audio"/>
+  <cable input="goinometer" output="analyzer" type="jack-audio"/>
+  <cable input="Phase/Frequency Wheel 1" output="analyzer" type="jack-audio"/>
+  <cable input="scope2" output="analyzer" type="jack-audio"/>
+  <cable input="ffmpeg_meine 1" output="analyzer" type="jack-audio"/>
+  <cable input="eq 12" output="limiter out" type="jack-audio"/>
+  <cable input="onboard" output="eq 12" type="jack-audio"/>
+  <cable input="xonar" output="eq 12" type="jack-audio"/>
+  <cable input="i_mono" output="webcam" type="jack-audio"/>
+  <cable input="i_eq8" output="i_mono" type="jack-audio"/>
+  <cable input="i_gate" output="i_eq8" type="jack-audio"/>
+  <cable input="i_limiter" output="i_gate" type="jack-audio"/>
+  <cable input="i_analyzer" output="i_lilmiter" type="jack-audio"/>
+  <cable input="pa_in" output="i_lilmiter" type="jack-audio"/>
+  <cable input="nr_l" output="eq8_l" type="jack-audio"/>
+  <cable input="nr_r" output="eq8_r" type="jack-audio"/>
  </cables>
 </patchbay>
 

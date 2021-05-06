@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cat ~/.bash_history | grep -a "$1" | grep -a "$2" | grep -a "$3"
+

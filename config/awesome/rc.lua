@@ -171,7 +171,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "q", "w", "e", "a", "s", "d", "z", "x", "u", "i", "o", "j", "k", "l" }, s, awful.layout.layouts[1])
+    awful.tag({ "1", "2", "3", "4", "5", "q", "w", "e", "r", "t", "a", "s", "d", "f", "g", "z", "x", "u", "i", "o", "j", "k", "l" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -270,9 +270,14 @@ globalkeys = awful.util.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey, "Control" }, "F11", awesome.restart,
+    awful.key({ modkey, "Shift" }, "F11", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "F12", awesome.quit,
+              {description = "quit awesome", group = "awesome"}),
+
+    awful.key({ modkey, "Control" }, "F11", function () awful.spawn("transset-df -p --dec -m 0.1 0.1") end,
+              {description = "reload awesome", group = "awesome"}),
+    awful.key({ modkey, "Control"   }, "F12", function () awful.spawn("transset-df -p --inc -m 0.1 0.1") end,
               {description = "quit awesome", group = "awesome"}),
 
 --    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
@@ -304,7 +309,7 @@ globalkeys = awful.util.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
+    awful.key({ modkey },            "space",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "F8",
@@ -330,7 +335,7 @@ clientkeys = awful.util.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey,           }, "c",      function (c) c:kill()                         end,
+    awful.key({ modkey,           }, "Escape",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
@@ -338,7 +343,7 @@ clientkeys = awful.util.table.join(
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
-    awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
+    awful.key({ modkey, "Control" }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
     awful.key({ modkey,           }, "n",
         function (c)

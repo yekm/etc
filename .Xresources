@@ -45,10 +45,20 @@ URxvt*secondaryScroll:  true
 
 xosview*labels:		false
 xosview*filesys:	false
-xosview*prefixGraph:	true
-xosview*graphNumCols:	100
+!xosview*prefixGraph:	true
 xosview*interrupts:	true
 xosview*irqrate:	true
+xosview*irqrateGraph: true
 xosview*battery:	false
 xosview*diskGraph:	true
-
+xosview*graphNumCols: 1900
+xosview*background:     #ffffff
+xosview*foreground:     #ffffff
+xosview*cpuFreeColor:   #ffffff
+xosview*memFreeColor:   #ffffff
+xosview*swapFreeColor:  #ffffff
+xosview*diskIdleColor:  #ffffff
+xosview*pageIdleColor:  #ffffff
+xosview*netBackground:  #ffffff
+xosview*intOffColor:        #ffffff
+xosview*irqrateIdleColor:   #ffffff
