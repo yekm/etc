@@ -1,8 +1,8 @@
 <?xml version="1.1" encoding="utf-8"?>
 <rack><plugin type="analyzer" instance-name="analyzer" input-index="3" output-index="3">
 <preset bank="0" program="0" plugin="analyzer" name="">
-  <param name="meter_L" value="-0.00180858" />
-  <param name="meter_R" value="0.0152004" />
+  <param name="meter_L" value="-0.0037003" />
+  <param name="meter_R" value="-0.0202926" />
   <param name="clip_L" value="0" />
   <param name="clip_R" value="0" />
   <param name="analyzer_level" value="2" />
@@ -26,13 +26,13 @@
 </plugin>
 <plugin type="eq12" instance-name="eq12" input-index="11" output-index="11">
 <preset bank="0" program="0" plugin="eq12" name="">
-  <param name="bypass" value="0" />
+  <param name="bypass" value="1" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.0367241" />
-  <param name="meter_inR" value="0.0658016" />
-  <param name="meter_outL" value="0.0367445" />
-  <param name="meter_outR" value="0.0588891" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -141,15 +141,15 @@
   <param name="bypass" value="1" />
   <param name="level_in" value="0.920188" />
   <param name="level_out" value="1" />
-  <param name="amount" value="1.05702" />
-  <param name="meter_in" value="5.19872e-07" />
-  <param name="meter_out" value="5.2159e-07" />
+  <param name="amount" value="1.18099" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="drive" value="8.5" />
   <param name="blend" value="2" />
   <param name="meter_drive" value="0" />
-  <param name="freq" value="7500" />
+  <param name="freq" value="3279.44" />
   <param name="listen" value="0" />
   <param name="ceil_active" value="1" />
   <param name="ceil" value="16000" />
@@ -175,7 +175,7 @@
   <param name="muter" value="0" />
   <param name="phasel" value="1" />
   <param name="phaser" value="0" />
-  <param name="mode" value="2" />
+  <param name="mode" value="0" />
   <param name="slev" value="1" />
   <param name="sbal" value="0" />
   <param name="mlev" value="1" />
@@ -259,25 +259,25 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.0936308" />
-  <param name="meter_inR" value="0.100784" />
-  <param name="meter_outL" value="0.0548436" />
-  <param name="meter_outR" value="0.0675708" />
+  <param name="meter_inL" value="0.13973" />
+  <param name="meter_inR" value="0.186772" />
+  <param name="meter_outL" value="0.118891" />
+  <param name="meter_outR" value="0.108138" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
   <param name="hp_active" value="1" />
   <param name="hp_freq" value="77.8535" />
-  <param name="hp_mode" value="0" />
-  <param name="hp_q" value="0.707" />
+  <param name="hp_mode" value="2" />
+  <param name="hp_q" value="0.660693" />
   <param name="lp_active" value="0" />
   <param name="lp_freq" value="482.531" />
   <param name="lp_mode" value="2" />
   <param name="lp_q" value="0.660693" />
   <param name="ls_active" value="1" />
-  <param name="ls_level" value="0.435275" />
-  <param name="ls_freq" value="653.983" />
+  <param name="ls_level" value="0.400535" />
+  <param name="ls_freq" value="283.435" />
   <param name="ls_q" value="0.707" />
   <param name="hs_active" value="0" />
   <param name="hs_level" value="2.94854" />
@@ -296,8 +296,8 @@
   <param name="p3_freq" value="733.321" />
   <param name="p3_q" value="6.66807" />
   <param name="p4_active" value="0" />
-  <param name="p4_level" value="0.435275" />
-  <param name="p4_freq" value="9352.48" />
+  <param name="p4_level" value="0.514057" />
+  <param name="p4_freq" value="5927.41" />
   <param name="p4_q" value="1.28825" />
   <param name="individuals" value="0" />
   <param name="zoom" value="0.0625" />
@@ -328,11 +328,11 @@
 <preset bank="0" program="0" plugin="limiter" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.0548428" />
-  <param name="meter_inR" value="0.0675708" />
-  <param name="meter_outL" value="0.0548428" />
-  <param name="meter_outR" value="0.0675708" />
+  <param name="level_out" value="0.339151" />
+  <param name="meter_inL" value="0.120436" />
+  <param name="meter_inR" value="0.108138" />
+  <param name="meter_outL" value="0.0408461" />
+  <param name="meter_outR" value="0.0376366" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -343,7 +343,7 @@
   <param name="att" value="1" />
   <param name="asc" value="1" />
   <param name="asc_led" value="0" />
-  <param name="asc_coeff" value="0.5" />
+  <param name="asc_coeff" value="0" />
   <param name="oversampling" value="1" />
   <param name="auto_level" value="0" />
 </preset>

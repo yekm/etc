@@ -1,3 +1,5 @@
+osd-on-seek=msg
+
 #profile=gpu
 
 #dither-depth=auto
@@ -37,14 +39,14 @@ ao=jack
 jack-connect=no
 
 #af=resample=48000:0:2
-cache-dir=/home/yekm/.cache/mpv
-cache-on-disk=yes
+#cache-dir=/home/yekm/.cache/mpv
+#cache-on-disk=yes
 demuxer-readahead-secs=6000
 alang=jpn,jp,eng,en,und
 audio-file-auto=fuzzy
 
 sub-ass=yes
-#sub-auto=all
+sub-auto=all
 #autosub-match=fuzzy
 
 #ass-hinting=
@@ -56,7 +58,7 @@ sub-ass=yes
 #subfont-osd-scale=1
 #utf8=yes
 sub-codepage=enca:ru:utf8
-slang=ru,en
+slang=en,ru
 #secondary-sid=auto
 #
 #ass-use-margins=yes

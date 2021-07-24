@@ -1,6 +1,7 @@
 #!/bin/sh
 
 [ -z "$to" ] && to=.
+[ -z "$from" ] && from=.
 
 list=$(find -L "$from" -iname "$what" -type f | sort)
 count=$(echo "$list" | wc -l)
@@ -78,12 +79,13 @@ echo "$list" | while read f ; do
         fi
     ;;
     opus)
-        tofn=$(echo -n "$fn" | iconv -c -t cp1251 | iconv -c -f cp1251 | perl -pe 's/[^абвгдеёжзийклмнопрстуфхцчшщэюыяьъАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯЫЬЪa-z0-9A-Z\-\(\) \.]/_/g')
+        #tofn=$(echo -n "$fn" | iconv -c -t cp1251 | iconv -c -f cp1251 | perl -pe 's/[^абвгдеёжзийклмнопрстуфхцчшщэюыяьъАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯЫЬЪa-z0-9A-Z\-\(\) \.]/_/g')
+        tofn="$fn"
         t="$to/$dn/$tofn"
         t=${t%.*}.opus
         echo "$f -> $t"
-        [ -z $FAKE ] && nice ffmpeg -loglevel error -i "$f" -c:a libopus -b:a 128000 "$t" </dev/null &
-        pwait.sh ffmpeg 4
+        [ -z $FAKE ] && nice ffmpeg -hide_banner -nostdin -loglevel warning -i "$f" -c:a libopus -b:a 32000 "$t" </dev/null &
+        ~/bin/pwait.sh ffmpeg 4
     ;;
     *)
         echo -e "$f \t\t $to/$dn"

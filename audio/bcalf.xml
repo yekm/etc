@@ -4,9 +4,9 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.000327958" />
+  <param name="meter_inL" value="0.00318608" />
   <param name="meter_inR" value="0" />
-  <param name="meter_outL" value="0.000271362" />
+  <param name="meter_outL" value="0.00209481" />
   <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
@@ -28,18 +28,18 @@
   <param name="hs_level" value="1" />
   <param name="hs_freq" value="5000" />
   <param name="hs_q" value="0.707" />
-  <param name="p1_active" value="1" />
-  <param name="p1_level" value="0.018453" />
+  <param name="p1_active" value="0" />
+  <param name="p1_level" value="0.0169802" />
   <param name="p1_freq" value="1296.16" />
-  <param name="p1_q" value="1.8197" />
+  <param name="p1_q" value="0.691831" />
   <param name="p2_active" value="0" />
   <param name="p2_level" value="0.0358968" />
   <param name="p2_freq" value="2645.79" />
   <param name="p2_q" value="8.91251" />
-  <param name="p3_active" value="0" />
-  <param name="p3_level" value="0.30187" />
-  <param name="p3_freq" value="1798.11" />
-  <param name="p3_q" value="5.97035" />
+  <param name="p3_active" value="1" />
+  <param name="p3_level" value="0.015625" />
+  <param name="p3_freq" value="2080.64" />
+  <param name="p3_q" value="4.46684" />
   <param name="p4_active" value="0" />
   <param name="p4_level" value="0.015625" />
   <param name="p4_freq" value="3429.56" />
@@ -52,16 +52,16 @@
 </plugin>
 <plugin type="filter" instance-name="Filter" input-index="5" output-index="5">
 <preset bank="0" program="0" plugin="filter" name="">
-  <param name="freq" value="1113.37" />
+  <param name="freq" value="1628.13" />
   <param name="res" value="0.707" />
-  <param name="mode" value="4" />
-  <param name="inertia" value="20" />
+  <param name="mode" value="3" />
+  <param name="inertia" value="5" />
   <param name="bypass" value="0" />
-  <param name="level_in" value="64" />
+  <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.000322871" />
+  <param name="meter_inL" value="0.0116832" />
   <param name="meter_inR" value="0" />
-  <param name="meter_outL" value="0.000319999" />
+  <param name="meter_outL" value="0.00460431" />
   <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
@@ -74,17 +74,17 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.000271362" />
+  <param name="meter_inL" value="0.00209481" />
   <param name="meter_inR" value="0" />
-  <param name="meter_outL" value="0.000229374" />
+  <param name="meter_outL" value="0.0022275" />
   <param name="meter_outR" value="4.58137e-26" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
   <param name="limit" value="1" />
-  <param name="attack" value="10" />
-  <param name="release" value="22.3872" />
+  <param name="attack" value="9.9604" />
+  <param name="release" value="8.51138" />
   <param name="att" value="1" />
   <param name="asc" value="1" />
   <param name="asc_led" value="0" />
@@ -121,9 +121,9 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="0.015625" />
   <param name="level_out" value="0.015625" />
-  <param name="meter_inL" value="3.58397e-06" />
+  <param name="meter_inL" value="3.48047e-05" />
   <param name="meter_inR" value="7.15839e-28" />
-  <param name="meter_outL" value="5.76148e-08" />
+  <param name="meter_outL" value="5.57349e-07" />
   <param name="meter_outR" value="7.15839e-28" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
@@ -142,7 +142,7 @@
 </plugin>
 <plugin type="analyzer" instance-name="Analyzer" input-index="12" output-index="13">
 <preset bank="0" program="0" plugin="analyzer" name="">
-  <param name="meter_L" value="-3.97563e-09" />
+  <param name="meter_L" value="-2.25362e-07" />
   <param name="meter_R" value="7.15839e-28" />
   <param name="clip_L" value="0" />
   <param name="clip_R" value="0" />

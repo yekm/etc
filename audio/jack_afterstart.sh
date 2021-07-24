@@ -31,8 +31,8 @@ $calf -c bcalf    --load ~/etc/audio/bcalf.xml &
 #jalv.gtk3 https://github.com/lucianodato/noise-repellent &
 #chrt --rr 99 $calf --client inputs --load ~/etc/audio/inputs.xml &
 
-zita-j2n --chan 1 acer.local 7777 &
-jalv -i -c delay=5000 'http://gareus.org/oss/lv2/nodelay' &
+#zita-j2n --chan 1 acer.local 7777 &
+jalv -i -c delay=$(python -c 'print (48000*5.5)') http://gareus.org/oss/lv2/nodelay &
 #gate_recorder -q -l -20 -c 2000 -o /mnt/1/bak//birds_audio/gate_rec >/dev/null &
 
 #chrt --rr 99 jalv.gtk --jack-name eq12 -l ~/etc/audio/lv2/12band http://calf.sourceforge.net/plugins/Equalizer12Band &

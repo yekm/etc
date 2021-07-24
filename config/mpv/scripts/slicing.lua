@@ -18,9 +18,13 @@ function osd(str)
 end
 
 function cut(shift, endpos)
-
     cmd = table.concat(
-        { "/home/yekm/bin/mpv-slice.sh", '"' .. mp.get_property("stream-path") .. '"', shift, endpos - shift},
+        {   "/home/yekm/bin/mpv-slice.sh",
+            '"' .. mp.get_property("stream-path") .. '"',
+            shift,
+            endpos - shift,
+            '"' .. timestamp(shift) .. '"',
+        },
         " ")
     msg.info(cmd)
     os.execute(cmd)
@@ -37,7 +41,8 @@ function toggle_mark()
             osd("Cut fragment is empty")
         else
             cut_pos = nil
-            osd(string.format("Cut fragment: %s - %s",
+            osd(string.format("%s sec = %s - %s",
+                endpos - shift,
                 timestamp(shift),
                 timestamp(endpos)))
             cut(shift, endpos)

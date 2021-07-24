@@ -149,27 +149,8 @@ local tasklist_buttons = awful.util.table.join(
                                               awful.client.focus.byidx(-1)
                                           end))
 
--- @DOC_WALLPAPER@
-local function set_wallpaper(s)
-    -- Wallpaper
-    if beautiful.wallpaper then
-        local wallpaper = beautiful.wallpaper
-        -- If wallpaper is a function, call it with the screen
-        if type(wallpaper) == "function" then
-            wallpaper = wallpaper(s)
-        end
-        gears.wallpaper.maximized(wallpaper, s, true)
-    end
-end
-
--- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-screen.connect_signal("property::geometry", set_wallpaper)
-
 -- @DOC_FOR_EACH_SCREEN@
 awful.screen.connect_for_each_screen(function(s)
-    -- Wallpaper
-    -- set_wallpaper(s)
-
     -- Each screen has its own tag table.
     awful.tag({ "1", "2", "3", "4", "5", "q", "w", "e", "r", "t", "a", "s", "d", "f", "g", "z", "x", "u", "i", "o", "j", "k", "l" }, s, awful.layout.layouts[1])
 
@@ -276,9 +257,14 @@ globalkeys = awful.util.table.join(
               {description = "quit awesome", group = "awesome"}),
 
     awful.key({ modkey, "Control" }, "F11", function () awful.spawn("transset-df -p --dec -m 0.1 0.1") end,
-              {description = "reload awesome", group = "awesome"}),
+              {description = "", group = "awesome"}),
     awful.key({ modkey, "Control"   }, "F12", function () awful.spawn("transset-df -p --inc -m 0.1 0.1") end,
-              {description = "quit awesome", group = "awesome"}),
+              {description = "", group = "awesome"}),
+
+    awful.key({ modkey, }, "Print", function () awful.spawn("scrot") end,
+              {description = "", group = "awesome"}),
+    awful.key({ modkey, "Control"   }, "Print", function () awful.spawn("scrot -s") end,
+              {description = "", group = "awesome"}),
 
 --    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
 --              {description = "increase master width factor", group = "layout"}),
@@ -373,24 +359,26 @@ for i,tag in pairs(root.tags()) do
         -- View tag only.
         awful.key({ modkey }, tag.name,
                   function ()
-                        --local screen = awful.screen.focused()
-                        --local tag = screen.tags[i]
+                        local screen = awful.screen.focused()
+                        local tag = screen.tags[i]
                         if tag then
                            tag:view_only()
-                           local c = awful.mouse.client_under_pointer()
-                           if not (c == nil) then
-                           client.focus = c
-                              c:raise()
-                           end
+                           --local c = awful.mouse.client_under_pointer()
+                           --if not (c == nil) then
+                           --client.focus = c
+                           --   c:raise()
+                           --end
                         end
                   end),
         awful.key({ modkey, "Shift" }, tag.name,
                   function ()
                       if client.focus then
+                        local screen = awful.screen.focused()
+                        local tag = screen.tags[i]
                           --local tag = client.focus.screen.tags[i]
-                          --if tag then
+                          if tag then
                               client.focus:move_to_tag(tag)
-                          --end
+                          end
                      end
                   end)
     )
@@ -452,55 +440,12 @@ client.connect_signal("manage", function (c)
     end
 end)
 
--- @DOC_TITLEBARS@
--- Add a titlebar if titlebars_enabled is set to true in the rules.
-client.connect_signal("request::titlebars", function(c)
-    -- buttons for the titlebar
-    local buttons = awful.util.table.join(
-        awful.button({ }, 1, function()
-            client.focus = c
-            c:raise()
-            awful.mouse.client.move(c)
-        end),
-        awful.button({ }, 3, function()
-            client.focus = c
-            c:raise()
-            awful.mouse.client.resize(c)
-        end)
-    )
-
-    awful.titlebar(c) : setup {
-        { -- Left
-            awful.titlebar.widget.iconwidget(c),
-            buttons = buttons,
-            layout  = wibox.layout.fixed.horizontal
-        },
-        { -- Middle
-            { -- Title
-                align  = "center",
-                widget = awful.titlebar.widget.titlewidget(c)
-            },
-            buttons = buttons,
-            layout  = wibox.layout.flex.horizontal
-        },
-        { -- Right
-            awful.titlebar.widget.floatingbutton (c),
-            awful.titlebar.widget.maximizedbutton(c),
-            awful.titlebar.widget.stickybutton   (c),
-            awful.titlebar.widget.ontopbutton    (c),
-            awful.titlebar.widget.closebutton    (c),
-            layout = wibox.layout.fixed.horizontal()
-        },
-        layout = wibox.layout.align.horizontal
-    }
-end)
-
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
-    if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-        and awful.client.focus.filter(c) then
+    --if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
+    --    and awful.client.focus.filter(c) then
         client.focus = c
-    end
+    --end
 end)
 
 -- @DOC_BORDER@
@@ -510,6 +455,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- awful.spawn("quasselclient")
 -- awful.spawn("nextcloud")
-awful.spawn("chromium")
+awful.spawn("google-chrome-stable")
 awful.spawn("goldendict")
 
