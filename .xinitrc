@@ -26,19 +26,23 @@ setxkbmap -layout us,ru -variant ,winkeys -option grp:caps_toggle,grp_led:caps,t
 # https://www.linux.org.ru/forum/desktop/9112231
 xkbcomp $DISPLAY - | egrep -v "group . = AltGr;" | xkbcomp - $DISPLAY
 
-#vo=$(xrandr | grep \ connected | cut -f1 -d\ )
-#xrandr --output $vo --auto --set "Broadcast RGB" "Full" --output HDMI1 --auto --right-of VGA1
-xrandr --output HDMI-0 --auto --output HDMI3 --auto  --right-of HDMI-0
-#xrandr --output HDMI-0  --rotate right
-xrandr --output HDMI3 --set "Broadcast RGB" "Full"
+#o2="DisplayPort-0"
+#o1="HDMI-A-0"
+o2="DP-1"
+o1="HDMI-0"
+#vo=$(xrandr | grep \ connected | tail -n1 | cut -f1 -d\ )
+xrandr --output $o2 --auto --output $o1 --auto --left-of $o2
+xrandr --output $o2 --rotate right
+#xrandr --output HDMI-0 --set "Broadcast RGB" "Full"
+#xrandr --output DP-1 --set "Broadcast RGB" "Full"
 #xcalib -d :0 ~/etc/benq_gw2760hs.icc
 
 xhost local:boinc
 
 #redshift -l 55.81:37.58 -t 5700:2500 -g 0.6 -m randr &
-redshift -l 55.81:37.58 -t 5700:2500 -g 0.9 -m randr &
+#redshift -l 55.81:37.58 -t 5700:2500 -g 0.9 -m randr &
 
-urxvtd -q -f -o
+#urxvtd -q -f -o
 
 #irxevent -d
 
@@ -48,6 +52,8 @@ date >>~/.cache/awesome/log
 
 udiskie -t &
 #xbindkeys
+
+xscreensaver -no-splash &
 
 #export PATH="~/firejail:$PATH"
 

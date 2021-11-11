@@ -15,19 +15,18 @@ case $mode in
     ;;
     gif)
     ffmpeg -v warning -y -stats \
-        -ss $2 -t $3 -i "$1" \
+        -ss $2 -t $3 -copyts -i "$1" \
         -filter:v "scale='trunc(oh*a/2)*2:480':flags=spline" \
         -an \
-        -c:v libx264 -pix_fmt yuv420p -crf 18 -preset slow -tune zerolatency \
+        -c:v libx264 -pix_fmt yuv420p -crf 22 -preset slower -tune zerolatency \
         "$1-at-$4-gif.mp4"
     ;;
     gifsub)
     ffmpeg -v warning -y -stats \
         -ss $2 -t $3 -copyts -i "$1" \
-        -filter:v "scale='trunc(oh*a/2)*2:480':flags=spline,subtitles='$1':stream_index=1:force_style='Fontsize=30,Fontname=SourceCodePro-Black'" \
+        -filter:v "scale='trunc(oh*a/2)*2:480':flags=spline,subtitles='$1':stream_index=0:9:force_style='Fontsize=30,Fontname=SourceCodePro-Black'" \
         -an \
-        -c:v libx264 -crf 28 -preset slower -tune zerolatency \
-        -ss $2 \
+        -c:v libx264 -pix_fmt yuv420p -crf 22 -preset slower -tune zerolatency \
         "$1-at-$4-gif.mp4"
     ;;
     wiki)

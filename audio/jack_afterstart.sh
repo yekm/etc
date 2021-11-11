@@ -11,8 +11,9 @@ SR=48000
 #killall mpd
 #sleep 0.5
 #pulseaudio --start
-#/usr/bin/alsa_out -d hw:PCH,0 -r$SR -j onboard &
-/usr/bin/alsa_in -d hw:PCH,0 -r$SR -j onboard_in &
+#alsa_out -d hw:PCH,0 -r$SR -j onboard_out &
+#alsa_in -d hw:PCH,0 -r$SR -j onboard_in &
+alsa_out -d hw:NVidia,7 -r$SR -j hdmi_out &
 
 x42-meter 0 &
 x42-meter 13 &

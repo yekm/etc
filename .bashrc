@@ -13,7 +13,7 @@ stty stop undef
 stty start undef
 
 alias df="df -hT"
-alias grep="grep -n --color=auto"
+alias grep="grep --color=auto"
 alias x509info="openssl x509 -noout -text -in"
 alias diff='diff --color=auto'
 alias ls='ls --color=auto'

@@ -4,9 +4,9 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.00318608" />
+  <param name="meter_inL" value="0.00553741" />
   <param name="meter_inR" value="0" />
-  <param name="meter_outL" value="0.00209481" />
+  <param name="meter_outL" value="0.00459745" />
   <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
@@ -37,7 +37,7 @@
   <param name="p2_freq" value="2645.79" />
   <param name="p2_q" value="8.91251" />
   <param name="p3_active" value="1" />
-  <param name="p3_level" value="0.015625" />
+  <param name="p3_level" value="0.0734039" />
   <param name="p3_freq" value="2080.64" />
   <param name="p3_q" value="4.46684" />
   <param name="p4_active" value="0" />
@@ -59,9 +59,9 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.0116832" />
+  <param name="meter_inL" value="0.0152997" />
   <param name="meter_inR" value="0" />
-  <param name="meter_outL" value="0.00460431" />
+  <param name="meter_outL" value="0.00567514" />
   <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
@@ -74,16 +74,16 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.00209481" />
+  <param name="meter_inL" value="0.00459745" />
   <param name="meter_inR" value="0" />
-  <param name="meter_outL" value="0.0022275" />
+  <param name="meter_outL" value="0.00423696" />
   <param name="meter_outR" value="4.58137e-26" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
   <param name="limit" value="1" />
-  <param name="attack" value="9.9604" />
+  <param name="attack" value="10" />
   <param name="release" value="8.51138" />
   <param name="att" value="1" />
   <param name="asc" value="1" />
@@ -121,9 +121,9 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="0.015625" />
   <param name="level_out" value="0.015625" />
-  <param name="meter_inL" value="3.48047e-05" />
+  <param name="meter_inL" value="6.62025e-05" />
   <param name="meter_inR" value="7.15839e-28" />
-  <param name="meter_outL" value="5.57349e-07" />
+  <param name="meter_outL" value="1.0472e-06" />
   <param name="meter_outR" value="7.15839e-28" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
@@ -142,7 +142,7 @@
 </plugin>
 <plugin type="analyzer" instance-name="Analyzer" input-index="12" output-index="13">
 <preset bank="0" program="0" plugin="analyzer" name="">
-  <param name="meter_L" value="-2.25362e-07" />
+  <param name="meter_L" value="-2.16839e-07" />
   <param name="meter_R" value="7.15839e-28" />
   <param name="clip_L" value="0" />
   <param name="clip_R" value="0" />
