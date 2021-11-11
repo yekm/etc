@@ -21,8 +21,8 @@ while read f; do
 done
 
 f0n=$(( f0n - 1 ))
-allvf="[0:v]split[vfade0][vtmp];[vtmp]nullsink;$allvf[vfade$f0n]format=yuv420p"
-allaf="[0:a]asplit[afade0][atmp];[atmp]anullsink;$allaf[afade$f0n]acopy"
+allvf="[0:v]copy[vfade0];$allvf[vfade$f0n]format=yuv420p"
+allaf="[0:a]acopy[afade0];$allaf[afade$f0n]acopy"
 
 #set -vx
 ffmpeg -y -hide_banner $inputs \
