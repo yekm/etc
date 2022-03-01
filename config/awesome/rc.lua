@@ -113,7 +113,7 @@ awful.screen.connect_for_each_screen(function(s)
                 "1", "2", "3", "4",
                 "q", "w", "e", "r",
                 "a", "s", "d", "f",
-                "z", "x", "c", "v",
+                "z", "x", "c",
                 "i", "o", "p",
                 "j", "k", "l",
                 "b", "n", "m" }, s, awful.layout.layouts[1])
@@ -140,7 +140,7 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 
 root.buttons(awful.util.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
+    -- awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))

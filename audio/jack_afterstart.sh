@@ -26,14 +26,16 @@ sleep 0.5
 #calf=~/src/repos/lv2/calf/inst/bin/calfjackhost
 #calf=/bin/calfjackhost
 calf=/usr/bin/calfjackhost
-#$calf --load ~/etc/audio/cjh.xml &
 $calf -c meincalf --load ~/etc/audio/cjh.xml &
 $calf -c bcalf    --load ~/etc/audio/bcalf.xml &
+$calf -c dcalf    --load ~/etc/audio/dcalf.xml &
+#$calf --load ~/etc/audio/cjh.xml &
 #jalv.gtk3 https://github.com/lucianodato/noise-repellent &
 #chrt --rr 99 $calf --client inputs --load ~/etc/audio/inputs.xml &
 
+zita-j2n --chan 2 --jname dell 192.168.1.231 11223
 #zita-j2n --chan 1 acer.local 7777 &
-jalv -i -c delay=$(python -c 'print (48000*5.5)') http://gareus.org/oss/lv2/nodelay &
+#jalv -i -c delay=$(python -c 'print (48000*5.5)') http://gareus.org/oss/lv2/nodelay &
 #gate_recorder -q -l -20 -c 2000 -o /mnt/1/bak//birds_audio/gate_rec >/dev/null &
 
 #chrt --rr 99 jalv.gtk --jack-name eq12 -l ~/etc/audio/lv2/12band http://calf.sourceforge.net/plugins/Equalizer12Band &

@@ -37,6 +37,8 @@ xrandr --output $o2 --rotate right
 #xrandr --output DP-1 --set "Broadcast RGB" "Full"
 #xcalib -d :0 ~/etc/benq_gw2760hs.icc
 
+xinput --set-prop 'Logitech Advanced Corded Mouse M500s' 157 0.3, 0, 0, 0, 0.3, 0, 0, 0, 1
+
 xhost local:boinc
 
 #redshift -l 55.81:37.58 -t 5700:2500 -g 0.6 -m randr &
