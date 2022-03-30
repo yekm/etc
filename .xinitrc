@@ -10,7 +10,8 @@ systemctl --user import-environment PATH DBUS_SESSION_BUS_ADDRESS DISPLAY
 #systemctl --no-block --user start xsession.target
 
 xrdb -merge ~/.Xresources
-xrdb -merge ~/.colors
+#xrdb -merge ~/.colors
+xrdb -merge ~/.colors-dracula
 xmodmap ~/.Xmodmap
 
 # with -a no transparancy, without -a 30fps

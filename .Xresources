@@ -9,11 +9,11 @@ URxvt.geometry:             90x30
 URxvt.transparent:          false
 URxvt.fading:               0
 ! URxvt.urgentOnBell:         true
-! URxvt.visualBell:           true
+URxvt.visualBell:           true
 URxvt.loginShell:           true
-URxvt.internalBorder:       3
+URxvt.internalBorder:       2
 URxvt.lineSpace:            -7
-URxvt*letterSpace: -2
+URxvt*letterSpace:          -2
 
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false

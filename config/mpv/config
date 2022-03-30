@@ -1,5 +1,6 @@
 osd-on-seek=msg
 stop-screensaver=no
+no-audio-display
 
 #profile=gpu
 

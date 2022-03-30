@@ -33,7 +33,7 @@ $calf -c dcalf    --load ~/etc/audio/dcalf.xml &
 #jalv.gtk3 https://github.com/lucianodato/noise-repellent &
 #chrt --rr 99 $calf --client inputs --load ~/etc/audio/inputs.xml &
 
-zita-j2n --chan 2 --jname dell 192.168.1.231 11223
+zita-j2n --chan 2 --jname dell 192.168.1.231 11223 &
 #zita-j2n --chan 1 acer.local 7777 &
 #jalv -i -c delay=$(python -c 'print (48000*5.5)') http://gareus.org/oss/lv2/nodelay &
 #gate_recorder -q -l -20 -c 2000 -o /mnt/1/bak//birds_audio/gate_rec >/dev/null &
@@ -45,7 +45,7 @@ zita-j2n --chan 2 --jname dell 192.168.1.231 11223
 #chrt --rr 99 jalv.gtk --jack-name deesser http://calf.sourceforge.net/plugins/Deesser &
 #chrt --rr 99 jalv.gtk --jack-name analyzer -l ~/etc/audio/lv2/analyzer http://calf.sourceforge.net/plugins/Analyzer &
 
-jack_load netmanager &
+#jack_load netmanager &
 
 systemctl --user restart pulseaudio
 

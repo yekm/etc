@@ -4,7 +4,24 @@ export EDITOR=vim
 #export LANG=ru_RU.UTF8
 export LANG=en_US.UTF8
 #export LC_ALL=en_US.UTF8
-export LESS="-i -R -x4 -F -X $LESS"
+
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
+export LESS_TERMCAP_md=$(tput bold; tput setaf 6) # cyan
+export LESS_TERMCAP_me=$(tput sgr0)
+export LESS_TERMCAP_so=$(tput bold; tput setaf 3; tput setab 4) # yellow on blue
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 7) # white
+export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
+export LESS_TERMCAP_mr=$(tput rev)
+export LESS_TERMCAP_mh=$(tput dim)
+export LESS_TERMCAP_ZN=$(tput ssubm)
+export LESS_TERMCAP_ZV=$(tput rsubm)
+export LESS_TERMCAP_ZO=$(tput ssupm)
+export LESS_TERMCAP_ZW=$(tput rsupm)
+export GROFF_NO_SGR=1         # For Konsole and Gnome-terminal
+export MANWIDTH=80
+export LESS="-i -R -x4 -F -X -J --line-num-width=4 -N"
+
 export HISTFILESIZE=100000
 export HISTSIZE=10000
 export HISTCONTORL=ignoredups
@@ -21,17 +38,14 @@ alias lsblk='lsblk -o NAME,SIZE,FSTYPE,FSSIZE,FSUSED,FSAVAIL,FSUSE%,MOUNTPOINT,L
 alias sshot='scrot "%Y-%m-%d_$wx$h.png" -e "mv $f ~/shots/"'
 alias ssshot='scrot -s "%Y-%m-%d_$wx$h.png" -e "mv $f ~/shots/"'
 alias cal='cal -my'
+alias cd..='cd ..'
 
 . /usr/share/bash-completion/bash_completion
-
-#PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 export SDL_VIDEO_WINDOW_POS=0,0
 
 export MPD_HOST='yekm_mpd@localhost'
-
-export MANPAGER="/usr/bin/most -s"
 
 export GOPATH=$HOME/go
 export PATH="~/bin:$PATH"
@@ -39,8 +53,6 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="~/.local/bin:$PATH"
 #export PATH=/usr/lib/ccache:$PATH
 #export PATH=/opt/rpi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin:$PATH
-
-export PS1="════════════════════════════════════════════════════════════════════════════════\n\t \w\n\$? \h:\u\\$ "
 
 # Created by `userpath` on 2020-04-23 12:16:01
 export PATH="$PATH:/home/yekm/.local/bin"
@@ -54,4 +66,30 @@ export MC_SKIN=~/etc/solarized.ini
 
 # https://unix.stackexchange.com/a/147572
 bind Space:magic-space
+
+# https://github.com/pkrumins/bash-vi-editing-mode-cheat-sheet/blob/master/bash-vi-editing-mode-cheat-sheet.txt
+set -o vi
+
+
+LONGLINE="════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════"
+# https://stackoverflow.com/a/1862762/17388074
+function timer_start {
+  ___timer=${___timer:-$SECONDS}
+}
+
+function timer_stop {
+  timer_show=$(($SECONDS - $___timer))
+  unset ___timer
+}
+
+trap 'timer_start' DEBUG
+PROMPT_COMMAND='history -a; timer_stop;'
+
+HOST='\033[02;36m\]\h'; HOST=' '$HOST
+TIME='\033[01;31m\]\t \033[01;32m\]'
+LOCATION=' \033[01;34m\]$PWD'
+. /usr/share/git/git-prompt.sh
+BRANCH=' \033[00;33m\]$(__git_ps1)\[\033[00m\]\e[?7l$LONGLINE\e[?7h\]\n\$ '
+PS1="\$? \${timer_show} $TIME$USER$HOST$LOCATION$BRANCH"
+PS2='\[\033[01;36m\]>'
 
