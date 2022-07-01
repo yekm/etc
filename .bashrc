@@ -26,6 +26,9 @@ export HISTFILESIZE=100000
 export HISTSIZE=10000
 export HISTCONTORL=ignoredups
 
+export DISTCC_DIR=/tmp/distcc
+export DISTCC_HOSTS="distcc.local/24"
+
 stty stop undef
 stty start undef
 
@@ -62,13 +65,14 @@ export COLORTERM=truecolor
 
 export SYSTEMD_DEBUGGER=cgdb
 
-export MC_SKIN=~/etc/solarized.ini
+#export MC_SKIN=~/etc/solarized.ini
+export MC_SKIN=yadt256-defbg
 
 # https://unix.stackexchange.com/a/147572
 bind Space:magic-space
 
 # https://github.com/pkrumins/bash-vi-editing-mode-cheat-sheet/blob/master/bash-vi-editing-mode-cheat-sheet.txt
-set -o vi
+#set -o vi
 
 
 LONGLINE="════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════"

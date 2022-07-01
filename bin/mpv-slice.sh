@@ -4,6 +4,8 @@
 [ -z "$2" ] && exit -1
 
 mode=cut
+#mode=gif
+#mode=gifsub
 
 cv="-c:v libx264 -pix_fmt yuv420p -crf 22 -preset slower -tune zerolatency"
 #cv="-c:v h264_nvenc -preset p7 -tune ll -profile:v high -rc-lookahead 8 -spatial_aq 1 -pix_fmt yuv420p"
@@ -18,17 +20,18 @@ case $mode in
     ;;
     gif)
     ffmpeg -v warning -y -stats \
-        -ss $2 -t $3 -copyts -i "$1" \
+        -ss $2 -t $3 -i "$1" \
         -filter:v "scale='trunc(oh*a/2)*2:480':flags=spline" \
         -an \
-        -c:v libx264 -pix_fmt yuv420p -crf 22 -preset slower -tune zerolatency \
+        $cv \
         "$1-at-$4-gif.mp4"
     ;;
     gifsub)
     set -x
     ffmpeg -v info -y -stats \
         -ss $2 -t $3 -copyts -i "$1" \
-        -filter:v "scale='trunc(oh*a/2)*2:480':flags=spline,subtitles='$1':stream_index=2:force_style='Fontsize=30,Fontname=SourceCodePro-Black'" \
+        -ss $2 \
+        -filter:v "scale='trunc(oh*a/2)*2:480':flags=spline,subtitles='$1':stream_index=0:force_style='Fontsize=30,Fontname=SourceCodePro-Black'" \
         -an \
         $cv \
         "$1-at-$4-gif.mp4"

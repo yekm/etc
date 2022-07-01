@@ -4,10 +4,10 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.0301339" />
-  <param name="meter_inR" value="0.0287205" />
-  <param name="meter_outL" value="0.0263625" />
-  <param name="meter_outR" value="0.0264366" />
+  <param name="meter_inL" value="1.51426e-11" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -20,7 +20,7 @@
   <param name="lp_freq" value="18000" />
   <param name="lp_mode" value="1" />
   <param name="lp_q" value="0.707" />
-  <param name="ls_active" value="1" />
+  <param name="ls_active" value="0" />
   <param name="ls_level" value="0.607097" />
   <param name="ls_freq" value="653.983" />
   <param name="ls_q" value="0.707" />
@@ -68,18 +68,18 @@
 </plugin>
 <plugin type="exciter" instance-name="Exciter" input-index="3" output-index="3">
 <preset bank="0" program="0" plugin="exciter" name="">
-  <param name="bypass" value="0" />
+  <param name="bypass" value="1" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="amount" value="1.31951" />
-  <param name="meter_in" value="0.0185696" />
-  <param name="meter_out" value="0.0204448" />
+  <param name="amount" value="1.05702" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="drive" value="8.5" />
   <param name="blend" value="0" />
-  <param name="meter_drive" value="0.0155228" />
-  <param name="freq" value="4984.74" />
+  <param name="meter_drive" value="0" />
+  <param name="freq" value="3742.3" />
   <param name="listen" value="0" />
   <param name="ceil_active" value="0" />
   <param name="ceil" value="16000" />
@@ -109,10 +109,10 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.0299392" />
-  <param name="meter_inR" value="0.0259368" />
-  <param name="meter_outL" value="0.0299392" />
-  <param name="meter_outR" value="0.0259368" />
+  <param name="meter_inL" value="1.73515e-11" />
+  <param name="meter_inR" value="7.15839e-28" />
+  <param name="meter_outL" value="1.73515e-11" />
+  <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -138,13 +138,13 @@
 </plugin>
 <plugin type="limiter" instance-name="Limiter" input-index="9" output-index="9">
 <preset bank="0" program="0" plugin="limiter" name="">
-  <param name="bypass" value="0" />
+  <param name="bypass" value="1" />
   <param name="level_in" value="1" />
   <param name="level_out" value="0.264255" />
-  <param name="meter_inL" value="0.0984845" />
-  <param name="meter_inR" value="0.0765266" />
-  <param name="meter_outL" value="0.0263466" />
-  <param name="meter_outR" value="0.0209816" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -165,16 +165,16 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="0.015625" />
   <param name="level_out" value="0.015625" />
-  <param name="meter_inL" value="2.7945e-09" />
-  <param name="meter_inR" value="1.60173e-28" />
-  <param name="meter_outL" value="5.14383e-11" />
+  <param name="meter_inL" value="1.08069e-09" />
+  <param name="meter_inR" value="1.24802e-28" />
+  <param name="meter_outL" value="1.68858e-11" />
   <param name="meter_outR" value="7.15839e-28" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
   <param name="limit" value="1" />
-  <param name="attack" value="5" />
+  <param name="attack" value="0.1" />
   <param name="release" value="50" />
   <param name="att" value="1" />
   <param name="asc" value="1" />
