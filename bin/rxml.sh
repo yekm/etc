@@ -30,11 +30,9 @@ xi() {
     x $@ | filter_int
 }
 
-case $1 in
-list)
-xmlrpc rutorrent.lan download_list | filter_string | \
-    while read hash; do
-        (
+info_line() {
+    (
+        hash=$1
         echo $hash
         xs d.name $hash
         xs d.directory $hash
@@ -44,12 +42,36 @@ xmlrpc rutorrent.lan download_list | filter_string | \
         printf %.2f$'\n' $(bc -l <<< "$cb / $size")
         xs d.custom1 $hash
         xs d.custom2 $hash
-        ) | paste -s
-    done
+        xi d.down.rate $hash
+        xi d.up.rate $hash
+    ) | paste -s
+}
+
+export -f info_line xi xs x filter_int filter_string
+
+case $1 in
+cache)
+    cat $(ls -1t /tmp/rxml.cache* | head -n1)
+;;
+list)
+xmlrpc rutorrent.lan download_list | filter_string | \
+    parallel -k -j8 info_line | tee /tmp/rxml.cache_$(date +%F_%R)
+;;
+ls)
+    parallel -k -j8 info_line
+;;
+help)
+    echo "hash name dir completed/total percent custom1 custom2 down up"
+    echo "1    2    3   4               5       6       7       8    9"
 ;;
 set_dir)
     while read hash; do
-        x d.directory.set $hash $2
+        x d.directory.set $hash "$2"
+    done
+;;
+dbase_set)
+    while read hash; do
+        x d.directory_base.set $hash $2
     done
 ;;
 check)
@@ -77,9 +99,41 @@ c2)
         x d.custom2.set $hash $2
     done
 ;;
+fcount)
+    while read hash; do
+        xi d.size_files $hash
+    done
+;;
+flist)
+    while read hash; do
+        c=$(echo $hash | $0 fcount)
+        for i in $(seq 0 $c); do
+        eco $i $c
+        done
+    done
+;;
 x)
     while read hash; do
         echo x $2 $hash ${@:3}
     done
+;;
+xx)
+    set -vx
+    while read hash; do
+        x $2 $hash ${@:3}
+    done
+;;
+
+
+# commands that read whole list
+
+done)
+    grep -P '\s1.00\s'
+;;
+notdone)
+    grep -P '\s0.00\s'
+;;
+*)
+    echo what?
 ;;
 esac

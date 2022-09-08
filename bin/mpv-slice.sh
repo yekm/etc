@@ -21,7 +21,7 @@ case $mode in
     gif)
     ffmpeg -v warning -y -stats \
         -ss $2 -t $3 -i "$1" \
-        -filter:v "scale='trunc(oh*a/2)*2:480':flags=spline" \
+        -filter:v "scale='trunc(oh*a/2)*2:720':flags=spline" \
         -an \
         $cv \
         "$1-at-$4-gif.mp4"

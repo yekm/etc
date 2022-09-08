@@ -97,3 +97,9 @@ BRANCH=' \033[00;33m\]$(__git_ps1)\[\033[00m\]\e[?7l$LONGLINE\e[?7h\]\n\$ '
 PS1="\$? \${timer_show} $TIME$USER$HOST$LOCATION$BRANCH"
 PS2='\[\033[01;36m\]>'
 
+
+PATH="/home/yekm/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/yekm/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/yekm/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/yekm/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/yekm/perl5"; export PERL_MM_OPT;
