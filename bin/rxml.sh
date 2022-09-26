@@ -18,8 +18,11 @@ filter_int() {
     grep integer | sed 's/64-bit integer: //'
 }
 
+P=RPCrut
+#P=RPCgd
+
 x() {
-    xmlrpc rutorrent.lan $@
+    xmlrpc http://rutorrent.lan/$P $@
 }
 
 xs() {
@@ -31,10 +34,12 @@ xi() {
 }
 
 info_line() {
+    #set -vx
     (
         hash=$1
         echo $hash
         xs d.name $hash
+        #echo "name"
         xs d.directory $hash
         cb=$(xi d.completed_bytes $hash)
         size=$(xi d.size_bytes $hash)
@@ -48,14 +53,18 @@ info_line() {
 }
 
 export -f info_line xi xs x filter_int filter_string
+export P
 
 case $1 in
 cache)
-    cat $(ls -1t /tmp/rxml.cache* | head -n1)
+    cat $(ls -1t /tmp/rxml_$P.cache* | head -n1)
+;;
+dlist)
+x download_list | filter_string
 ;;
 list)
-xmlrpc rutorrent.lan download_list | filter_string | \
-    parallel -k -j8 info_line | tee /tmp/rxml.cache_$(date +%F_%R)
+xmlrpc http://rutorrent.lan/$P download_list | filter_string | \
+    parallel -k -j8 info_line | tee /tmp/rxml_$P.cache_$(date +%F_%R)
 ;;
 ls)
     parallel -k -j8 info_line
@@ -114,7 +123,7 @@ flist)
 ;;
 x)
     while read hash; do
-        echo x $2 $hash ${@:3}
+        echo xx $2 $hash ${@:3}
     done
 ;;
 xx)
