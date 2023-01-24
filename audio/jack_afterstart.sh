@@ -12,7 +12,7 @@ SR=48000
 #sleep 0.5
 #pulseaudio --start
 #alsa_out -d hw:PCH,0 -r$SR -j onboard_out &
-#alsa_in -d hw:PCH,0 -r$SR -j onboard_in &
+alsa_in -d hw:PCH,0 -r$SR -j onboard_in &
 alsa_out -d hw:NVidia,7 -r$SR -j hdmi_out &
 
 x42-meter 0 &
@@ -33,7 +33,7 @@ $calf -c dcalf    --load ~/etc/audio/dcalf.xml &
 #jalv.gtk3 https://github.com/lucianodato/noise-repellent &
 #chrt --rr 99 $calf --client inputs --load ~/etc/audio/inputs.xml &
 
-zita-j2n --chan 2 --jname dell 192.168.1.231 11223 &
+nice -n -10 zita-j2n --chan 2 --jname dell dell.lan 11223 &
 #zita-j2n --chan 1 acer.local 7777 &
 #jalv -i -c delay=$(python -c 'print (48000*5.5)') http://gareus.org/oss/lv2/nodelay &
 #gate_recorder -q -l -20 -c 2000 -o /mnt/1/bak//birds_audio/gate_rec >/dev/null &

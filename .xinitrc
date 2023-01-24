@@ -58,6 +58,8 @@ udiskie -t &
 
 xscreensaver -no-splash &
 
+export SSH_AUTH_SOCK=/run/user/$UID/ssh-agent.socket
+
 #export PATH="~/firejail:$PATH"
 
 #exec startlxqt

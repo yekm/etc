@@ -334,3 +334,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 awful.spawn("google-chrome-stable")
 awful.spawn("goldendict")
+awful.spawn("code")

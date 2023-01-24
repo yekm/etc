@@ -4,7 +4,7 @@
 [ -z "$2" ] && exit -1
 
 mode=cut
-#mode=gif
+mode=gif
 #mode=gifsub
 
 cv="-c:v libx264 -pix_fmt yuv420p -crf 22 -preset slower -tune zerolatency"
@@ -12,26 +12,33 @@ cv="-c:v libx264 -pix_fmt yuv420p -crf 22 -preset slower -tune zerolatency"
 
 case $mode in
     cut)
+    cat <<EOF >"$1-at-$4.mp4".sh
+at="$2"
+dur="$3"
+atd="$4"
+EOF
     ffmpeg -v warning -y -stats \
         -ss $2 -t $3 -i "$1" \
         -c:a copy \
         -c:v copy \
-        "$1-at-$4.mp4"
+        file:"$1-at-$4.mp4"
     ;;
     gif)
     ffmpeg -v warning -y -stats \
-        -ss $2 -t $3 -i "$1" \
+        -ss $2 -t $3 \
+        -i "$1" \
+        -map 0:0 \
         -filter:v "scale='trunc(oh*a/2)*2:720':flags=spline" \
         -an \
         $cv \
-        "$1-at-$4-gif.mp4"
+        file:"$1-at-$4-gif.mp4"
     ;;
     gifsub)
     set -x
     ffmpeg -v info -y -stats \
         -ss $2 -t $3 -copyts -i "$1" \
         -ss $2 \
-        -filter:v "scale='trunc(oh*a/2)*2:480':flags=spline,subtitles='$1':stream_index=0:force_style='Fontsize=30,Fontname=SourceCodePro-Black'" \
+        -filter:v "scale='trunc(oh*a/2)*2:720':flags=spline,subtitles='$1':stream_index=1:force_style='Fontsize=30,Fontname=SourceCodePro-Black'" \
         -an \
         $cv \
         "$1-at-$4-gif.mp4"

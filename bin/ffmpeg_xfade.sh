@@ -27,6 +27,6 @@ allaf="[0:a]acopy[afade0];$allaf[afade$f0n]acopy"
 set -vx
 ffmpeg -y -hide_banner $inputs \
 	-filter_complex "$allvf;$allaf" \
-	-c:v h264_nvenc -preset p7 -profile:v high -rc-lookahead 8 -spatial_aq 1 -pix_fmt yuv420p \
+	-c:v h264_nvenc -preset p7 -profile:v high -zerolatency 1 -rc-lookahead 128 -spatial_aq 1 -pix_fmt yuv420p \
 	-c:a libopus \
 	"$1"

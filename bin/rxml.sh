@@ -10,6 +10,9 @@
 # bash rxml.sh list | cut -f 1,6 | grep 'arbitrary_sting_1$' | cut -f1 | bash rxml.sh ...
 
 
+P=RPCrut
+#P=RPCgd
+
 filter_string() {
     grep String | sed "s/.*String: '\(.*\)'/\1/"
 }
@@ -17,9 +20,6 @@ filter_string() {
 filter_int() {
     grep integer | sed 's/64-bit integer: //'
 }
-
-P=RPCrut
-#P=RPCgd
 
 x() {
     xmlrpc http://rutorrent.lan/$P $@
@@ -60,11 +60,11 @@ cache)
     cat $(ls -1t /tmp/rxml_$P.cache* | head -n1)
 ;;
 dlist)
-x download_list | filter_string
+    x download_list | filter_string
 ;;
 list)
-xmlrpc http://rutorrent.lan/$P download_list | filter_string | \
-    parallel -k -j8 info_line | tee /tmp/rxml_$P.cache_$(date +%F_%R)
+    xmlrpc http://rutorrent.lan/$P download_list | filter_string | \
+        parallel -k -j8 info_line | tee /tmp/rxml_$P.cache_$(date +%F_%R)
 ;;
 ls)
     parallel -k -j8 info_line
@@ -86,6 +86,12 @@ dbase_set)
 check)
     while read hash; do
         x d.check_hash $hash
+    done
+;;
+restart)
+    while read hash; do
+        x d.stop $hash
+        x d.start $hash
     done
 ;;
 start)
@@ -121,6 +127,11 @@ flist)
         done
     done
 ;;
+add_peer)
+    while read hash; do
+        x d.add_peer $2
+    done
+;;
 x)
     while read hash; do
         echo xx $2 $hash ${@:3}
@@ -137,11 +148,13 @@ xx)
 # commands that read whole list
 
 done)
-    grep -P '\s1.00\s'
+    $0 cache | grep -P '\s1.00\s'
 ;;
 notdone)
-    grep -P '\s0.00\s'
+    $0 cache | grep -v -P '\s1.00\s'
 ;;
+
+
 *)
     echo what?
 ;;

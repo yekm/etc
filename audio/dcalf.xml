@@ -4,10 +4,10 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.0252954" />
-  <param name="meter_inR" value="0.029098" />
-  <param name="meter_outL" value="0.0153627" />
-  <param name="meter_outR" value="0.0191387" />
+  <param name="meter_inL" value="8.14376e-12" />
+  <param name="meter_inR" value="7.15839e-28" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -163,12 +163,12 @@
 <plugin type="limiter" instance-name="Limiter ext" input-index="13" output-index="13">
 <preset bank="0" program="0" plugin="limiter" name="">
   <param name="bypass" value="0" />
-  <param name="level_in" value="1" />
-  <param name="level_out" value="0.264255" />
-  <param name="meter_inL" value="0.237828" />
-  <param name="meter_inR" value="0.201789" />
-  <param name="meter_outL" value="0.0628472" />
-  <param name="meter_outR" value="0.0533236" />
+  <param name="level_in" value="0.015625" />
+  <param name="level_out" value="0.015625" />
+  <param name="meter_inL" value="5.88641e-10" />
+  <param name="meter_inR" value="1.24802e-28" />
+  <param name="meter_outL" value="9.19752e-12" />
+  <param name="meter_outR" value="7.15839e-28" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />

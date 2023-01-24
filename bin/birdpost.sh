@@ -29,7 +29,7 @@ apicall \
 	-F title="$o" \
 	-F duration=$dur \
 	-F disable_notification=true \
-	-F protect_content=true \
+	-F protect_content=false \
 	-F supports_streaming=true \
     -F width=$(ffjson "$o" | jq -r '.streams[0].width') \
     -F height=$(ffjson "$o" | jq -r '.streams[0].height')

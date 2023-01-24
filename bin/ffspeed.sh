@@ -1,3 +1,5 @@
+[ -z "$1" ] && echo "$0 <file> <speed>" && exit
+
 ffmpeg -y \
 	-i "$1" -an \
 	-filter:v "setpts=$2*PTS,drawtext=text='1/$2 speed':fontcolor=white:fontsize=36:x=20:y=20" \
