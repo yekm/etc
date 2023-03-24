@@ -16,9 +16,11 @@ case $mode in
 at="$2"
 dur="$3"
 atd="$4"
+# ffmpeg -v warning -y -stats -ss $2 -t $3 -copyts -i "$1" -ss $2 -c:a copy -c:v copy file:"$1-at-$4.mp4"
 EOF
     ffmpeg -v warning -y -stats \
-        -ss $2 -t $3 -i "$1" \
+        -ss $2 -t $3 -copyts -i "$1" \
+        -ss $2 \
         -c:a copy \
         -c:v copy \
         file:"$1-at-$4.mp4"
