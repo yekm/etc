@@ -24,9 +24,12 @@ f0n=$(( f0n - 1 ))
 allvf="[0:v]copy[vfade0];$allvf[vfade$f0n]format=yuv420p"
 allaf="[0:a]acopy[afade0];$allaf[afade$f0n]acopy"
 
+cv="-c:v libx264 -pix_fmt yuv420p -preset veryslow -crf 18 -tune zerolatency"
+#cv="-c:v h264_nvenc -preset p7 -profile:v high -zerolatency 1 -rc-lookahead 128 -spatial_aq 1 -pix_fmt yuv420p"
+
 set -vx
 ffmpeg -y -hide_banner $inputs \
 	-filter_complex "$allvf;$allaf" \
-	-c:v h264_nvenc -preset p7 -profile:v high -zerolatency 1 -rc-lookahead 128 -spatial_aq 1 -pix_fmt yuv420p \
+	$cv \
 	-c:a libopus \
 	"$1"

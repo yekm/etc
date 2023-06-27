@@ -11,7 +11,8 @@ systemctl --user import-environment PATH DBUS_SESSION_BUS_ADDRESS DISPLAY
 
 xrdb -merge ~/.Xresources
 #xrdb -merge ~/.colors
-xrdb -merge ~/.colors-dracula
+#xrdb -merge ~/.colors-dracula
+xrdb -merge ~/.colors-zenburn
 xmodmap ~/.Xmodmap
 
 # with -a no transparancy, without -a 30fps

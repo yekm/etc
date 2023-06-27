@@ -45,6 +45,7 @@ alias ssshot='scrot -s "%Y-%m-%d_$wx$h.png" -e "mv $f ~/shots/"'
 alias cal='cal -my'
 alias cd..='cd ..'
 alias zst='zstdmt --adapt'
+alias zstl='zstdmt --adapt=min=13 --long -v'
 
 . /usr/share/bash-completion/bash_completion
 
@@ -61,7 +62,7 @@ export PATH="~/.local/bin:$PATH"
 #export PATH=/opt/rpi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin:$PATH
 
 # Created by `userpath` on 2020-04-23 12:16:01
-export PATH="$PATH:/home/yekm/.local/bin"
+#export PATH="$PATH:/home/yekm/.local/bin"
 export PATH="/usr/lib/ccache/bin:$PATH"
 
 export COLORTERM=truecolor

@@ -1,0 +1,311 @@
+extra_attr,inode_checksum,sb_checksum
+atgc,gc_merge,lazytime
+1.15GiB [ 339MiB/s] [ 339MiB/s]
+
+real    0m5.942s
+user    0m0.704s
+sys     0m5.152s
+writes:35252
+requested writes:3256544
+12
+
+real    0m4.734s
+user    0m0.447s
+sys     0m1.837s
+reads:74009
+requested reads:2894552
+
+real    0m11.686s
+user    0m1.195s
+sys     0m7.439s
+
+
+
+
+extra_attr,inode_checksum,sb_checksum,compression
+/dev/nvme0n1p50 on /mnt/testfs type f2fs (rw,relatime,lazytime,background_gc=on,gc_merge,discard,discard_unit=block,no_heap,user_xattr,inline_xattr,acl,inline_data,inline_dentry,flush_merge,barrier,extent_cache,mode=adaptive,active_logs=6,alloc_mode=reuse,checkpoint_merge,fsync_mode=posix,compress_algorithm=zstd:2,compress_log_size=2,compress_extension=txt,compress_extension=c,compress_extension=h,compress_chksum,compress_mode=fs,atgc,memory=normal)
+
+real	0m10.377s
+user	0m0.542s
+sys	0m5.188s
+writes:2743
+requested writes:2286592
+12
+
+real	0m8.421s
+user	0m0.512s
+sys	0m4.206s
+reads:67992
+requested reads:1825864
+
+real	0m19.758s
+user	0m1.086s
+sys	0m9.824s
+
+
+extra_attr,inode_checksum,sb_checksum,compression
+/dev/nvme0n1p50 on /mnt/testfs type f2fs (rw,relatime,lazytime,background_gc=on,gc_merge,discard,discard_unit=block,no_heap,user_xattr,inline_xattr,acl,inline_data,inline_dentry,flush_merge,barrier,extent_cache,mode=adaptive,active_logs=6,alloc_mode=reuse,checkpoint_merge,fsync_mode=posix,compress_algorithm=zstd:6,compress_log_size=2,compress_extension=txt,compress_extension=c,compress_extension=h,compress_chksum,compress_mode=fs,atgc,memory=normal)
+
+real	0m19.000s
+user	0m0.710s
+sys	0m5.303s
+writes:2697
+requested writes:2237360
+12
+
+real	0m8.559s
+user	0m0.615s
+sys	0m4.427s
+reads:67993
+requested reads:1776736
+
+real	0m28.431s
+user	0m1.359s
+sys	0m10.159s
+
+
+extra_attr,inode_checksum,sb_checksum,compression
+/dev/nvme0n1p50 on /mnt/testfs type f2fs (rw,relatime,lazytime,background_gc=on,gc_merge,discard,discard_unit=block,no_heap,user_xattr,inline_xattr,acl,inline_data,inline_dentry,flush_merge,barrier,extent_cache,mode=adaptive,active_logs=6,alloc_mode=reuse,checkpoint_merge,fsync_mode=posix,compress_algorithm=zstd:9,compress_log_size=2,compress_extension=txt,compress_extension=c,compress_extension=h,compress_chksum,compress_mode=fs,atgc,memory=normal)
+
+real	0m37.285s
+user	0m0.505s
+sys	0m5.483s
+writes:2712
+requested writes:2235312
+12
+
+real	0m8.405s
+user	0m0.549s
+sys	0m4.435s
+reads:67993
+requested reads:1774688
+
+real	0m46.643s
+user	0m1.087s
+sys	0m10.355s
+
+
+extra_attr,inode_checksum,sb_checksum,compression
+/dev/nvme0n1p50 on /mnt/testfs type f2fs (rw,relatime,lazytime,background_gc=on,gc_merge,discard,discard_unit=block,no_heap,user_xattr,inline_xattr,acl,inline_data,inline_dentry,flush_merge,barrier,extent_cache,mode=adaptive,active_logs=6,alloc_mode=reuse,checkpoint_merge,fsync_mode=posix,compress_algorithm=lzo,compress_log_size=2,compress_extension=txt,compress_extension=c,compress_extension=h,compress_chksum,compress_mode=fs,atgc,memory=normal)
+
+real	0m6.962s
+user	0m0.554s
+sys	0m5.254s
+writes:2783
+requested writes:2352024
+12
+
+real	0m6.307s
+user	0m0.518s
+sys	0m2.401s
+reads:67992
+requested reads:1891168
+
+real	0m14.271s
+user	0m1.115s
+sys	0m8.096s
+
+
+extra_attr,inode_checksum,sb_checksum,compression
+/dev/nvme0n1p50 on /mnt/testfs type f2fs (rw,relatime,lazytime,background_gc=on,gc_merge,discard,discard_unit=block,no_heap,user_xattr,inline_xattr,acl,inline_data,inline_dentry,flush_merge,barrier,extent_cache,mode=adaptive,active_logs=6,alloc_mode=reuse,checkpoint_merge,fsync_mode=posix,compress_algorithm=lzo-rle,compress_log_size=2,compress_extension=txt,compress_extension=c,compress_extension=h,compress_chksum,compress_mode=fs,atgc,memory=normal)
+
+real	0m6.736s
+user	0m0.631s
+sys	0m5.347s
+writes:2806
+requested writes:2352136
+12
+
+real	0m6.040s
+user	0m0.540s
+sys	0m2.324s
+reads:67992
+requested reads:1891280
+
+real	0m13.650s
+user	0m1.216s
+sys	0m8.073s
+
+
+extra_attr,inode_checksum,sb_checksum,compression
+/dev/nvme0n1p50 on /mnt/testfs type f2fs (rw,relatime,lazytime,background_gc=on,nogc_merge,discard,discard_unit=block,no_heap,user_xattr,inline_xattr,acl,inline_data,inline_dentry,flush_merge,barrier,extent_cache,mode=adaptive,active_logs=6,alloc_mode=reuse,checkpoint_merge,fsync_mode=posix,compress_algorithm=lzo-rle,compress_log_size=2,compress_extension=txt,compress_extension=c,compress_extension=h,compress_chksum,compress_mode=fs,memory=normal)
+
+real	0m6.882s
+user	0m0.508s
+sys	0m5.312s
+writes:2801
+requested writes:2352136
+12
+
+real	0m5.966s
+user	0m0.515s
+sys	0m2.459s
+reads:67992
+requested reads:1891280
+
+real	0m13.743s
+user	0m1.061s
+sys	0m8.161s
+
+
+extra_attr,inode_checksum,sb_checksum,compression
+/dev/nvme0n1p50 on /mnt/testfs type f2fs (rw,relatime,lazytime,background_gc=on,nogc_merge,discard,discard_unit=block,no_heap,user_xattr,inline_xattr,acl,inline_data,inline_dentry,flush_merge,barrier,extent_cache,mode=adaptive,active_logs=6,alloc_mode=reuse,checkpoint_merge,fsync_mode=posix,compress_algorithm=lz4,compress_log_size=2,compress_extension=txt,compress_extension=c,compress_extension=h,compress_chksum,compress_mode=fs,memory=normal)
+
+real	0m6.878s
+user	0m0.666s
+sys	0m5.391s
+writes:2857
+requested writes:2377824
+12
+
+real	0m5.562s
+user	0m0.541s
+sys	0m2.233s
+reads:67992
+requested reads:1916944
+
+real	0m13.444s
+user	0m1.231s
+sys	0m8.092s
+btrfs-progs v6.3.2
+See https://btrfs.readthedocs.io for more information.
+
+Performing full device TRIM /dev/nvme0n1p50 (10.00GiB) ...
+NOTE: several default settings have changed in version 5.15, please make sure
+      this does not affect your deployments:
+      - DUP for metadata (-m dup)
+      - enabled no-holes (-O no-holes)
+      - enabled free-space-tree (-R free-space-tree)
+
+Label:              (null)
+UUID:               2e7b6eca-2c42-4fe4-a517-eb510a87f5e0
+Node size:          16384
+Sector size:        4096
+Filesystem size:    10.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         DUP             256.00MiB
+  System:           DUP               8.00MiB
+SSD detected:       yes
+Zoned device:       no
+Incompat features:  extref, skinny-metadata, no-holes, free-space-tree
+Runtime features:   free-space-tree
+Checksum:           crc32c
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    10.00GiB  /dev/nvme0n1p50
+
+
+
+
+/dev/nvme0n1p50 on /mnt/testfs type btrfs (rw,relatime,compress=zstd:2,ssd,discard=async,space_cache=v2,subvolid=5,subvol=/)
+
+real	0m11.231s
+user	0m0.779s
+sys	0m6.519s
+writes:36191
+requested writes:803464
+12
+
+real	0m12.489s
+user	0m0.469s
+sys	0m2.430s
+reads:35756
+requested reads:682760
+
+real	0m24.203s
+user	0m1.285s
+sys	0m9.339s
+btrfs-progs v6.3.2
+See https://btrfs.readthedocs.io for more information.
+
+Performing full device TRIM /dev/nvme0n1p50 (10.00GiB) ...
+NOTE: several default settings have changed in version 5.15, please make sure
+      this does not affect your deployments:
+      - DUP for metadata (-m dup)
+      - enabled no-holes (-O no-holes)
+      - enabled free-space-tree (-R free-space-tree)
+
+Label:              (null)
+UUID:               3bdade8e-e4a6-4ca9-a2c4-58d01a90c4bf
+Node size:          16384
+Sector size:        4096
+Filesystem size:    10.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         DUP             256.00MiB
+  System:           DUP               8.00MiB
+SSD detected:       yes
+Zoned device:       no
+Incompat features:  extref, skinny-metadata, no-holes, free-space-tree
+Runtime features:   free-space-tree
+Checksum:           crc32c
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    10.00GiB  /dev/nvme0n1p50
+
+
+
+
+/dev/nvme0n1p50 on /mnt/testfs type btrfs (rw,relatime,compress=zstd:6,ssd,discard=async,space_cache=v2,subvolid=5,subvol=/)
+
+real	0m30.741s
+user	0m0.981s
+sys	0m7.377s
+writes:36187
+requested writes:752904
+12
+
+real	0m8.437s
+user	0m0.567s
+sys	0m2.269s
+reads:35695
+requested reads:631784
+
+real	0m39.657s
+user	0m1.597s
+sys	0m10.028s
+
+
+
+/dev/nvme0n1p50 on /mnt/testfs type btrfs (rw,relatime,ssd,discard=async,space_cache=v2,subvolid=5,subvol=/)
+
+real	0m4.272s
+user	0m0.586s
+sys	0m5.146s
+writes:34883
+requested writes:2674096
+12
+
+real	0m5.194s
+user	0m0.590s
+sys	0m1.899s
+reads:45044
+requested reads:2557064
+
+real	0m9.884s
+user	0m1.215s
+sys	0m7.399s
+
+
+
+/dev/nvme0n1p50 on /mnt/testfs type btrfs (rw,relatime,ssd,discard=async,space_cache=v2,subvolid=5,subvol=/)
+
+real	0m4.410s
+user	0m0.734s
+sys	0m5.276s
+writes:36322
+requested writes:2673456
+12
+
+real	0m5.121s
+user	0m0.475s
+sys	0m1.900s
+reads:45024
+requested reads:2556680
+
+real	0m10.086s
+user	0m1.240s
+sys	0m7.561s

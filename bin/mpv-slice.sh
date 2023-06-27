@@ -4,10 +4,10 @@
 [ -z "$2" ] && exit -1
 
 mode=cut
-mode=gif
+#mode=gif
 #mode=gifsub
 
-cv="-c:v libx264 -pix_fmt yuv420p -crf 22 -preset slower -tune zerolatency"
+cv="-c:v libx264 -pix_fmt yuv420p -crf 28 -preset slower -tune zerolatency"
 #cv="-c:v h264_nvenc -preset p7 -tune ll -profile:v high -rc-lookahead 8 -spatial_aq 1 -pix_fmt yuv420p"
 
 case $mode in
