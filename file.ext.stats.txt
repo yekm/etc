@@ -1,0 +1,28 @@
+find . -type f -iname '*.*' | rev | cut -f1 -d. | rev | sort | uniq -c | sort -n
+
+cat etc/ext.comp.list.txt | parallel --tag 'find . -type f -iname "*.{}" -print0  2>/dev/null | du -bch --files0-from=- | tail -n1' | sort -k2 -h | tee etc/filetyped.du.txt
+
+yaml    21M     total
+sh      37M     total
+in      47M     total
+m4      50M     total
+css     55M     total
+rst     69M     total
+el      75M     total
+php     79M     total
+md      81M     total
+hpp     128M    total
+S       147M    total
+rs      234M    total
+java    259M    total
+cpp     359M    total
+html    561M    total
+js      690M    total
+py      808M    total
+xml     1.3G    total
+go      1.6G    total
+h       1.8G    total
+c       2.8G    total
+txt     3.2G    total
+json    21G     total
+

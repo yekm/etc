@@ -176,7 +176,7 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, }, "Pause", function () awful.spawn("bash -c 'sleep 0.3; xscreensaver-command --activate'") end,
               {description = "", group = "awesome"}),
-    awful.key({ modkey, "Control"   }, "Pause", function () awful.spawn("bash -c 'sleep 1; xset dpms force standby'") end,
+    awful.key({ modkey, "Control"   }, "Pause", function () awful.spawn("bash -c 'sleep 0.5; /home/yekm/bin/dpms_standby.sh'") end,
               {description = "", group = "awesome"}),
 
     awful.key({ modkey,  }, "Scroll_Lock", function () awful.spawn("urxvt -e bash -c 'cd /home/yekm/Documents/scan ; ./scan.sh'") end,

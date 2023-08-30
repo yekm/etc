@@ -10,8 +10,8 @@
 # bash rxml.sh list | cut -f 1,6 | grep 'arbitrary_sting_1$' | cut -f1 | bash rxml.sh ...
 
 
-P=RPCrut
-#P=RPCgd
+#P=RPCrut
+P=RPCgd
 
 filter_string() {
     grep String | sed "s/.*String: '\(.*\)'/\1/"
