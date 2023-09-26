@@ -25,6 +25,9 @@ xset r rate 200 100
 xset m 4/3 0
 setxkbmap -layout us,ru -variant ,winkeys -option grp:caps_toggle,grp_led:caps,terminate:ctrl_alt_bksp,compose:ralt
 
+#xinput --set-prop 'Logitech Advanced Corded Mouse M500s' 157 0.3, 0, 0, 0, 0.3, 0, 0, 0, 1
+xinput set-prop 'Logitech Advanced Corded Mouse M500s' 'Coordinate Transformation Matrix' 0.3, 0, 0, 0, 0.3, 0, 0, 0, 1
+
 # https://unix.stackexchange.com/questions/453069/configuring-kensington-slimblade-in-linux
 xinput set-prop 'Kensington Slimblade Trackball' 'libinput Scroll Method Enabled' 0, 0, 1
 xinput set-prop 'Kensington Slimblade Trackball' 'libinput Button Scrolling Button' 8
@@ -32,6 +35,8 @@ xinput set-prop 'Kensington Slimblade Trackball' 'libinput Scrolling Pixel Dista
 xinput set-button-map 'Kensington Slimblade Trackball' 2 1 3 4 5 6 7 8
 # L S
 # R M
+
+xinput set-prop 'pointer:Razer Razer DeathAdder Essential' 'Coordinate Transformation Matrix' 0.2, 0, 0, 0, 0.2, 0, 0, 0, 1
 
 # https://www.linux.org.ru/forum/desktop/9112231
 xkbcomp $DISPLAY - | egrep -v "group . = AltGr;" | xkbcomp - $DISPLAY
@@ -47,8 +52,6 @@ xrandr --output $o2 --rotate right
 #xrandr --output DP-1 --set "Broadcast RGB" "Full"
 #xcalib -d :0 ~/etc/benq_gw2760hs.icc
 
-#xinput --set-prop 'Logitech Advanced Corded Mouse M500s' 157 0.3, 0, 0, 0, 0.3, 0, 0, 0, 1
-xinput set-prop 'Logitech Advanced Corded Mouse M500s' 'Coordinate Transformation Matrix' 0.3, 0, 0, 0, 0.3, 0, 0, 0, 1
 
 xset dpms 0 0 0
 

@@ -25,8 +25,11 @@ URxvt.cursorUnderline:      false
 URxvt.pointerBlank:         true
 
 xterm*faceName: -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
-xterm*faceSize: 24
-Xmerm*vt100*faceSize: 24
+xterm*faceSize: 18
+Xmerm*vt100*faceSize: 18
+
+!https://superuser.com/questions/557043/how-to-disable-truetype-fonts-in-xterm
+XTerm*vt100.renderFont: false
 
 
 !URxvt*font:           xft:Inconsolata:size=14

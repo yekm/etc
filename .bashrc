@@ -46,6 +46,7 @@ alias cal='cal -my'
 alias cd..='cd ..'
 alias zst='zstdmt --adapt'
 alias zstl='zstdmt --adapt=min=13 --long -v'
+alias prll='hwloc-bind core:all parallel --progress --eta --tag'
 
 . /usr/share/bash-completion/bash_completion
 

@@ -17,6 +17,13 @@ at="$2"
 dur="$3"
 atd="$4"
 # ffmpeg -v warning -y -stats -ss $2 -t $3 -copyts -i "$1" -ss $2 -c:a copy -c:v copy file:"$1-at-$4.mp4"
+# ffmpeg -v warning -y -stats -ss \$at -t \$dur -copyts \\
+#    -i "$1" \\
+#    -ss \$at \\
+#    -filter:v "scale='trunc(oh*a/2)*2:720':flags=spline" \\
+#    $cv \\
+#    -an \\
+#    file:"$1-at-$4-gif.mp4"
 EOF
     ffmpeg -v warning -y -stats \
         -ss $2 -t $3 -copyts -i "$1" \
@@ -33,6 +40,7 @@ EOF
         -filter:v "scale='trunc(oh*a/2)*2:720':flags=spline" \
         -an \
         $cv \
+        -ss $2 \
         file:"$1-at-$4-gif.mp4"
     ;;
     gifsub)
