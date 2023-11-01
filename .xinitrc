@@ -31,7 +31,7 @@ xinput set-prop 'Logitech Advanced Corded Mouse M500s' 'Coordinate Transformatio
 # https://unix.stackexchange.com/questions/453069/configuring-kensington-slimblade-in-linux
 xinput set-prop 'Kensington Slimblade Trackball' 'libinput Scroll Method Enabled' 0, 0, 1
 xinput set-prop 'Kensington Slimblade Trackball' 'libinput Button Scrolling Button' 8
-xinput set-prop 'Kensington Slimblade Trackball' 'libinput Scrolling Pixel Distance' 42 # more is slower, default 15
+#xinput set-prop 'Kensington Slimblade Trackball' 'libinput Scrolling Pixel Distance' 42 # more is slower, default 15
 xinput set-button-map 'Kensington Slimblade Trackball' 2 1 3 4 5 6 7 8
 # L S
 # R M

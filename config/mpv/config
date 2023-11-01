@@ -39,7 +39,7 @@ tscale=oversample
 #autoq=100
 #vf=pp
 
-hwdec=auto
+#hwdec=auto
 #hwdec=vaapi
 #vo=opengl-hq
 #vo=opengl:scale=spline36:cscale=spline36:dscale=mitchell:dither-depth=no:fancy-downscaling:sigmoid-upscaling
