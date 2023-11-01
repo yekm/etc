@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # example
-# find pictures -type f | egrep -i -e Репин -e Кандинский | shuf | DISPLAY=:0 bash gal.sh
+# find pictures -type f | egrep -i -e репин -e кандинский | shuf | DISPLAY=:0 bash root_slideshow.sh
 
 # deps
 #pacman -S xorg-server xorg-xinit xorg-apps ffmpeg some-font
