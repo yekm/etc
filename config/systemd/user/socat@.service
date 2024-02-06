@@ -1,0 +1,8 @@
+[Install]
+WantedBy=default.target
+
+[Service]
+Restart=on-success
+ExecStart=/usr/bin/socat -u UDP-RECV:%i STDOUT
+#514 usually
+

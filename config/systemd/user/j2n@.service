@@ -1,0 +1,17 @@
+[Unit]
+Description=zita-j2n
+#After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Environment=ASSERVICE=1
+ExecStart=zita-j2n --chan 2 --jname %i %i 11223
+KillSignal=SIGINT
+#WorkingDirectory=%h/bin
+SyslogIdentifier=zita-j2n@%i
+Restart=always
+RestartSec=1
+Nice=-10
+
+[Install]
+WantedBy=default.target

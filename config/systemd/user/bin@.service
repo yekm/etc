@@ -1,0 +1,16 @@
+[Unit]
+Description=usr bin %I
+#After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Environment=ASSERVICE=1
+ExecStart=/bin/bash %i
+KillSignal=SIGINT
+WorkingDirectory=%h/bin
+SyslogIdentifier=bin@%i
+#Restart=always
+#RestartSec=4
+
+[Install]
+WantedBy=default.target

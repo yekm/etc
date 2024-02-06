@@ -1,0 +1,220 @@
+# i3 config file (v4)
+
+#font pango:monospace 8
+font pango:DejaVu Sans Mono 14
+
+#set $refresh_i3status killall -SIGUSR1 i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+set $mod Mod4
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up Up
+set $down Down
+set $left Left
+set $right Right
+
+floating_modifier $mod
+tiling_drag modifier titlebar
+bindsym $mod+Return exec urxvt
+bindsym $mod+Escape kill
+
+bindsym $mod+space exec --no-startup-id dmenu_run
+# bindsym $mod+d exec "rofi -modi drun,run -show drun"
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+Shift+h split h
+bindsym $mod+Shift+v split v
+
+bindsym $mod+Shift+f fullscreen toggle
+
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+m focus mode_toggle
+
+# focus the parent container
+bindsym $mod+Shift+p focus parent
+
+# focus the child container
+#bindsym $mod+Shift+o focus child
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1: vt"
+set $ws2 "2: www"
+set $ws3 "3: code"
+set $ws4 "4: work"
+set $ws5 "5: telegram"
+set $ws6 "6: www2"
+set $ws7 "7: tmp"
+set $ws8 "8: dict"
+set $ws9 "9: xos"
+set $ws10 "10: sound"
+
+workspace $ws1 output primary
+workspace $ws2 output primary
+workspace $ws3 output primary
+workspace $ws4 output primary
+workspace $ws5 output primary
+workspace $ws6 output nonprimary
+workspace $ws7 output nonprimary
+workspace $ws8 output nonprimary
+workspace $ws9 output nonprimary
+workspace $ws10 output nonprimary
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+bindsym --release $mod+Print exec --no-startup-id scrot
+bindsym --release $mod+Shift+Print exec --no-startup-id scrot -s
+bindsym --release Pause exec --no-startup-id xscreensaver-command --activate
+bindsym --release $mod+Pause exec --no-startup-id bash /home/yekm/bin/dpms_standby.sh
+
+
+# reload the configuration file
+bindsym $mod+Control+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Control+r restart
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode
+    
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym $left       resize shrink width 10 px or 10 ppt
+    bindsym $down       resize grow height 10 px or 10 ppt
+    bindsym $up         resize shrink height 10 px or 10 ppt
+    bindsym $right      resize grow width 10 px or 10 ppt
+    
+    # same bindings, but for the arrow keys
+    bindsym Left        resize shrink width 10 px or 10 ppt
+    bindsym Down        resize grow height 10 px or 10 ppt
+    bindsym Up          resize shrink height 10 px or 10 ppt
+    bindsym Right       resize grow width 10 px or 10 ppt
+    
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+
+bindsym $mod+Shift+r mode "resize"
+
+
+# Move focuses container to monitor
+bindsym $mod+Shift+greater move container to output right
+bindsym $mod+Shift+less move container to output left
+
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    output right
+    position top
+    workspace_buttons yes
+    status_command i3status
+    tray_output right
+}
+
+default_border pixel
+default_floating_border pixel
+
+for_window [window_role="About"] floating enable
+for_window [window_role="Organizer"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="page-info"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="toolbox"] floating enable
+for_window [window_role="webconsole"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+for_window [instance="Msgcompose" class="Thunderbird"] floating enable
+for_window [window_role="Preferences" class="Thunderbird"] floating enable
+for_window [window_type="notification"] floating enable
+for_window [class="Pavucontrol"] floating enable
+#for_window [class="Slack" floating] move container to workspace current
+for_window [class="JetBrains Toolbox"] floating enable
+for_window [title="win0"] floating enable
+
+
+for_window [class="qjackctl"] floating enable, move container to workspace number $ws10
+for_window [class="calfjackhost"] floating enable, move container to workspace number $ws10
+for_window [title="EBU R128 Meter"] floating enable, move container to workspace number $ws10
+for_window [title="Goniometer"] floating enable, move container to workspace number $ws10
+for_window [title="Phase/Frequency Wheel"] floating enable, move container to workspace number $ws10
+for_window [title="EBU R128 Meter"] floating enable, move container to workspace number $ws10
+
+for_window [class="xosview"] move container to workspace number $ws9, layout splitv
+
+
+for_window [class="^URxvt$"] move container to workspace number $ws1, layout tabbed
+for_window [class="^URxvt$"] move container to workspace number $ws1, layout tabbed
+for_window [class="^URxvt$"] move container to workspace number $ws1, layout tabbed
+
+
+#assign [class="^URxvt$" instance="^localroot$"] $ws1
+#assign [class="^URxvt$" instance="^localuser$"] $ws2
+#assign [class="^URxvt$" instance="^remote$"] $ws3
+
+assign [class="google-chrome"] $ws2
+
+# exec --no-startup-id i3-msg 'workspace 3; exec iceweasel; workspace 1'
+exec --no-startup-id urxvt -pe tabbed -name localroot
+exec --no-startup-id urxvt -pe tabbed -name localuser
+exec --no-startup-id urxvt -pe tabbed -name remote
