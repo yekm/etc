@@ -33,8 +33,8 @@ XTerm*vt100.renderFont: false
 
 
 !URxvt*font:           xft:Inconsolata:size=14
-URxvt*font:           xft:Input Mono:style=Regular:size=14
-URxvt*boldFont:         xft:Input Mono:style=Bold:size=14
+URxvt*font:           xft:Input Mono:style=Regular:size=16
+URxvt*boldFont:         xft:Input Mono:style=Bold:size=16
 !URxvt*font:             -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
 !URxvt*boldFont:         -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
 URxvt.scrollstyle:      plain

@@ -53,6 +53,10 @@
    <plug>L\ Out\ \#1</plug>
    <plug>L\ Out\ \#2</plug>
   </socket>
+  <socket client="bcalf" exclusive="off" name="b_meine" type="jack-audio">
+   <plug>L\ meine\ Out\ \#1</plug>
+   <plug>L\ meine\ Out\ \#2</plug>
+  </socket>
   <socket client="Noise repellent" exclusive="off" name="noise-rep" type="jack-audio">
    <plug>output</plug>
   </socket>
@@ -63,10 +67,6 @@
   <socket client="gate_recorder" exclusive="off" name="gate_recorder" type="jack-audio">
    <plug>output0</plug>
    <plug>output1</plug>
-  </socket>
-  <socket client="bcalf" exclusive="off" name="b_meine" type="jack-audio">
-   <plug>L\ meine\ Out\ \#1</plug>
-   <plug>L\ meine\ Out\ \#2</plug>
   </socket>
   <socket client="bcalf" exclusive="off" name="b_exciter" type="jack-audio">
    <plug>Exciter Out #1</plug>
@@ -474,7 +474,11 @@
    <plug>Equalizer\ 12\ Band\ In\ \#1</plug>
    <plug>Equalizer\ 12\ Band\ In\ \#2</plug>
   </socket>
-  <socket client="dell" exclusive="off" name="dell 1" type="jack-audio">
+  <socket client="nc110\.lan" exclusive="off" name="nc110" type="jack-audio">
+   <plug>in_1</plug>
+   <plug>in_2</plug>
+  </socket>
+  <socket client="four\.lan" exclusive="off" name="four\.lan 1" type="jack-audio">
    <plug>in_1</plug>
    <plug>in_2</plug>
   </socket>
@@ -501,12 +505,12 @@
    <plug>Gate In #1</plug>
    <plug>Gate In #2</plug>
   </socket>
-  <socket client="Noise repellent" exclusive="off" name="noise-rep" type="jack-audio">
-   <plug>input</plug>
-  </socket>
   <socket client="bcalf" exclusive="off" name="b_meine" type="jack-audio">
    <plug>L\ meine\ In\ \#1</plug>
    <plug>L\ meine\ In\ \#2</plug>
+  </socket>
+  <socket client="Noise repellent" exclusive="off" name="noise-rep" type="jack-audio">
+   <plug>input</plug>
   </socket>
   <socket client="ffmpeg_bird_audio_dump" exclusive="off" name="ffmpeg" type="jack-audio">
    <plug>input_1</plug>
@@ -967,15 +971,18 @@
   <cable input="d exciter" output="d stereo" type="jack-audio"/>
   <cable input="d bass" output="d exciter" type="jack-audio"/>
   <cable input="d eq12" output="d bass" type="jack-audio"/>
-  <cable input="dell 1" output="d eq12" type="jack-audio"/>
+  <cable input="nc110" output="d eq12" type="jack-audio"/>
+  <cable input="four\.lan 1" output="d eq12" type="jack-audio"/>
   <cable input="b_filter" output="onboard_in" type="jack-audio"/>
   <cable input="b_filter" output="system_in" type="jack-audio"/>
   <cable input="b_eq8" output="b_filetr" type="jack-audio"/>
   <cable input="b_limiter" output="b_eq8" type="jack-audio"/>
   <cable input="b_gate" output="b_limiter" type="jack-audio"/>
-  <cable input="noise-rep" output="b_limiter" type="jack-audio"/>
-  <cable input="b_meine" output="noise-rep" type="jack-audio"/>
+  <cable input="b_meine" output="b_limiter" type="jack-audio"/>
+  <cable input="b_analyser" output="b_meine" type="jack-audio"/>
+  <cable input="noise-rep" output="b_meine" type="jack-audio"/>
   <cable input="baudline 3" output="noise-rep" type="jack-audio"/>
+  <cable input="limiter in" output="noise-rep" type="jack-audio"/>
   <cable input="ffmpeg_pi 1" output="b_gate" type="jack-audio"/>
   <cable input="ffmpeg_birds 1" output="b_gate" type="jack-audio"/>
   <cable input="baudline 2" output="b_gate" type="jack-audio"/>
@@ -983,8 +990,6 @@
   <cable input="ffmpeg" output="b_gate" type="jack-audio"/>
   <cable input="ffmpeg_twitch 1" output="gate_recorder" type="jack-audio"/>
   <cable input="baudline 3" output="gate_recorder" type="jack-audio"/>
-  <cable input="b_analyser" output="b_meine" type="jack-audio"/>
-  <cable input="limiter out" output="b_meine" type="jack-audio"/>
   <cable input="testscope 1" output="dell" type="jack-audio"/>
   <cable input="scomp" output="DESKTOP-MNCBJ7M 1" type="jack-audio"/>
   <cable input="s_tools" output="sgate" type="jack-audio"/>
@@ -1013,6 +1018,10 @@
   <cable input="musicscope 1" output="eq8" type="jack-audio"/>
   <cable input="limiter out" output="qjsg" type="jack-audio"/>
   <cable input="limiter out" output="baudline 1" type="jack-audio"/>
+  <cable input="eq 12" output="limiter out" type="jack-audio"/>
+  <cable input="d ext" output="limiter out" type="jack-audio"/>
+  <cable input="ffmpeg_cqt 1" output="limiter out" type="jack-audio"/>
+  <cable input="musicscope 2" output="limiter out" type="jack-audio"/>
   <cable input="spectr" output="analyzer" type="jack-audio"/>
   <cable input="rms_o" output="analyzer" type="jack-audio"/>
   <cable input="ebur128" output="analyzer" type="jack-audio"/>
@@ -1020,10 +1029,6 @@
   <cable input="Phase/Frequency Wheel 1" output="analyzer" type="jack-audio"/>
   <cable input="scope2" output="analyzer" type="jack-audio"/>
   <cable input="ffmpeg_meine 1" output="analyzer" type="jack-audio"/>
-  <cable input="eq 12" output="limiter out" type="jack-audio"/>
-  <cable input="d ext" output="limiter out" type="jack-audio"/>
-  <cable input="ffmpeg_cqt 1" output="limiter out" type="jack-audio"/>
-  <cable input="musicscope 2" output="limiter out" type="jack-audio"/>
   <cable input="hdmi_out" output="eq 12" type="jack-audio"/>
   <cable input="system" output="eq 12" type="jack-audio"/>
   <cable input="onboard_out 1" output="eq 12" type="jack-audio"/>

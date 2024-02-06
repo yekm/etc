@@ -116,27 +116,51 @@ awful.screen.connect_for_each_screen(function(s)
                 "z", "x", "c",
                 "i", "o", "p",
                 "j", "k", "l",
-                "b", "n", "m" }, s, awful.layout.layouts[1])
+                     "n", "m" }, s, awful.layout.layouts[1])
 
     s.mypromptbox = awful.widget.prompt()
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist_buttons)
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
-    s.mywibox = awful.wibar({ position = "bottom", screen = s })
-    s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
-            mysystray,
-            mytextclock,
-        },
-    }
+    
+    if s == screen.primary then
+        s.mywibox = awful.wibar({ position = "bottom", screen = s, visible = false})
+        --s.mywibox = awful.wibar({ position = "left", screen = s})
+        s.mywibox:setup {
+            layout = wibox.layout.align.horizontal,
+            { -- Left widgets
+                layout = wibox.layout.fixed.horizontal,
+                s.mytaglist,
+                s.mypromptbox,
+                --widget = wibox.container.rotate,
+            },
+            s.mytasklist, -- Middle widget
+            { -- Right widgets
+                layout = wibox.layout.fixed.horizontal,
+                mykeyboardlayout,
+                --mysystray,
+                mytextclock,
+                widget = wibox.container.rotate,
+            },
+            --widget = wibox.container.rotate,
+        }
+    else
+        s.mywibox = awful.wibar({ position = "top", screen = s })
+        s.mywibox:setup {
+            layout = wibox.layout.align.horizontal,
+            { -- Left widgets
+                layout = wibox.layout.fixed.horizontal,
+                s.mytaglist,
+                s.mypromptbox,
+            },
+            s.mytasklist, -- Middle widget
+            { -- Right widgets
+                layout = wibox.layout.fixed.horizontal,
+                mykeyboardlayout,
+                mysystray,
+                mytextclock,
+            },
+        }
+    end
 end)
 
 root.buttons(awful.util.table.join(
@@ -206,10 +230,19 @@ globalkeys = awful.util.table.join(
                     history_path = awful.util.get_cache_dir() .. "/history_eval"
                   }
               end,
-              {description = "lua execute prompt", group = "awesome"})
+              {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     -- awful.key({ modkey }, "p", function() menubar.show() end,
     --           {description = "show the menubar", group = "launcher"})
+
+    awful.key({ modkey }, "b",
+        function ()
+            myscreen = awful.screen.focused()
+            myscreen.mywibox.visible = not myscreen.mywibox.visible
+        end,
+        {description = "toggle statusbar"}
+    )
+
 )
 
 clientkeys = awful.util.table.join(
@@ -332,6 +365,6 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
-awful.spawn("google-chrome-stable")
-awful.spawn("goldendict")
-awful.spawn("code")
+-- awful.spawn("google-chrome-stable")
+-- awful.spawn("goldendict")
+-- awful.spawn("code")

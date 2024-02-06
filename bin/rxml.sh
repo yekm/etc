@@ -11,7 +11,9 @@
 
 
 #P=RPCrut
-P=RPCgd
+#P=RPCgd
+#P=RPCfilm
+P=RPCmult
 
 filter_string() {
     grep String | sed "s/.*String: '\(.*\)'/\1/"
@@ -102,6 +104,11 @@ start)
 stop)
     while read hash; do
         x d.stop $hash
+    done
+;;
+close)
+    while read hash; do
+        x d.close $hash
     done
 ;;
 c1)

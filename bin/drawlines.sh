@@ -1,11 +1,12 @@
 set -vxeu
 
-w=${1:-"2480"}
-h=${2:-"3508"}
+w=${1:-"7016"}
+h=${2:-"4961"}
 
 #3840x2160 4k lg tv
 
-gm convert -size "${w}x$h" xc:white -pointsize 40 -fill "#ff08" label:'qweqwe' white.bmp
+#gm convert -size "${w}x$h" xc:white -pointsize 40 -fill "#ff08" label:'qweqwe' white.bmp
+gm convert -size "${w}x$h" xc:white white.bmp
 
 echo fill black >draw.txt
 echo stroke black >>draw.txt
@@ -14,7 +15,27 @@ echo stroke black >>draw.txt
 y=0
 x=0
 rw=1
-if [ -n "${do1+x}" ]; then
+if [ -n "${do3+x}" ]; then
+    # squares
+    inc=$(( $h / 20 ))
+    while [ $y -lt $h ]; do
+        echo "line 0,$y,$w,$y" >> draw.txt
+        (( y += $inc ))
+    done
+    while [ $x -lt $w ]; do
+        echo "line $x,0,$x,$h" >> draw.txt
+        (( x += $inc ))
+    done
+
+elif [ -n "${do2+x}" ]; then
+    # lines
+    inc=$(( $h / 20 ))
+    while [ $y -lt $h ]; do
+        echo "line 0,$y,$w,$y" >> draw.txt
+        (( y += $inc ))
+    done
+
+elif [ -n "${do1+x}" ]; then
     rw=1
     w=$rw
     while [ $y -lt 3508 ]; do
@@ -24,6 +45,7 @@ if [ -n "${do1+x}" ]; then
         (( y += w+32 ))
         (( x += w+16 ))
     done
+
 else
     inc=100
     while [ $y -lt $h ]; do
@@ -38,3 +60,4 @@ else
 fi
 
 gm mogrify -stroke black -strokewidth 1 -draw @draw.txt white.bmp
+gm convert white.bmp white.png
